@@ -24,8 +24,10 @@
 }
 
 .active-chip {
-    border: greenyellow 3px solid;
+    border: greenyellow 10px solid;
     cursor: pointer;
+    height: 10vh;
+    border-radius: 60pt;
 }
 
 .spin-circle {
@@ -42,7 +44,7 @@
     border-radius: 60pt;
 }
 
-.spin-circle-div {
+.img-div {
     height: 18vh;
     width: 14vw;
     display: flex;

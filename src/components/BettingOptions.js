@@ -16,7 +16,7 @@ import SpinCircle from '../images/spin-circle.png'
 export default function BettingOptions(props) {
 
     const handleChipClick = (value) => {
-        if(props.isSpinComplete) {
+        if(props.isSpinComplete || !props.isSpinComplete) {
             props.setCurrentBetValue(value)
         }
     }
@@ -24,19 +24,107 @@ export default function BettingOptions(props) {
     return(
         <div className="betting-options-div">
             <div className="chip-options-div">
-                {props.chipCount >= 1 ? <img alt="1 chip" onClick={() => handleChipClick(1)} className={props.currentBetValue === 1 ? "active-chip" : "chip-img"} src={One}></img> : <></>}
-                {props.chipCount >= 5 ? <img alt="5 chip" onClick={() => handleChipClick(5)} className={props.currentBetValue === 5 ? "active-chip" : "chip-img"} src={Five}></img> : <></>}
-                {props.chipCount >= 25 ? <img alt="25 chip" onClick={() => handleChipClick(25)} className={props.currentBetValue === 25 ? "active-chip" : "chip-img"} src={TwentyFive}></img> : <></>}
-                {props.chipCount >= 100 ? <img alt="100 chip" onClick={() => handleChipClick(100)} className={props.currentBetValue === 100 ? "active-chip" : "chip-img"} src={OneHundred}></img> : <></>}
-                {props.chipCount >= 500 ? <img alt="500 chip" onClick={() => handleChipClick(500)} className={props.currentBetValue === 500 ? "active-chip" : "chip-img"} src={FiveHundred}></img> : <></>}
-                {props.chipCount >= 1000 ? <img alt="1000 chip" onClick={() => handleChipClick(1000)} className={props.currentBetValue === 1000 ? "active-chip" : "chip-img"} src={OneThousand}></img> : <></>}
-                {props.chipCount >= 10000 ? <img alt="10k chip" onClick={() => handleChipClick(10000)} className={props.currentBetValue === 10000 ? "active-chip" : "chip-img"} src={TenThousand}></img> : <></>}
-                {props.chipCount >= 50000 ? <img alt="50k chip" onClick={() => handleChipClick(50000)} className={props.currentBetValue === 50000 ? "active-chip" : "chip-img"} src={FiftyThousand}></img> : <></>}
-                {props.chipCount >= 100000 ? <img alt="100k chip" onClick={() => handleChipClick(100000)} className={props.currentBetValue === 100000 ? "active-chip" : "chip-img"} src={OneHundredK}></img> : <></>}
-                {props.chipCount >= 500000 ? <img alt="500k chip" onClick={() => handleChipClick(500000)} className={props.currentBetValue === 500000 ? "active-chip" : "chip-img"} src={FiveHundredK}></img> : <></>}
-                {props.chipCount >= 1000000 ? <img alt="1 million chip" onClick={() => handleChipClick(1000000)} className={props.currentBetValue === 1000000 ? "active-chip" : "chip-img"} src={OneMillion}></img> : <></>}
+                
+                {props.chipCount >= 1 ?
+                    <div className="img-div">
+                        <img alt="1 chip" onClick={() => handleChipClick(1)} 
+                            className={props.currentBetValue === 1 ? "active-chip" : "chip-img"} 
+                            src={One}
+                        >
+                        </img>
+                        </div> : <></>}
+                
+                {props.chipCount >= 5 ?
+                    <div className="img-div">
+                        <img alt="5 chip" onClick={() => handleChipClick(5)} 
+                            className={props.currentBetValue === 5 ? "active-chip" : "chip-img"} 
+                            src={Five}
+                        >
+                        </img>
+                        </div> : <></>}
+                
+                {props.chipCount >= 25 ?
+                    <div className="img-div">
+                        <img alt="25 chip" onClick={() => handleChipClick(25)} 
+                            className={props.currentBetValue === 25 ? "active-chip" : "chip-img"} 
+                            src={TwentyFive}
+                        >
+                        </img>
+                        </div> : <></>}
+                
+                {props.chipCount >= 100 ?
+                    <div className="img-div">
+                        <img alt="100 chip" onClick={() => handleChipClick(100)} 
+                            className={props.currentBetValue === 100 ? "active-chip" : "chip-img"} 
+                            src={OneHundred}
+                        >
+                        </img>
+                        </div> : <></>}
+                
+                {props.chipCount >= 500 ?
+                    <div className="img-div">
+                        <img alt="500 chip" onClick={() => handleChipClick(500)} 
+                            className={props.currentBetValue === 500 ? "active-chip" : "chip-img"} 
+                            src={FiveHundred}
+                        >
+                        </img>
+                        </div> : <></>}
+                
+                {props.chipCount >= 1000 ?
+                    <div className="img-div">
+                        <img alt="1000 chip" onClick={() => handleChipClick(1000)} 
+                            className={props.currentBetValue === 1000 ? "active-chip" : "chip-img"} 
+                            src={OneThousand}
+                        >
+                        </img>
+                        </div> : <></>}
+                
+                {props.chipCount >= 10000 ?
+                    <div className="img-div">
+                        <img alt="10k chip" onClick={() => handleChipClick(10000)} 
+                            className={props.currentBetValue === 10000 ? "active-chip" : "chip-img"} 
+                            src={TenThousand}
+                        >
+                        </img>
+                        </div> : <></>}
+                
+                {props.chipCount >= 50000 ?
+                    <div className="img-div">
+                        <img alt="50k chip" onClick={() => handleChipClick(50000)} 
+                            className={props.currentBetValue === 50000 ? "active-chip" : "chip-img"} 
+                            src={FiftyThousand}
+                        >
+                        </img>
+                        </div> : <></>}
+                
+                {props.chipCount >= 100000 ?
+                    <div className="img-div">
+                        <img alt="100k chip" onClick={() => handleChipClick(100000)} 
+                            className={props.currentBetValue === 100000 ? "active-chip" : "chip-img"} 
+                            src={OneHundredK}
+                        >
+                        </img>
+                        </div> : <></>}
+                
+                {props.chipCount >= 500000 ?
+                    <div className="img-div">
+                        <img alt="500k chip" onClick={() => handleChipClick(500000)} 
+                            className={props.currentBetValue === 500000 ? "active-chip" : "chip-img"} 
+                            src={FiveHundredK}
+                        >
+                        </img>
+                        </div> : <></>}
+                
+                {props.chipCount >= 1000000 ?
+                    <div className="img-div">
+                        <img alt="1 million chip" onClick={() => handleChipClick(1000000)} 
+                            className={props.currentBetValue === 1000000 ? "active-chip" : "chip-img"} 
+                            src={OneMillion}
+                        >
+                        </img>
+                        </div> : <></>}
             </div>
-            <div className="spin-circle-div">
+            <div className="img-div">
                 <img alt="spin circle" onClick={props.spinTheWheel} className="spin-circle" src={SpinCircle}></img>
             </div>
         </div>
