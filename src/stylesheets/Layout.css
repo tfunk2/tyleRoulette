@@ -1,0 +1,46 @@
+.layout-div {
+    font-size: 12px;
+    /* width: 1200px; */
+}
+
+.zeroes {
+    display: grid;
+    grid-template-columns: 6vw;
+    grid-template-rows: 15.37vh 0.75vh 16.13vh;
+}
+
+.inside-and-columns {
+    display: grid;
+    grid-template-columns: 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 6vw;
+    grid-template-rows: 10vh 0.75vh 10vh 0.75vh 10vh 0.75vh ;
+}
+
+.dozens {
+    display: grid;
+    grid-template-columns: 6vw 27.4vw 27vw 26.6vw;
+    grid-template-rows: 10vh;
+}
+
+.even-money-bets {
+    display: grid;
+    grid-template-columns: 6vw 13.5vw 13.5vw 13.5vw 13.5vw 13.5vw 13.5vw;
+    grid-template-rows: 10vh;
+}
+
+.bet-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.bet-box:hover {
+    background-color: greenyellow;
+}
+
+.zeroes-inside-columns {
+    display: flex;
+    width: 100%;
+    /* flex-direction: row; */
+    /* justify-content: center; */
+}

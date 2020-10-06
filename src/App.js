@@ -1,9 +1,11 @@
 import React, { useState, useEffect} from 'react';
 import './App.css';
+import Layout from './components/Layout.js'
 
 function App() {
   const [chipCount, useChipCount] = useState(1000);
   const [currentBetValue, setCurrentBetValue] = useState(null);
+  const [totalAmountWon, setTotalAmountWon] = useState(0);
   const [winningNumber, setWinningNumber] = useState(null);
   const [previousTwenty, setPreviousTwenty] = useState([]);
   const [straightUps, setStraightUps] = useState([
@@ -16,8 +18,7 @@ function App() {
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-    0, 0
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
   ]);
   const [streets, setStreets] = useState([
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
@@ -33,14 +34,15 @@ function App() {
   const [oddEven, setOddEven] = useState(null);
   const [highLow, setHighLow] = useState(null);
 
+  const wheelNumbers = [
+    "0", "1", "2", "3", "4", "5", "6", "7", "8",
+    "9", "10", "11", "12", "13", "14", "15", "16",
+    "17", "18", "19", "20", "21", "22", "23", "24",
+    "25", "26", "27", "28", "29", "30", "31", "32",
+    "33", "34", "35", "36", "00"
+  ];
+
   const spinTheWheel = () => {
-    const wheelNumbers = [
-      "0", "1", "2", "3", "4", "5", "6", "7", "8",
-      "9", "10", "11", "12", "13", "14", "15", "16",
-      "17", "18", "19", "20", "21", "22", "23", "24",
-      "25", "26", "27", "28", "29", "30", "31", "32",
-      "33", "34", "35", "36", "00"
-    ];
     let randomIndex = Math.floor(Math.random() * Math.floor(38));
     let randomWinner = wheelNumbers[randomIndex];
     setWinningNumber(randomWinner);
@@ -57,15 +59,20 @@ function App() {
   };
 
   const wheelHistory = previousTwenty.map(winningNum => {
-    return <p>{winningNum}</p>
+    return <p className="history-num">{winningNum}</p>
   })
 
   return (
     <div className="app">
       <header className="app-header" onClick={spinTheWheel}>
-        Spin the Wheel - {winningNumber}
+        <h3 className="header-h3">TyleRoulette</h3>
+        <h3 className="header-h3">WinningNumber{winningNumber}</h3>
+        <h3 className="header-h3">{chipCount}</h3>
       </header>
-      {wheelHistory}
+      <div className="wheel-history">
+        {wheelHistory}
+      </div>
+      <Layout />
     </div>
   );
 };

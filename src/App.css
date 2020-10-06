@@ -1,1 +1,21 @@
+.app {
+  /* width: 1200px; */
+  /* margin: 0px; */
+}
 
+.app-header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.wheel-history {
+  display: flex;
+}
+
+.history-num {
+  margin: 5px;
+}
+
+.header-h3 {
+
+}
