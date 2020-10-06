@@ -10,12 +10,18 @@
 
 .wheel-history {
   display: flex;
+  margin-left: 5vw;
+  margin-bottom: 1vw;
 }
 
 .history-num {
-  margin: 5px;
+  margin: 0px 5px;
 }
 
 .header-h3 {
 
+}
+
+.header-div {
+  width: 30vw;
 }

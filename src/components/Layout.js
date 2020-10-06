@@ -60,7 +60,7 @@ export default function Layout(props) {
                     <div className="bet-box">32-33 split</div>
                     <div className="bet-box">32-33-35-36 corner</div>
                     <div className="bet-box">35-36 split</div>
-                    <div className="bet-box">empty</div>
+                    <div className="empty">empty</div>
 
                     <div className="bet-box">0 - 00 - 2 street</div>
                     <div className="bet-box">2 straight</div>
@@ -111,7 +111,7 @@ export default function Layout(props) {
                     <div className="bet-box">31-32 split</div>
                     <div className="bet-box">31-32-34-35 corner</div>
                     <div className="bet-box">34-35 split</div>
-                    <div className="bet-box">empty</div>
+                    <div className="empty"></div>
 
                     <div className="bet-box">0-1 split</div>
                     <div className="bet-box">1 straight</div>
@@ -138,7 +138,7 @@ export default function Layout(props) {
                     <div className="bet-box">31-34 split</div>
                     <div className="bet-box">34 straight</div>
                     <div className="bet-box">1st column</div>
-                    <div className="bet-box">empty</div>
+                    <div className="empty"></div>
                     <div className="bet-box">1-2-3 street</div>
                     <div className="bet-box">1 to 6 double street</div>
                     <div className="bet-box">4-5-6 street</div>
@@ -162,17 +162,16 @@ export default function Layout(props) {
                     <div className="bet-box">31-32-33 street</div>
                     <div className="bet-box">31-36 double street</div>
                     <div className="bet-box">34-35-36 street</div>
-                    {/* <div className="bet-box">empty</div> */}
                 </section>
             </div>
             <section className="dozens">
-                <div className="betbox">empty</div>
+                <div className="empty"></div>
                 <div className="bet-box">1st dozen</div>
                 <div className="bet-box">2nd dozen</div>
                 <div className="bet-box">3rd dozen</div>
             </section>
             <section className="even-money-bets">
-                <div className="bet-box">empty</div>
+                <div className="empty"></div>
                 <div className="bet-box">1 to 18</div>
                 <div className="bet-box">odd</div>
                 <div className="bet-box">red</div>

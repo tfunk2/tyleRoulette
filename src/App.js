@@ -1,9 +1,10 @@
 import React, { useState, useEffect} from 'react';
 import './App.css';
 import Layout from './components/Layout.js'
+import BettingOptions from './components/BettingOptions.js'
 
 function App() {
-  const [chipCount, useChipCount] = useState(1000);
+  const [chipCount, useChipCount] = useState(1000000);
   const [currentBetValue, setCurrentBetValue] = useState(null);
   const [totalAmountWon, setTotalAmountWon] = useState(0);
   const [winningNumber, setWinningNumber] = useState(null);
@@ -33,6 +34,7 @@ function App() {
   const [redBlack, setRedBlack] = useState(null);
   const [oddEven, setOddEven] = useState(null);
   const [highLow, setHighLow] = useState(null);
+  const [isSpinComplete, setIsSpinComplete] = useState(false);
 
   const wheelNumbers = [
     "0", "1", "2", "3", "4", "5", "6", "7", "8",
@@ -56,7 +58,40 @@ function App() {
       currentTwenty.pop();
       setPreviousTwenty(currentTwenty);
     };
+
+    setIsSpinComplete(true)
   };
+
+  const resetLayout = () => {
+    setCurrentBetValue(null);
+    setTotalAmountWon(0);
+    setStraightUps([
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0, 0
+  ]);
+  setSplits([
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+  ]);
+  setStreets([
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+  ]);
+  setCorners([
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+  ]);
+  setBasket(0);
+  setColumns(0, 0, 0);
+  setDozens(0, 0, 0);
+  setRedBlack(null);
+  setOddEven(null);
+  setHighLow(null);
+  setIsSpinComplete(false)
+  }
 
   const wheelHistory = previousTwenty.map(winningNum => {
     return <p className="history-num">{winningNum}</p>
@@ -64,15 +99,28 @@ function App() {
 
   return (
     <div className="app">
-      <header className="app-header" onClick={spinTheWheel}>
-        <h3 className="header-h3">TyleRoulette</h3>
-        <h3 className="header-h3">WinningNumber{winningNumber}</h3>
-        <h3 className="header-h3">{chipCount}</h3>
+      <header className="app-header">
+        <div className="header-div">
+          <h3 className="header-h3">TyleRoulette</h3>
+        </div>
+        <div className="header-div">
+          <h3 className="header-h3">Winning Number: {winningNumber}</h3>
+        </div>
+        <div className="header-div">
+          <h3 className="header-h3">Chip Count: {chipCount}</h3>
+        </div>
       </header>
       <div className="wheel-history">
-        {wheelHistory}
+        Previous 20 Spins: {wheelHistory}
       </div>
       <Layout />
+      <BettingOptions chipCount={chipCount}
+        currentBetValue={currentBetValue}
+        setCurrentBetValue={setCurrentBetValue}
+        spinTheWheel={spinTheWheel}
+        isSpinComplete={isSpinComplete}
+      />
+      <button onClick={resetLayout} className="reset-button">Reset Bets</button>
     </div>
   );
 };

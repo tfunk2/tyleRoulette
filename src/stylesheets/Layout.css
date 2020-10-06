@@ -1,6 +1,7 @@
 .layout-div {
-    font-size: 12px;
+    font-size: 8px;
     /* width: 1200px; */
+    padding-left: 5vw;
 }
 
 .zeroes {
@@ -17,7 +18,7 @@
 
 .dozens {
     display: grid;
-    grid-template-columns: 6vw 27.4vw 27vw 26.6vw;
+    grid-template-columns: 6vw 27vw 27vw 27vw;
     grid-template-rows: 10vh;
 }
 
@@ -32,6 +33,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    border: 1px black solid;
 }
 
 .bet-box:hover {

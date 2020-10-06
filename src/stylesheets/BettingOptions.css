@@ -1,0 +1,51 @@
+.betting-options-div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.chip-options-div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80vw;
+}
+
+.chip-img {
+    height: 10vh;
+    cursor: pointer;
+}
+
+.chip-img:hover {
+    background-color: greenyellow;
+    border-radius: 60px;
+}
+
+.active-chip {
+    border: greenyellow 3px solid;
+    cursor: pointer;
+}
+
+.spin-circle {
+    height: 15vh;
+    cursor: pointer;
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
+}
+
+.spin-circle:hover {
+    border: 4px greenyellow solid;
+    border-radius: 60pt;
+}
+
+.spin-circle-div {
+    height: 18vh;
+    width: 14vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
