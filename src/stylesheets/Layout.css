@@ -1,31 +1,93 @@
 .layout-div {
-    font-size: 8px;
+    font-size: 28px;
     /* width: 1200px; */
-    padding-left: 5vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 900;
+    background-image: url(../images/blue-felt.jpg);
+    border-radius: 20px;
+    padding: 2vh 1vw;
+    /* padding-left: .5vw; */
+    /* padding-right: 1vw; */
+    /* padding-right: 20px; */
+    cursor: default;
+    color: rgb(235, 235, 235);
+    /* width: 100%; */
 }
 
 .zeroes {
     display: grid;
     grid-template-columns: 6vw;
-    grid-template-rows: 15.37vh 0.75vh 16.13vh;
+    grid-template-rows: 15.27vh 0.95vh 16.03vh;
+    border-left: .8vw rgb(22, 22, 22) solid;
+    /* border-bottom: .8vw rgb(22, 22, 22) solid; */
 }
 
 .inside-and-columns {
     display: grid;
     grid-template-columns: 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 6vw;
-    grid-template-rows: 10vh 0.75vh 10vh 0.75vh 10vh 0.75vh ;
+    grid-template-rows: 9.8vh 0.95vh 9.8vh 0.95vh 9.8vh 0.95vh ;
+    border: 2px rgb(22, 22, 22) solid;
 }
 
 .dozens {
     display: grid;
-    grid-template-columns: 6vw 27vw 27vw 27vw;
-    grid-template-rows: 10vh;
+    grid-template-columns: 6.76vw 27.2vw 27vw 27.64vw;
+    grid-template-rows: 10.5vh;
+    color: rgb(22, 22, 22);
 }
 
 .even-money-bets {
+    font-size: 2.5vw;
     display: grid;
-    grid-template-columns: 6vw 13.5vw 13.5vw 13.5vw 13.5vw 13.5vw 13.5vw;
+    grid-template-columns: 6.76vw 13.58vw 13.58vw 13.52vw 13.52vw 13.82vw 13.82vw;
     grid-template-rows: 10vh;
+    color: rgb(22, 22, 22);
+}
+
+#one-chip-cursor {
+    cursor: url(../images/1-chip-cursor.png), auto;
+}
+
+#five-chip-cursor {
+    cursor: url(../images/5-chip-cursor.png), auto;
+}
+
+#twenty-five-chip-cursor {
+    cursor: url(../images/25-chip-cursor.png), auto;
+}
+
+#one-hundred-chip-cursor {
+    cursor: url(../images/100-chip-cursor.png), auto;
+}
+
+#five-hundred-chip-cursor {
+    cursor: url(../images/500-chip-cursor.png), auto;
+}
+
+#one-thousand-chip-cursor {
+    cursor: url(../images/1000-chip-cursor.png), auto;
+}
+
+#ten-thousand-chip-cursor {
+    cursor: url(../images/10k-chip-cursor.png), auto;
+}
+
+#fifty-thousand-chip-cursor {
+    cursor: url(../images/50k-chip-cursor.png), auto;
+}
+
+#hundred-thousand-chip-cursor {
+    cursor: url(../images/100k-chip-cursor.png), auto;
+}
+
+#five-hundred-thousand-chip-cursor {
+    cursor: url(../images/500k-chip-cursor.png), auto;
+}
+
+#one-million-chip-cursor {
+    cursor: url(../images/1m-chip-cursor.png), auto;
 }
 
 .bet-box {
@@ -33,16 +95,145 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    border: 1px black solid;
+    /* border: 1px rgb(22, 22, 22) solid; */
+    /* cursor: url(../images/1-chip-cursor.png), auto; */
+}
+
+.bet-box > .green {
+    background-color: rgb(90, 161, 34);
+    margin: 2px;
+}
+
+.bet-box > .red {
+    background-color: rgb(254,0,0);
+    margin: 2px;
+}
+
+.bet-box > .black {
+    background-color: rgb(22, 22, 22);
+    margin: 2px;
 }
 
 .bet-box:hover {
-    background-color: greenyellow;
+    background-color: rgba(172, 255, 47, 0.897);
 }
 
 .zeroes-inside-columns {
     display: flex;
     width: 100%;
+    border-top: .7vw rgb(22, 22, 22) solid;
+    border-right: .7vw rgb(22, 22, 22) solid;
+    border-bottom: .7vw rgb(22, 22, 22) solid;
     /* flex-direction: row; */
     /* justify-content: center; */
+}
+
+.empty {
+    /* border-right: .7vw rgb(22, 22, 22) solid; */
+    /* border-left: 1px rgb(22, 22, 22) solid; */
+}
+
+#straight-up-number {
+    font-size: 40pt;
+    /* padding: 10px 10px; */
+}
+
+.number {
+    border: 1px rgb(22, 22, 22) solid;
+    border-radius: 60pt;
+    width: 100%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#empty-remove-border {
+    /* border-left: 1.7vw transparent solid; */
+}
+
+.fill {
+    background-color: rgb(22, 22, 22);
+}
+
+.diamond {
+    height: 90%;
+}
+
+.ribbon-div {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.dozen {
+    border-bottom: .7vw rgb(22, 22, 22) solid;
+    border-left: .7vw rgb(22, 22, 22) solid;
+}
+
+.right-dozen {
+    border-right: .7vw rgb(22, 22, 22) solid;
+    border-bottom: .7vw rgb(22, 22, 22) solid;
+    border-left: .7vw rgb(22, 22, 22) solid;
+}
+
+.ribbon-img {
+    position: fixed;
+    height: 10vh;
+    margin-top: 0.5vh;
+}
+
+.dozen-text {
+    position: fixed;
+    /* padding-bottom: 44px; */
+    padding-bottom: 5vh;
+    /* margin: 0; */
+}
+
+.column {
+    color: rgb(22, 22, 22);
+    border-left: .7vw rgb(22, 22, 22) solid;
+}
+
+.split, .basket, .corner, .street, .double-street {
+    background-color: rgb(22, 22, 22);
+}
+.even-money {
+    border-bottom: .7vw rgb(22, 22, 22) solid;
+    border-left: .7vw rgb(22, 22, 22) solid;
+}
+
+.right-even-money {
+    border-right: .7vw rgb(22, 22, 22) solid;
+    border-bottom: .7vw rgb(22, 22, 22) solid;
+    border-left: .7vw rgb(22, 22, 22) solid;
+}
+
+.blank-chip {
+    height: 7vh;
+    z-index: 50;
+    /* position: absolute; */
+}   
+
+.chip-and-bet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.bet-text {
+    position: absolute;
+    font-size: 10pt;
+    color: rgb(22, 22, 22);
+    z-index: 100;
+    padding-bottom: 1.8vw;
+}
+
+.dozen-chip {
+    
 }

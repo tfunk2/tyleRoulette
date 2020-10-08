@@ -9,8 +9,9 @@
 .chip-options-div {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     align-items: center;
-    width: 80vw;
+    width: 60vw;
 }
 
 .chip-img {
@@ -45,9 +46,13 @@
 }
 
 .img-div {
-    height: 18vh;
-    width: 14vw;
+    height: 14vh;
+    width: 10vw;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.roulette-wheel {
+    height: 25vh;
 }

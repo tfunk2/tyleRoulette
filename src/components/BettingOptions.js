@@ -12,6 +12,7 @@ import OneHundredK from '../images/100k-chip.png'
 import FiveHundredK from '../images/500k-chip.png'
 import OneMillion from '../images/1m-chip.png'
 import SpinCircle from '../images/spin-circle.png'
+import Wheel from '../images/roulette-wheel.png'
 
 export default function BettingOptions(props) {
 
@@ -23,6 +24,9 @@ export default function BettingOptions(props) {
 
     return(
         <div className="betting-options-div">
+            <div className="wheel-div">
+                <img alt="roulette wheel" className="roulette-wheel" src={Wheel}></img>
+            </div>
             <div className="chip-options-div">
                 
                 {props.chipCount >= 1 ?

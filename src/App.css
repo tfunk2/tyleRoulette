@@ -1,5 +1,5 @@
 .app {
-  /* width: 1200px; */
+  /* width: 100%; */
   /* margin: 0px; */
 }
 
@@ -24,4 +24,9 @@
 
 .header-div {
   width: 30vw;
+}
+
+.reset-button-div {
+  display: flex;
+  justify-content: center;
 }

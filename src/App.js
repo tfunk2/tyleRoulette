@@ -5,6 +5,7 @@ import BettingOptions from './components/BettingOptions.js'
 
 function App() {
   const [chipCount, setChipCount] = useState(1000);
+  const [pendingTotalBet, setPendingTotalBet] = useState(0);
   const [currentBetValue, setCurrentBetValue] = useState(0);
   const [totalAmountWon, setTotalAmountWon] = useState(0);
   const [winningNumber, setWinningNumber] = useState(null);
@@ -68,7 +69,7 @@ function App() {
   };
 
   const resetLayout = () => {
-    setCurrentBetValue(null);
+    setCurrentBetValue(0);
     setTotalAmountWon(0);
     setStraightUps([
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
@@ -95,7 +96,9 @@ function App() {
     setRedBlack([0, 0]);
     setOddEven([0, 0]);
     setHighLow([0, 0]);
-    setIsSpinComplete(true)
+    setIsSpinComplete(true);
+    setChipCount(chipCount + pendingTotalBet);
+    setPendingTotalBet(0);
   }
 
   const wheelHistory = previousTwenty.map(winningNum => {
@@ -117,6 +120,39 @@ function App() {
       </header>
       <div className="wheel-history">
         Previous 20 Spins: {wheelHistory}
+      </div>
+      <BettingOptions chipCount={chipCount}
+        currentBetValue={currentBetValue}
+        setCurrentBetValue={setCurrentBetValue}
+        spinTheWheel={spinTheWheel}
+        isSpinComplete={isSpinComplete}
+        setSplits={setSplits}
+        splits={splits}
+        straightUps={straightUps}
+        setStraightUps={setStraightUps}
+        columns={columns}
+        setColumns={setColumns}
+        setCorners={setCorners}
+        corners={corners}
+        setStreets={setStreets}
+        streets={streets}
+        setDoubleStreets={setDoubleStreets}
+        doubleStreets={doubleStreets}
+        setHighLow={setHighLow}
+        highLow={highLow}
+        setOddEven={setOddEven}
+        oddEven={oddEven}
+        setRedBlack={setRedBlack}
+        redBlack={redBlack}
+        setDozens={setDozens}
+        dozens={dozens}
+        setPendingTotalBet={setPendingTotalBet}
+        pendingTotalBet={pendingTotalBet}
+        basket={basket}
+        setBasket={setBasket}
+      />
+      <div className="reset-button-div">
+        <button onClick={resetLayout} className="reset-button">Reset Bets</button>  
       </div>
       <Layout 
         chipCount={chipCount}
@@ -145,34 +181,11 @@ function App() {
         redBlack={redBlack}
         setDozens={setDozens}
         dozens={dozens}
+        setPendingTotalBet={setPendingTotalBet}
+        pendingTotalBet={pendingTotalBet}
+        basket={basket}
+        setBasket={setBasket}
       />
-      <BettingOptions chipCount={chipCount}
-        currentBetValue={currentBetValue}
-        setCurrentBetValue={setCurrentBetValue}
-        spinTheWheel={spinTheWheel}
-        isSpinComplete={isSpinComplete}
-        setSplits={setSplits}
-        splits={splits}
-        straightUps={straightUps}
-        setStraightUps={setStraightUps}
-        columns={columns}
-        setColumns={setColumns}
-        setCorners={setCorners}
-        corners={corners}
-        setStreets={setStreets}
-        streets={streets}
-        setDoubleStreets={setDoubleStreets}
-        doubleStreets={doubleStreets}
-        setHighLow={setHighLow}
-        highLow={highLow}
-        setOddEven={setOddEven}
-        oddEven={oddEven}
-        setRedBlack={setRedBlack}
-        redBlack={redBlack}
-        setDozens={setDozens}
-        dozens={dozens}
-      />
-      <button onClick={resetLayout} className="reset-button">Reset Bets</button>
     </div>
   );
 };
