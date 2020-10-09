@@ -53,6 +53,66 @@
     align-items: center;
 }
 
+.wheel-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .roulette-wheel {
     height: 25vh;
 }
+.roulette-wheel-spinning {
+    height: 25vh;
+    animation-name: spin;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.wheel-number-div {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 14.5vh;
+    width: 14.5vh;
+    border-radius: 100pt;
+}
+
+.winning-number-h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: rgb(240, 240, 240);
+    font-size: 60pt;
+    border-radius: 60pt;
+    /* padding: 1vw; */
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 900;
+    /* width: 5%;
+    height: 10%; */
+    text-align: center;
+}
+
+.green-wheel-number {
+    background-color: rgba(89, 161, 34, 0.9);
+}
+
+.red-wheel-number {
+    background-color: rgba(254, 0, 0, 0.9);
+
+}
+
+.black-wheel-number {
+    background-color: rgba(22, 22, 22, 0.9);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+

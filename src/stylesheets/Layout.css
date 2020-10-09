@@ -187,13 +187,13 @@
 }
 
 .ribbon-img {
-    position: fixed;
+    position: absolute;
     height: 10vh;
     margin-top: 0.5vh;
 }
 
 .dozen-text {
-    position: fixed;
+    position: absolute;
     /* padding-bottom: 44px; */
     padding-bottom: 5vh;
     /* margin: 0; */

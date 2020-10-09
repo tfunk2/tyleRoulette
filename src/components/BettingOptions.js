@@ -17,15 +17,146 @@ import Wheel from '../images/roulette-wheel.png'
 export default function BettingOptions(props) {
 
     const handleChipClick = (value) => {
-        if(props.isSpinComplete || !props.isSpinComplete) {
+        if(!props.isSpinComplete) {
             props.setCurrentBetValue(value)
         }
+    }
+
+    const whatColorNumber = () => {
+        switch(props.winningNumber) {
+            case "0":
+                return "green-wheel-number"       
+                break;
+            case "1":
+                return "red-wheel-number"     
+                break;
+            case "2":
+                return "black-wheel-number"       
+                break;
+            case "3":
+                return "red-wheel-number"       
+                break;
+            case "4":
+                return "black-wheel-number"      
+                break;
+            case "5":
+                return "red-wheel-number"       
+                break;
+            case "6":
+                return "black-wheel-number"       
+                break;
+            case "7":
+                return "red-wheel-number"       
+                break;
+            case "8":
+                return "black-wheel-number"       
+                break;
+            case "9":
+                return "red-wheel-number"       
+                break;
+            case "10":
+                return "black-wheel-number"     
+                break;
+            case "11":
+                return "black-wheel-number"     
+                break;
+            case "12":
+                return "red-wheel-number"     
+                break;
+            case "13":
+                return "black-wheel-number"     
+                break;
+            case "14":
+                return "red-wheel-number"     
+                break;
+            case "15":
+                return "black-wheel-number"     
+                break;
+            case "16":
+                return "red-wheel-number"     
+                break;
+            case "17":
+                return "black-wheel-number"     
+                break;
+            case "18":
+                return "red-wheel-number"     
+                break;
+            case "19":
+                return "red-wheel-number"     
+                break;
+            case "20":
+                return "black-wheel-number"     
+                break;
+            case "21":
+                return "red-wheel-number"     
+                break;
+            case "22":
+                return "black-wheel-number"     
+                break;
+            case "23":
+                return "red-wheel-number"     
+                break;
+            case "24":
+                return "black-wheel-number"     
+                break;
+            case "25":
+                return "red-wheel-number"     
+                break;
+            case "26":
+                return "black-wheel-number"     
+                break;
+            case "27":
+                return "red-wheel-number"     
+                break;
+            case "28":
+                return "black-wheel-number"     
+                break;
+            case "29":
+                return "black-wheel-number"     
+                break;
+            case "30":
+                return "red-wheel-number"     
+                break;
+            case "31":
+                return "black-wheel-number"     
+                break;
+            case "32":
+                return "red-wheel-number"     
+                break;
+            case "33":
+                return "black-wheel-number"     
+                break;
+            case "34":
+                return "red-wheel-number"     
+                break;
+            case "35":
+                return "black-wheel-number"     
+                break;
+            case "36":
+                return "red-wheel-number"     
+                break;
+            case "00":
+                return "green-wheel-number"     
+                break;
+          }
     }
 
     return(
         <div className="betting-options-div">
             <div className="wheel-div">
-                <img alt="roulette wheel" className="roulette-wheel" src={Wheel}></img>
+                <img alt="roulette wheel" 
+                    className={props.isWheelSpinning ? 
+                        "roulette-wheel-spinning" : 
+                        "roulette-wheel"
+                    } 
+                    src={Wheel}
+                >
+                </img>
+                <div className={`${whatColorNumber()} wheel-number-div`}>
+                    <h2 className="winning-number-h2">
+                        {props.winningNumber}
+                    </h2>
+                </div>
             </div>
             <div className="chip-options-div">
                 

@@ -30,3 +30,21 @@
   display: flex;
   justify-content: center;
 }
+
+.winnings-div {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: yellowgreen;
+  z-index: 101;
+  border-radius: 6pt;
+  top: 48.5vh;
+  padding: 8vh;
+}
+
+.winnings-div > h3 {
+  font-size: 36px;
+  color: rgb(238, 238, 238);
+  text-shadow: grey 2px 2px 2px;
+}

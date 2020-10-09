@@ -38,9 +38,10 @@ function App() {
   const [redBlack, setRedBlack] = useState([0, 0]);
   const [oddEven, setOddEven] = useState([0, 0]);
   const [highLow, setHighLow] = useState([0, 0]);
-  const [isSpinComplete, setIsSpinComplete] = useState(true);
+  const [isSpinComplete, setIsSpinComplete] = useState(false);
   const [recentBet, setRecentBet] = useState([]);
   const [recentBetValue, setRecentBetValue] = useState(0);
+  const [isWheelSpinning, setIsWheelSpinning] = useState(false)
 
   const wheelNumbers = [
     "0", "1", "2", "3", "4", "5", "6", "7", "8",
@@ -51,22 +52,25 @@ function App() {
   ];
 
   const spinTheWheel = () => {
-    if(isSpinComplete || !isSpinComplete) {
-      let randomIndex = Math.floor(Math.random() * Math.floor(38));
-      let randomWinner = wheelNumbers[randomIndex];
-      setWinningNumber(randomWinner);
+    if(!isSpinComplete && pendingTotalBet > 0) {
+      setIsWheelSpinning(true)
+      setTimeout(() => {
+        let randomIndex = Math.floor(Math.random() * Math.floor(38));
+        let randomWinner = wheelNumbers[randomIndex];
+        setWinningNumber(randomWinner);
 
-      let currentTwenty = [...previousTwenty];
+        let currentTwenty = [...previousTwenty];
 
-      if(currentTwenty.length < 20) {
-        setPreviousTwenty([...previousTwenty, randomWinner]);
-      } else {
-        currentTwenty.unshift(randomWinner);
-        currentTwenty.pop();
-        setPreviousTwenty(currentTwenty);
-      };
+        if(currentTwenty.length < 20) {
+          setPreviousTwenty([...previousTwenty, randomWinner]);
+        } else {
+          currentTwenty.unshift(randomWinner);
+          currentTwenty.pop();
+          setPreviousTwenty(currentTwenty);
+        };
 
-      setIsSpinComplete(false)
+        setIsSpinComplete(true)
+      }, 3000)
     }
   };
 
@@ -101,8 +105,12 @@ function App() {
     setRedBlack([0, 0]);
     setOddEven([0, 0]);
     setHighLow([0, 0]);
-    setIsSpinComplete(true);
-    setChipCount(chipCount + pendingTotalBet);
+    if(!isSpinComplete) {
+      setChipCount(chipCount + pendingTotalBet);
+      if(chipCount < 1) {
+        setChipCount(1000)
+      }
+    }
     setPendingTotalBet(0);
   }
 
@@ -207,12 +215,19 @@ function App() {
     }
   }
 
+  const collectWinnings = () => {
+    setIsSpinComplete(false)
+    setChipCount(chipCount + totalAmountWon)
+    resetLayout()
+  }
+
 
   // PAYOUT SECTION BELOW
   let allPayouts = 0;
 
   useEffect(() => {
     if(winningNumber) {
+      setIsWheelSpinning(false)
       switch(winningNumber) {
         case "0":
           allPayouts = 
@@ -876,6 +891,12 @@ function App() {
     }
   }, [winningNumber])
 
+  // useEffect(() => {
+  //   if(chipCount < 1) {
+
+  //   }
+  // }, [chipCount])
+
   return (
     <div className="app">
       <header className="app-header">
@@ -883,10 +904,13 @@ function App() {
           <h3 className="header-h3">TyleRoulette</h3>
         </div>
         <div className="header-div">
-          <h3 className="header-h3">Winning Number: {winningNumber}</h3>
-        </div>
-        <div className="header-div">
           <h3 className="header-h3">Chip Count: {chipCount}</h3>
+          {chipCount < 1 && !isSpinComplete ? 
+            <button className="restart-button" 
+              onClick={resetLayout}
+            >+1000 Restart
+            </button> : <></>
+          }
         </div>
       </header>
       <div className="wheel-history">
@@ -925,10 +949,34 @@ function App() {
         setRecentBet={setRecentBet}
         recentBetValue={recentBetValue}
         setRecentBetValue={setRecentBetValue}
+        isWheelSpinning={isWheelSpinning}
+        setIsWheelSpinning={setIsWheelSpinning}
+        winningNumber={winningNumber}
       />
       <div className="reset-button-div">
-        <button onClick={resetLayout} className="reset-button">Reset All Bets</button>  
-        <button onClick={undoRecentBet} className="undo-bet-button">Undo Last Bet</button>  
+        { !isSpinComplete && (chipCount > 0 || totalAmountWon > 0) ?
+          <div>
+            <button onClick={resetLayout} className="reset-button">Reset All Bets</button>  
+            <button onClick={undoRecentBet} className={recentBet.length === 2 ? "undo-bet-button" : "greyed-button"}>Undo Last Bet</button>
+          </div> : <></>
+        }
+        { isSpinComplete ? 
+          <div className="winnings-div">
+            <h3>
+              {totalAmountWon > 0 ? 
+                `Nice one! Won ${totalAmountWon}` || 
+                `Nailed it! Won ${totalAmountWon}` || 
+                `Chicken dinner! Won ${totalAmountWon}` : 
+                `Not this time. Lost ${pendingTotalBet}` || 
+                `Oh well, lost ${pendingTotalBet} try again?` || 
+                `It's only pretend luckily! Lost ${pendingTotalBet}`
+              }
+            </h3>
+            <button className="collect-winnings-button" onClick={collectWinnings}>
+              {totalAmountWon > 0 ? "Collect Winnings" : "Clear Layout"}
+            </button>
+          </div> : <></>
+        }
       </div>
       <Layout 
         chipCount={chipCount}
@@ -965,6 +1013,9 @@ function App() {
         setRecentBet={setRecentBet}
         recentBetValue={recentBetValue}
         setRecentBetValue={setRecentBetValue}
+        isWheelSpinning={isWheelSpinning}
+        setIsWheelSpinning={setIsWheelSpinning}
+        winningNumber={winningNumber}
       />
     </div>
   );
