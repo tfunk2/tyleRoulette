@@ -41,10 +41,12 @@
   border-radius: 6pt;
   top: 48.5vh;
   padding: 8vh;
+  width: 50vmin;
+  height: 20vmin;
 }
 
 .winnings-div > h3 {
-  font-size: 36px;
+  font-size: 3.5vmin;
   color: rgb(238, 238, 238);
   text-shadow: grey 2px 2px 2px;
 }

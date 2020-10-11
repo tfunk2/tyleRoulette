@@ -20,6 +20,9 @@ export default function BettingOptions(props) {
         if(!props.isSpinComplete) {
             props.setCurrentBetValue(value)
         }
+        if(value === props.currentBetValue) {
+            props.setCurrentBetValue(0)
+        }
     }
 
     const whatColorNumber = () => {
@@ -152,11 +155,11 @@ export default function BettingOptions(props) {
                     src={Wheel}
                 >
                 </img>
-                <div className={`${whatColorNumber()} wheel-number-div`}>
+                {!props.isWheelSpinning ? <div className={`${whatColorNumber()} wheel-number-div`}>
                     <h2 className="winning-number-h2">
                         {props.winningNumber}
                     </h2>
-                </div>
+                </div> : <></>}
             </div>
             <div className="chip-options-div">
                 

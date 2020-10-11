@@ -107,11 +107,14 @@ function App() {
     setHighLow([0, 0]);
     if(!isSpinComplete) {
       setChipCount(chipCount + pendingTotalBet);
-      if(chipCount < 1) {
-        setChipCount(1000)
-      }
     }
     setPendingTotalBet(0);
+    if(isSpinComplete && totalAmountWon === 0 && chipCount === 0) {
+      setIsSpinComplete(false)
+      setChipCount(1000)
+    }
+    setRecentBet([])
+    setRecentBetValue(0)
   }
 
   const wheelHistory = previousTwenty.map(winningNum => {
@@ -213,13 +216,23 @@ function App() {
         default:
           console.log("No recent bet")
     }
+    setChipCount(chipCount + recentBetValue)
+    setPendingTotalBet(pendingTotalBet - recentBetValue)
   }
 
   const collectWinnings = () => {
     setIsSpinComplete(false)
-    setChipCount(chipCount + totalAmountWon)
+    if(totalAmountWon > 0) {
+      setChipCount(chipCount + totalAmountWon)
+    }
     resetLayout()
   }
+
+  useEffect(() => {
+    if(previousTwenty[-1] === previousTwenty[-2]) {
+      setIsWheelSpinning(false)
+    }
+  }, [previousTwenty])
 
 
   // PAYOUT SECTION BELOW
@@ -905,16 +918,10 @@ function App() {
         </div>
         <div className="header-div">
           <h3 className="header-h3">Chip Count: {chipCount}</h3>
-          {chipCount < 1 && !isSpinComplete ? 
-            <button className="restart-button" 
-              onClick={resetLayout}
-            >+1000 Restart
-            </button> : <></>
-          }
         </div>
       </header>
       <div className="wheel-history">
-        Previous 20 Spins: {wheelHistory}
+        Previous 20 Spins: {wheelHistory.reverse()}
       </div>
       <BettingOptions chipCount={chipCount}
         currentBetValue={currentBetValue}
@@ -954,10 +961,10 @@ function App() {
         winningNumber={winningNumber}
       />
       <div className="reset-button-div">
-        { !isSpinComplete && (chipCount > 0 || totalAmountWon > 0) ?
+        { !isSpinComplete ?
           <div>
-            <button onClick={resetLayout} className="reset-button">Reset All Bets</button>  
-            <button onClick={undoRecentBet} className={recentBet.length === 2 ? "undo-bet-button" : "greyed-button"}>Undo Last Bet</button>
+            {pendingTotalBet > 0 ? <button onClick={resetLayout} className="reset-button">Reset All Bets</button> : <></>}  
+            {recentBet.length === 2 ? <button onClick={undoRecentBet} className={recentBet.length === 2 ? "undo-bet-button" : "greyed-button"}>Undo Last Bet</button> : <></>}
           </div> : <></>
         }
         { isSpinComplete ? 
@@ -972,9 +979,16 @@ function App() {
                 `It's only pretend luckily! Lost ${pendingTotalBet}`
               }
             </h3>
-            <button className="collect-winnings-button" onClick={collectWinnings}>
-              {totalAmountWon > 0 ? "Collect Winnings" : "Clear Layout"}
+            {chipCount < 1 && totalAmountWon === 0 ? 
+              <button className="restart-button" 
+                onClick={resetLayout}
+              >+1000 Restart
+              </button> : 
+              <button className="collect-winnings-button" 
+                onClick={collectWinnings}
+              >{totalAmountWon > 0 ? "Collect Winnings" : "Clear Layout"}
             </button>
+          }
           </div> : <></>
         }
       </div>

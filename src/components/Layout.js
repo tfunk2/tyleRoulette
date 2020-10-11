@@ -8,7 +8,7 @@ import BlankChip from '../images/blank-chip.png'
 export default function Layout(props) {
 
     const increaseBet = (betToIncrease) => {
-        if(!props.isSpinComplete && props.currentBetValue <= props.chipCount) {
+        if(!props.isSpinComplete && props.currentBetValue <= props.chipCount && props.currentBetValue > 0) {
             let splitRegex = /split$/
             let newSplits = props.splits.flat()
             let newStraightUps = props.straightUps.flat()
