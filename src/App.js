@@ -902,7 +902,7 @@ function App() {
       }
       setTotalAmountWon(totalAmountWon + allPayouts)
     }
-  }, [winningNumber])
+  }, [previousTwenty])
 
   // useEffect(() => {
   //   if(chipCount < 1) {
