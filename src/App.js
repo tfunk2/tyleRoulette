@@ -228,6 +228,25 @@ function App() {
     resetLayout()
   }
 
+  const whichMessage = (messageType) => {
+    const goodMessages = [
+      `Nice one! Won ${totalAmountWon}`, 
+      `Nailed it! Won ${totalAmountWon}`,
+      `Chicken dinner! Won ${totalAmountWon}`
+    ]
+    const badMessages = [
+      `Not this time. Lost ${pendingTotalBet}`, 
+      `Boooo, lost ${pendingTotalBet}. Try again?`, 
+      `It's only pretend luckily! Lost ${pendingTotalBet}`
+    ]
+
+    if(messageType === "won") {
+      return goodMessages[Math.floor(Math.random() * goodMessages.length)]
+    } else if(messageType === "lost") {
+      return badMessages[Math.floor(Math.random() * badMessages.length)]
+    }
+  }
+
   useEffect(() => {
     if(previousTwenty[-1] === previousTwenty[-2]) {
       setIsWheelSpinning(false)
@@ -959,24 +978,16 @@ function App() {
         isWheelSpinning={isWheelSpinning}
         setIsWheelSpinning={setIsWheelSpinning}
         winningNumber={winningNumber}
+        resetLayout={resetLayout}
+        undoRecentBet={undoRecentBet}
       />
       <div className="reset-button-div">
-        { !isSpinComplete ?
-          <div>
-            {pendingTotalBet > 0 ? <button onClick={resetLayout} className="reset-button">Reset All Bets</button> : <></>}  
-            {recentBet.length === 2 ? <button onClick={undoRecentBet} className={recentBet.length === 2 ? "undo-bet-button" : "greyed-button"}>Undo Last Bet</button> : <></>}
-          </div> : <></>
-        }
         { isSpinComplete ? 
           <div className="winnings-div">
             <h3>
               {totalAmountWon > 0 ? 
-                `Nice one! Won ${totalAmountWon}` || 
-                `Nailed it! Won ${totalAmountWon}` || 
-                `Chicken dinner! Won ${totalAmountWon}` : 
-                `Not this time. Lost ${pendingTotalBet}` || 
-                `Oh well, lost ${pendingTotalBet} try again?` || 
-                `It's only pretend luckily! Lost ${pendingTotalBet}`
+                whichMessage("won") :
+                whichMessage("lost")
               }
             </h3>
             {chipCount < 1 && totalAmountWon === 0 ? 

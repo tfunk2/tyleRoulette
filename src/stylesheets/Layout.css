@@ -22,10 +22,11 @@
 .zeroes {
     display: grid;
     grid-template-columns: 6vw;
-    grid-template-rows: 15.27vh 1vh 16.03vh;
+    grid-template-rows: 15.17vh 1.2vh 15.93vh;
     border-left: .8vw rgb(22, 22, 22) solid;
     /* border-top: 3px rgb(22, 22, 22) solid; */
     box-shadow: inset 0vh -1.15vh rgb(22, 22, 22);
+    border-radius: 0px 0px 0px 10px;
 }
 
 .inside-and-columns {
@@ -37,7 +38,7 @@
 
 .dozens {
     display: grid;
-    grid-template-columns: 6.76vw 27.05vw 27vw 27.64vw;
+    grid-template-columns: 6.76vw 27vw 27.05vw 27.7vw;
     grid-template-rows: 10.5vh;
     color: rgb(22, 22, 22);
 }
@@ -45,7 +46,7 @@
 .even-money-bets {
     font-size: 4.5vmin;
     display: grid;
-    grid-template-columns: 6.76vw 13.5vw 13.5vw 13.52vw 13.52vw 13.82vw 13.82vw;
+    grid-template-columns: 6.76vw 13.5vw 13.5vw 13.52vw 13.52vw 13.86vw 13.86vw;
     grid-template-rows: 10vh;
     color: rgb(22, 22, 22);
 }
@@ -125,22 +126,21 @@
 .zeroes-inside-columns {
     display: flex;
     width: 100%;
-    border-top: .7vw rgb(22, 22, 22) solid;
+    border-top: .65vw rgb(22, 22, 22) solid;
     /* border-right: .7vw rgb(22, 22, 22) solid; */
-    border-bottom: .7vw rgb(22, 22, 22) solid;
+    /* border-bottom: .7vw rgb(22, 22, 22) solid; */
     /* flex-direction: row; */
     /* justify-content: center; */
     border-radius: 10px 10px 10px 10px;
-    box-shadow: inset 0vh 1vh rgb(22, 22, 22);
+    /* box-shadow: inset 0vh 1vh rgb(22, 22, 22); */
 }
 
-.empty {
-    /* border-right: .7vw rgb(22, 22, 22) solid; */
-    /* border-left: 1px rgb(22, 22, 22) solid; */
+.empty-column {
+    border-radius: 0px 0px 10px 0px;
 }
 
 #straight-up-number {
-    font-size: 5vmin;
+    font-size: 6vmin;
     /* padding: 10px 10px; */
 }
 
@@ -177,14 +177,14 @@
 }
 
 .dozen {
-    border-bottom: .7vw rgb(22, 22, 22) solid;
-    border-left: .7vw rgb(22, 22, 22) solid;
+    border-bottom: .75vw rgb(22, 22, 22) solid;
+    border-left: .75vw rgb(22, 22, 22) solid;
 }
 
 .right-dozen {
-    border-right: .7vw rgb(22, 22, 22) solid;
-    border-bottom: .7vw rgb(22, 22, 22) solid;
-    border-left: .7vw rgb(22, 22, 22) solid;
+    border-right: .75vw rgb(22, 22, 22) solid;
+    border-bottom: .75vw rgb(22, 22, 22) solid;
+    border-left: .75vw rgb(22, 22, 22) solid;
 }
 
 .ribbon-img {
@@ -202,8 +202,8 @@
 
 .column {
     color: rgb(22, 22, 22);
-    border-left: .7vw rgb(22, 22, 22) solid;
-    border-right: .7vw rgb(22, 22, 22) solid;
+    border-left: .75vw rgb(22, 22, 22) solid;
+    border-right: .75vw rgb(22, 22, 22) solid;
     font-size: 2.5vmin;
 }
 
@@ -212,21 +212,21 @@
 }
 
 .even-money {
-    border-bottom: .7vw rgb(22, 22, 22) solid;
-    border-left: .7vw rgb(22, 22, 22) solid;
+    border-bottom: .75vw rgb(22, 22, 22) solid;
+    border-left: .75vw rgb(22, 22, 22) solid;
 }
 
 .left-even-money {
-    border-bottom: .7vw rgb(22, 22, 22) solid;
-    border-left: .7vw rgb(22, 22, 22) solid;
+    border-bottom: .75vw rgb(22, 22, 22) solid;
+    border-left: .75vw rgb(22, 22, 22) solid;
     border-radius: 0px 0px 0px 10px;
 
 }
 
 .right-even-money {
-    border-right: .7vw rgb(22, 22, 22) solid;
-    border-bottom: .7vw rgb(22, 22, 22) solid;
-    border-left: .7vw rgb(22, 22, 22) solid;
+    border-right: .75vw rgb(22, 22, 22) solid;
+    border-bottom: .75vw rgb(22, 22, 22) solid;
+    border-left: .75vw rgb(22, 22, 22) solid;
     border-radius: 0px 0px 10px 0px;
 }
 
@@ -254,4 +254,16 @@
 
 .dozen-chip {
     
+}
+
+.winning-num {
+    animation-name: flashingNumber;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes flashingNumber {
+    0% {background-color: gold;}
+    50% {background-color: rgba(255, 217, 0, 0);}
+    100% {background-color: gold;}
 }

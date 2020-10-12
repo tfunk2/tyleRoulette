@@ -39,8 +39,8 @@
   background-color: yellowgreen;
   z-index: 101;
   border-radius: 6pt;
-  top: 48.5vh;
-  padding: 8vh;
+  top: 9.5vh;
+  padding: 3vh;
   width: 50vmin;
   height: 20vmin;
 }
@@ -49,4 +49,5 @@
   font-size: 3.5vmin;
   color: rgb(238, 238, 238);
   text-shadow: grey 2px 2px 2px;
+  text-align: center;
 }

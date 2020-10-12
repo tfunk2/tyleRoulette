@@ -1328,7 +1328,9 @@ export default function Layout(props) {
         >
             <div className="zeroes-inside-columns">
                 <section className="zeroes">
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("00 straight")}>
+                    <div className={props.winningNumber === "00" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("00 straight")
+                    }>
                         <div className="number green">
                             {props.straightUps[37] > 0 ? 
                                 <div className="chip-and-bet">
@@ -1347,7 +1349,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("0 straight")}>
+                    <div className={props.winningNumber === "0" && props.isSpinComplete ? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("0 straight")
+                    }>
                         <div className="number green">
                             {props.straightUps[0] > 0 ? 
                             <div className="chip-and-bet">
@@ -1368,7 +1372,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("3 straight")}>
+                    <div className={props.winningNumber === "3" && props.isSpinComplete ? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("3 straight")
+                    }>
                         <div className="number red">
                             {props.straightUps[3] > 0 ? 
                             <div className="chip-and-bet">
@@ -1387,7 +1393,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("6 straight")}>
+                    <div className={props.winningNumber === "6" && props.isSpinComplete ? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("6 straight")
+                    }>
                         <div className="number black">
                             {props.straightUps[6] > 0 ? 
                             <div className="chip-and-bet">
@@ -1406,7 +1414,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("9 straight")}>
+                    <div className={props.winningNumber === "9" && props.isSpinComplete ? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("9 straight")
+                    }>
                         <div className="number red">
                             {props.straightUps[9] > 0 ? 
                             <div className="chip-and-bet">
@@ -1425,9 +1435,11 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("12 straight")}>
+                    <div className={props.winningNumber === "12" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("12 straight")
+                    }>
                         <div className="number red">
-                            {props.straightUps[12] > 0 ? 
+                        {props.straightUps[12] > 0 ? 
                             <div className="chip-and-bet">
                                 <img className="blank-chip" alt="blank chip" src={BlankChip}></img>
                                 <p className="bet-text">{props.straightUps[12]}</p>
@@ -1444,7 +1456,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("15 straight")}>
+                    <div className={props.winningNumber === "15" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("15 straight")
+                    }>
                         <div className="number black">
                             {props.straightUps[15] > 0 ? 
                             <div className="chip-and-bet">
@@ -1463,7 +1477,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("18 straight")}>
+                    <div className={props.winningNumber === "18" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("18 straight")
+                    }>
                         <div className="number red">
                             {props.straightUps[18] > 0 ? 
                             <div className="chip-and-bet">
@@ -1482,7 +1498,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("21 straight")}>
+                    <div className={props.winningNumber === "21" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("21 straight")
+                    }>
                         <div className="number red">
                             {props.straightUps[21] > 0 ? 
                             <div className="chip-and-bet">
@@ -1501,7 +1519,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("24 straight")}>
+                    <div className={props.winningNumber === "24" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("24 straight")
+                    }>
                         <div className="number black">
                             {props.straightUps[24] > 0 ? 
                             <div className="chip-and-bet">
@@ -1520,7 +1540,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("27 straight")}>
+                    <div className={props.winningNumber === "27" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("27 straight")
+                    }>
                         <div className="number red">
                             {props.straightUps[27] > 0 ? 
                             <div className="chip-and-bet">
@@ -1539,7 +1561,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("30 straight")}>
+                    <div className={props.winningNumber === "30" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("30 straight")
+                    }>
                         <div className="number red">
                             {props.straightUps[30] > 0 ? 
                             <div className="chip-and-bet">
@@ -1558,7 +1582,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("33 straight")}>
+                    <div className={props.winningNumber === "33" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("33 straight")
+                    }>
                         <div className="number black">
                             {props.straightUps[33] > 0 ? 
                             <div className="chip-and-bet">
@@ -1577,7 +1603,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("36 straight")}>
+                    <div className={props.winningNumber === "36" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("36 straight")
+                    }>
                         <div className="number red">
                             {props.straightUps[36] > 0 ? 
                             <div className="chip-and-bet">
@@ -1799,7 +1827,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("2 straight")}>
+                    <div className={props.winningNumber === "2" && props.isSpinComplete ? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("2 straight")
+                    }>
                         <div className="number black">
                             {props.straightUps[2] > 0 ? 
                             <div className="chip-and-bet">
@@ -1818,7 +1848,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("5 straight")}>
+                    <div className={props.winningNumber === "5" && props.isSpinComplete ? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("5 straight")
+                    }>
                         <div className="number red">
                             {props.straightUps[5] > 0 ? 
                             <div className="chip-and-bet">
@@ -1837,7 +1869,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("8 straight")}>
+                    <div className={props.winningNumber === "8" && props.isSpinComplete ? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("8 straight")
+                    }>
                         <div className="number black">
                             {props.straightUps[8] > 0 ? 
                             <div className="chip-and-bet">
@@ -1856,7 +1890,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("11 straight")}>
+                    <div className={props.winningNumber === "11" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("11 straight")
+                    }>
                         <div className="number black">
                             {props.straightUps[11] > 0 ? 
                             <div className="chip-and-bet">
@@ -1875,7 +1911,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("14 straight")}>
+                    <div className={props.winningNumber === "14" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("14 straight")
+                    }>
                         <div className="number red">
                             {props.straightUps[14] > 0 ? 
                             <div className="chip-and-bet">
@@ -1894,7 +1932,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("17 straight")}>
+                    <div className={props.winningNumber === "17" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("17 straight")
+                    }>
                         <div className="number black">
                             {props.straightUps[17] > 0 ? 
                             <div className="chip-and-bet">
@@ -1913,7 +1953,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("20 straight")}>
+                    <div className={props.winningNumber === "20" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("20 straight")
+                    }>
                         <div className="number black">
                             {props.straightUps[20] > 0 ? 
                             <div className="chip-and-bet">
@@ -1932,7 +1974,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("23 straight")}>
+                    <div className={props.winningNumber === "23" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("23 straight")
+                    }>
                         <div className="number red">
                             {props.straightUps[23] > 0 ? 
                             <div className="chip-and-bet">
@@ -1951,7 +1995,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("26 straight")}>
+                    <div className={props.winningNumber === "26" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("26 straight")
+                    }>
                         <div className="number black">
                             {props.straightUps[26] > 0 ? 
                             <div className="chip-and-bet">
@@ -1970,7 +2016,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("29 straight")}>
+                    <div className={props.winningNumber === "29" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("29 straight")
+                    }>
                         <div className="number black">
                             {props.straightUps[29] > 0 ? 
                             <div className="chip-and-bet">
@@ -1989,7 +2037,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("32 straight")}>
+                    <div className={props.winningNumber === "32" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("32 straight")
+                    }>
                         <div className="number red">
                             {props.straightUps[32] > 0 ? 
                             <div className="chip-and-bet">
@@ -2008,7 +2058,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("35 straight")}>
+                    <div className={props.winningNumber === "35" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("35 straight")
+                    }>
                         <div className="number black">
                             {props.straightUps[35] > 0 ? 
                             <div className="chip-and-bet">
@@ -2230,7 +2282,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("1 straight")}>
+                    <div className={props.winningNumber === "1" && props.isSpinComplete ? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("1 straight")
+                    }>
                         <div className="number red">
                             {props.straightUps[1] > 0 ? 
                             <div className="chip-and-bet">
@@ -2249,7 +2303,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("4 straight")}>
+                    <div className={props.winningNumber === "4" && props.isSpinComplete ? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("4 straight")
+                    }>
                         <div className="number black">
                             {props.straightUps[4] > 0 ? 
                             <div className="chip-and-bet">
@@ -2268,7 +2324,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("7 straight")}>
+                    <div className={props.winningNumber === "7" && props.isSpinComplete ? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("7 straight")
+                    }>
                         <div className="number red">
                             {props.straightUps[7] > 0 ? 
                             <div className="chip-and-bet">
@@ -2287,7 +2345,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("10 straight")}>
+                    <div className={props.winningNumber === "10" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("10 straight")
+                    }>
                         <div className="number black">
                             {props.straightUps[10] > 0 ? 
                             <div className="chip-and-bet">
@@ -2306,7 +2366,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("13 straight")}>
+                    <div className={props.winningNumber === "13" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("13 straight")
+                    }>
                         <div className="number black">
                             {props.straightUps[13] > 0 ? 
                             <div className="chip-and-bet">
@@ -2325,7 +2387,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("16 straight")}>
+                    <div className={props.winningNumber === "16" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("16 straight")
+                    }>
                         <div className="number red">
                             {props.straightUps[16] > 0 ? 
                             <div className="chip-and-bet">
@@ -2344,7 +2408,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("19 straight")}>
+                    <div className={props.winningNumber === "19" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("19 straight")
+                    }>
                         <div className="number red">
                             {props.straightUps[19] > 0 ? 
                             <div className="chip-and-bet">
@@ -2363,7 +2429,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("22 straight")}>
+                    <div className={props.winningNumber === "22" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("22 straight")
+                    }>
                         <div className="number black">
                             {props.straightUps[22] > 0 ? 
                             <div className="chip-and-bet">
@@ -2382,7 +2450,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("25 straight")}>
+                    <div className={props.winningNumber === "25" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("25 straight")
+                    }>
                         <div className="number red">
                             {props.straightUps[25] > 0 ? 
                             <div className="chip-and-bet">
@@ -2401,7 +2471,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("28 straight")}>
+                    <div className={props.winningNumber === "28" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("28 straight")
+                    }>
                         <div className="number black">
                             {props.straightUps[28] > 0 ? 
                             <div className="chip-and-bet">
@@ -2420,7 +2492,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("31 straight")}>
+                    <div className={props.winningNumber === "31" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("31 straight")
+                    }>
                         <div className="number black">
                             {props.straightUps[31] > 0 ? 
                             <div className="chip-and-bet">
@@ -2439,7 +2513,9 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="bet-box" id="straight-up-number" onClick={() => increaseBet("34 straight")}>
+                    <div className={props.winningNumber === "34" && props.isSpinComplete? "bet-box winning-num" : "bet-box"} 
+                        id="straight-up-number" onClick={() => increaseBet("34 straight")
+                    }>
                         <div className="number red">
                             {props.straightUps[34] > 0 ? 
                             <div className="chip-and-bet">
@@ -2651,7 +2727,7 @@ export default function Layout(props) {
                             </div> : <></>
                         }
                     </div>
-                    <div className="empty fill"></div>
+                    <div className="empty fill empty-column"></div>
                 </section>
             </div>
             <section className="dozens">

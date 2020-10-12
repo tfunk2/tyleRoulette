@@ -264,6 +264,12 @@ export default function BettingOptions(props) {
             </div>
             <div className="img-div">
                 <img alt="spin circle" onClick={props.spinTheWheel} className="spin-circle" src={SpinCircle}></img>
+                { !props.isSpinComplete ?
+                    <div>
+                        {props.pendingTotalBet > 0 ? <button onClick={props.resetLayout} className="reset-button">Reset All Bets</button> : <></>}  
+                        {props.recentBet.length === 2 ? <button onClick={props.undoRecentBet} className={props.recentBet.length === 2 ? "undo-bet-button" : "greyed-button"}>Undo Last Bet</button> : <></>}
+                    </div> : <></>
+                }
             </div>
         </div>
     )
