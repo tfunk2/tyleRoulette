@@ -1,4 +1,6 @@
 .layout-div {
+    height: 55vmin;
+    width: 96vw;
     font-size: 3.3vmin;
     /* width: 1200px; */
     margin-left: 2vw;
@@ -16,7 +18,7 @@
     cursor: default;
     color: rgb(235, 235, 235);
     /* width: 100%; */
-    margin-bottom: 10vh;
+    /* margin-bottom: 10vh; */
 }
 
 .zeroes {
@@ -140,7 +142,7 @@
 }
 
 #straight-up-number {
-    font-size: 6vmin;
+    font-size: 5vmin;
     /* padding: 10px 10px; */
 }
 

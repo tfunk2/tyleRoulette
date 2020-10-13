@@ -1,6 +1,19 @@
+html {
+  background-image: url(./images/casino-carpet-trimmed.png);
+  background-repeat: repeat;
+  background-size: 20vw 20vw;
+  background-position: center;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
 .app {
   /* width: 100%; */
   /* margin: 0px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .app-header {
@@ -10,8 +23,17 @@
 
 .wheel-history {
   display: flex;
-  margin-left: 5vw;
-  margin-bottom: 1vw;
+  width: 49vw;
+  /* margin-left: 5vw; */
+  /* margin-bottom: 1vw; */
+  background: linear-gradient(0.25turn, rgb(167,120,51), rgb(0, 0, 0, 0));
+  border-radius: 14pt;
+  padding-left: 0.5vw;
+  margin-left: .5vw;
+  font-family: 'Condiment', cursive;
+  font-size: 1.5vw;
+  align-items: center;
+  font-weight: bold;
 }
 
 .history-num {
@@ -19,11 +41,20 @@
 }
 
 .header-h3 {
-
+  margin: .4vw;
 }
 
 .header-div {
-  width: 30vw;
+  display: flex;
+  align-items: center;
+  width: 25vw;
+  background: linear-gradient(0.25turn, rgb(167,120,51), rgb(0, 0, 0, 0));
+  /* text-shadow: rgb(238, 238, 238) 0px 0px 2px; */
+  border-radius: 14pt;
+  padding-left: 0.5vw;
+  margin-left: .5vw;
+  font-family: 'Condiment', cursive;
+  font-size: 2.5vw;
 }
 
 .reset-button-div {
@@ -39,10 +70,11 @@
   background-color: yellowgreen;
   z-index: 101;
   border-radius: 6pt;
-  top: 9.5vh;
+  top: 10.5vh;
   padding: 3vh;
-  width: 50vmin;
-  height: 20vmin;
+  width: 40vmin;
+  height: 15vmin;
+  font-family: 'Libre Baskerville', serif;
 }
 
 .winnings-div > h3 {
@@ -50,4 +82,25 @@
   color: rgb(238, 238, 238);
   text-shadow: grey 2px 2px 2px;
   text-align: center;
+}
+
+.wood-railing {
+  width: 99vw;
+  height: 64vh;
+  /* padding-top: 5vh; */
+  background-image: url(https://data.1freewallpapers.com/download/polished-wood-texture.jpg);
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5vh;
+  border: rgb(78, 9, 1) 4px solid; 
+  border-radius: 14pt;
+  /* justify-self: center; */
+  /* align-self: center; */
+}
+
+.chip-count-text {
+  text-shadow: rgb(167,120,51) 2.5px 1px 3px;
+  font-size: 2.3vw;
 }

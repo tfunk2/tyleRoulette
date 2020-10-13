@@ -162,7 +162,6 @@ export default function BettingOptions(props) {
                 </div> : <></>}
             </div>
             <div className="chip-options-div">
-                
                 {props.chipCount >= 1 ?
                     <div className="img-div">
                         <img alt="1 chip" onClick={() => handleChipClick(1)} 
@@ -262,13 +261,15 @@ export default function BettingOptions(props) {
                         </img>
                         </div> : <></>}
             </div>
-            <div className="img-div">
-                <img alt="spin circle" onClick={props.spinTheWheel} className="spin-circle" src={SpinCircle}></img>
+            <div className="spin-img-div">
+                <div className="spin-circle-container">
+                    <img alt="spin circle" onClick={props.spinTheWheel} className="spin-circle" src={SpinCircle}></img>
+                </div>
                 { !props.isSpinComplete ?
-                    <div>
+                    <div className="buttons-div">
                         {props.pendingTotalBet > 0 ? <button onClick={props.resetLayout} className="reset-button">Reset All Bets</button> : <></>}  
                         {props.recentBet.length === 2 ? <button onClick={props.undoRecentBet} className={props.recentBet.length === 2 ? "undo-bet-button" : "greyed-button"}>Undo Last Bet</button> : <></>}
-                    </div> : <></>
+                    </div> : <div className="filler-div"></div>
                 }
             </div>
         </div>

@@ -929,19 +929,24 @@ function App() {
   //   }
   // }, [chipCount])
 
+  const wheelHistoryLine = wheelHistory.reverse().map(num => {
+  return <div>{num}</div>
+  })
+
   return (
     <div className="app">
       <header className="app-header">
         <div className="header-div">
           <h3 className="header-h3">TyleRoulette</h3>
         </div>
+        <div className="wheel-history">
+          <h3 className="header-h3">Last 20 Spins: </h3> 
+          <div>{wheelHistoryLine}</div>
+        </div>
         <div className="header-div">
-          <h3 className="header-h3">Chip Count: {chipCount}</h3>
+          <h3 className="header-h3">Chip Count: <span className="chip-count-text">{chipCount}</span></h3>
         </div>
       </header>
-      <div className="wheel-history">
-        Previous 20 Spins: {wheelHistory.reverse()}
-      </div>
       <BettingOptions chipCount={chipCount}
         currentBetValue={currentBetValue}
         setCurrentBetValue={setCurrentBetValue}
@@ -1003,45 +1008,47 @@ function App() {
           </div> : <></>
         }
       </div>
-      <Layout 
-        chipCount={chipCount}
-        setChipCount={setChipCount}
-        currentBetValue={currentBetValue}
-        setCurrentBetValue={setCurrentBetValue}
-        spinTheWheel={spinTheWheel}
-        isSpinComplete={isSpinComplete}
-        setSplits={setSplits}
-        splits={splits}
-        straightUps={straightUps}
-        setStraightUps={setStraightUps}
-        columns={columns}
-        setColumns={setColumns}
-        setCorners={setCorners}
-        corners={corners}
-        setStreets={setStreets}
-        streets={streets}
-        setDoubleStreets={setDoubleStreets}
-        doubleStreets={doubleStreets}
-        setHighLow={setHighLow}
-        highLow={highLow}
-        setOddEven={setOddEven}
-        oddEven={oddEven}
-        setRedBlack={setRedBlack}
-        redBlack={redBlack}
-        setDozens={setDozens}
-        dozens={dozens}
-        setPendingTotalBet={setPendingTotalBet}
-        pendingTotalBet={pendingTotalBet}
-        basket={basket}
-        setBasket={setBasket}
-        recentBet={recentBet}
-        setRecentBet={setRecentBet}
-        recentBetValue={recentBetValue}
-        setRecentBetValue={setRecentBetValue}
-        isWheelSpinning={isWheelSpinning}
-        setIsWheelSpinning={setIsWheelSpinning}
-        winningNumber={winningNumber}
-      />
+      <div className="wood-railing">
+        <Layout 
+          chipCount={chipCount}
+          setChipCount={setChipCount}
+          currentBetValue={currentBetValue}
+          setCurrentBetValue={setCurrentBetValue}
+          spinTheWheel={spinTheWheel}
+          isSpinComplete={isSpinComplete}
+          setSplits={setSplits}
+          splits={splits}
+          straightUps={straightUps}
+          setStraightUps={setStraightUps}
+          columns={columns}
+          setColumns={setColumns}
+          setCorners={setCorners}
+          corners={corners}
+          setStreets={setStreets}
+          streets={streets}
+          setDoubleStreets={setDoubleStreets}
+          doubleStreets={doubleStreets}
+          setHighLow={setHighLow}
+          highLow={highLow}
+          setOddEven={setOddEven}
+          oddEven={oddEven}
+          setRedBlack={setRedBlack}
+          redBlack={redBlack}
+          setDozens={setDozens}
+          dozens={dozens}
+          setPendingTotalBet={setPendingTotalBet}
+          pendingTotalBet={pendingTotalBet}
+          basket={basket}
+          setBasket={setBasket}
+          recentBet={recentBet}
+          setRecentBet={setRecentBet}
+          recentBetValue={recentBetValue}
+          setRecentBetValue={setRecentBetValue}
+          isWheelSpinning={isWheelSpinning}
+          setIsWheelSpinning={setIsWheelSpinning}
+          winningNumber={winningNumber}
+        />
+      </div>
     </div>
   );
 };
