@@ -64,8 +64,8 @@ function App() {
         if(currentTwenty.length < 20) {
           setPreviousTwenty([...previousTwenty, randomWinner]);
         } else {
-          currentTwenty.unshift(randomWinner);
-          currentTwenty.pop();
+          currentTwenty.shift();
+          currentTwenty.push(randomWinner);
           setPreviousTwenty(currentTwenty);
         };
 
@@ -119,6 +119,10 @@ function App() {
 
   const wheelHistory = previousTwenty.map(winningNum => {
     return <p className="history-num">{winningNum}</p>
+  })
+
+  const wheelHistoryLine = wheelHistory.reverse().map(num => {
+  return <div>{num}</div>
   })
 
   const undoRecentBet = () => {
@@ -929,9 +933,6 @@ function App() {
   //   }
   // }, [chipCount])
 
-  const wheelHistoryLine = wheelHistory.reverse().map(num => {
-  return <div>{num}</div>
-  })
 
   return (
     <div className="app">
@@ -941,7 +942,7 @@ function App() {
         </div>
         <div className="wheel-history">
           <h3 className="header-h3">Last 20 Spins: </h3> 
-          <div>{wheelHistoryLine}</div>
+          <div className="previous-numbers-div">{wheelHistoryLine}</div>
         </div>
         <div className="header-div">
           <h3 className="header-h3">Chip Count: <span className="chip-count-text">{chipCount}</span></h3>
