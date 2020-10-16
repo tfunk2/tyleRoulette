@@ -62,10 +62,10 @@ function App() {
         let currentTwenty = [...previousTwenty];
 
         if(currentTwenty.length < 20) {
-          setPreviousTwenty([...previousTwenty, randomWinner]);
+          setPreviousTwenty([randomWinner, ...previousTwenty]);
         } else {
-          currentTwenty.shift();
-          currentTwenty.push(randomWinner);
+          currentTwenty.unshift(randomWinner);
+          currentTwenty.pop();
           setPreviousTwenty(currentTwenty);
         };
 
@@ -117,12 +117,131 @@ function App() {
     setRecentBetValue(0)
   }
 
-  const wheelHistory = previousTwenty.map(winningNum => {
-    return <p className="history-num">{winningNum}</p>
-  })
+  const whatColorNumber = (winningNum) => {
+    switch(winningNum) {
+        case "0":
+            return "green-previous-number"       
+            break;
+        case "1":
+            return "red-previous-number"     
+            break;
+        case "2":
+            return "black-previous-number"       
+            break;
+        case "3":
+            return "red-previous-number"       
+            break;
+        case "4":
+            return "black-previous-number"      
+            break;
+        case "5":
+            return "red-previous-number"       
+            break;
+        case "6":
+            return "black-previous-number"       
+            break;
+        case "7":
+            return "red-previous-number"       
+            break;
+        case "8":
+            return "black-previous-number"       
+            break;
+        case "9":
+            return "red-previous-number"       
+            break;
+        case "10":
+            return "black-previous-number"     
+            break;
+        case "11":
+            return "black-previous-number"     
+            break;
+        case "12":
+            return "red-previous-number"     
+            break;
+        case "13":
+            return "black-previous-number"     
+            break;
+        case "14":
+            return "red-previous-number"     
+            break;
+        case "15":
+            return "black-previous-number"     
+            break;
+        case "16":
+            return "red-previous-number"     
+            break;
+        case "17":
+            return "black-previous-number"     
+            break;
+        case "18":
+            return "red-previous-number"     
+            break;
+        case "19":
+            return "red-previous-number"     
+            break;
+        case "20":
+            return "black-previous-number"     
+            break;
+        case "21":
+            return "red-previous-number"     
+            break;
+        case "22":
+            return "black-previous-number"     
+            break;
+        case "23":
+            return "red-previous-number"     
+            break;
+        case "24":
+            return "black-previous-number"     
+            break;
+        case "25":
+            return "red-previous-number"     
+            break;
+        case "26":
+            return "black-previous-number"     
+            break;
+        case "27":
+            return "red-previous-number"     
+            break;
+        case "28":
+            return "black-previous-number"     
+            break;
+        case "29":
+            return "black-previous-number"     
+            break;
+        case "30":
+            return "red-previous-number"     
+            break;
+        case "31":
+            return "black-previous-number"     
+            break;
+        case "32":
+            return "red-previous-number"     
+            break;
+        case "33":
+            return "black-previous-number"     
+            break;
+        case "34":
+            return "red-previous-number"     
+            break;
+        case "35":
+            return "black-previous-number"     
+            break;
+        case "36":
+            return "red-previous-number"     
+            break;
+        case "00":
+            return "green-previous-number"     
+            break;
+      }
+}
 
-  const wheelHistoryLine = wheelHistory.reverse().map(num => {
-  return <div>{num}</div>
+  // const wheelHistory = previousTwenty.reverse().map(winningNum => {
+  //   return <p className="history-num">{winningNum}</p>
+  // })
+
+  const wheelHistoryLine = previousTwenty.map(winningNum => {
+    return <div className={whatColorNumber(winningNum)}><p className="history-num">{winningNum}</p></div>
   })
 
   const undoRecentBet = () => {
@@ -941,11 +1060,20 @@ function App() {
           <h3 className="header-h3">TyleRoulette</h3>
         </div>
         <div className="wheel-history">
-          <h3 className="header-h3">Last 20 Spins: </h3> 
+          <h3 className="header-h3">Last 20: </h3> 
           <div className="previous-numbers-div">{wheelHistoryLine}</div>
         </div>
         <div className="header-div">
-          <h3 className="header-h3">Chip Count: <span className="chip-count-text">{chipCount}</span></h3>
+          <h3 className="header-h3">Chips: </h3>
+          <div className="chip-count-pending-bet">
+            <span className="chip-count-text">{chipCount}</span>
+          </div>
+          {pendingTotalBet > 0 ? 
+            <span className="pending-bet-span">
+              Pending Bet: -{pendingTotalBet}
+            </span> : 
+            <span className="empty-pending-bet-span">-</span>
+          }      
         </div>
       </header>
       <BettingOptions chipCount={chipCount}

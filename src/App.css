@@ -5,6 +5,7 @@ html {
   background-position: center;
   overflow-y: hidden;
   overflow-x: hidden;
+  min-width: 800px;
 }
 
 .app {
@@ -18,12 +19,12 @@ html {
 
 .app-header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .wheel-history {
   display: flex;
-  width: 49vw;
+  width: 55vw;
   /* margin-left: 5vw; */
   /* margin-bottom: 1vw; */
   background: linear-gradient(0.25turn, rgb(167,120,51), rgb(0, 0, 0, 0));
@@ -38,6 +39,52 @@ html {
 
 .history-num {
   margin: 0px 5px;
+  color: rgb(238, 238, 238);
+}
+
+.green-previous-number {
+  background-color: rgba(89, 161, 34, 0.9);
+  width: 2vw;
+  height: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Libre Baskerville', serif;
+  border-radius: 10pt;
+  padding: .2vh;
+  font-size: 1.5vw;
+  margin-bottom: 1.2vh;
+  margin-left: .1vw;
+}
+
+.red-previous-number {
+  background-color: rgba(254, 0, 0, 0.9);
+  width: 2vw;
+  height: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Libre Baskerville', serif;
+  border-radius: 10pt;
+  padding: .2vh;
+  font-size: 1.5vw;
+  margin-bottom: 1.2vh;
+  margin-left: .1vw;
+}
+
+.black-previous-number {
+  background-color: rgba(22, 22, 22, 0.9);
+  width: 2vw;
+  height: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Libre Baskerville', serif;
+  border-radius: 10pt;
+  padding: .2vh;
+  font-size: 1.5vw;
+  margin-bottom: 1.2vh;
+  margin-left: .1vw;
 }
 
 .header-h3 {
@@ -47,7 +94,7 @@ html {
 .header-div {
   display: flex;
   align-items: center;
-  width: 25vw;
+  width: 21vw;
   background: linear-gradient(0.25turn, rgb(167,120,51), rgb(0, 0, 0, 0));
   /* text-shadow: rgb(238, 238, 238) 0px 0px 2px; */
   border-radius: 14pt;
@@ -70,7 +117,7 @@ html {
   background-color: yellowgreen;
   z-index: 101;
   border-radius: 6pt;
-  top: 10.5vh;
+  top: 10.5vmin;
   padding: 3vh;
   width: 40vmin;
   height: 15vmin;
@@ -85,8 +132,8 @@ html {
 }
 
 .wood-railing {
-  width: 99vw;
-  height: 64vh;
+  width: 98.4vw;
+  height: 58vh;
   /* padding-top: 5vh; */
   background-image: url(https://data.1freewallpapers.com/download/polished-wood-texture.jpg);
   background-position: center;
@@ -103,8 +150,34 @@ html {
 .chip-count-text {
   text-shadow: rgb(167,120,51) 2.5px 1px 3px;
   font-size: 2.3vw;
+  font-family: 'Libre Baskerville', serif;
+  margin-bottom: .9vh;
 }
 
 .previous-numbers-div {
   display: flex;
+}
+
+
+.chip-count-pending-bet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: .2vw;
+}
+
+.pending-bet-span {
+  font-size: 1.2vw;
+  color: rgb(238, 238, 238);
+  position: absolute;
+  right: 8vw;
+  top: 7vh;
+}
+
+.empty-pending-bet-span {
+  font-size: 1vw;
+  color: rgba(240, 248, 255, 0);
+  position: absolute;
+  right: 8vw;
 }

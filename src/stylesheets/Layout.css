@@ -1,7 +1,7 @@
 .layout-div {
-    height: 55vmin;
+    height: 50vh;
     width: 96vw;
-    font-size: 3.3vmin;
+    font-size: 3.2vmin;
     /* width: 1200px; */
     margin-left: 2vw;
     margin-right: 2vw;
@@ -21,10 +21,11 @@
     /* margin-bottom: 10vh; */
 }
 
+/* come back to here */
 .zeroes {
     display: grid;
     grid-template-columns: 6vw;
-    grid-template-rows: 15.17vh 1.2vh 15.93vh;
+    grid-template-rows: 14.17vh 1.2vh 14.6vh;
     border-left: .8vw rgb(22, 22, 22) solid;
     /* border-top: 3px rgb(22, 22, 22) solid; */
     box-shadow: inset 0vh -1.15vh rgb(22, 22, 22);
@@ -34,22 +35,22 @@
 .inside-and-columns {
     display: grid;
     grid-template-columns: 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 0.75vw 6vw 6vw;
-    grid-template-rows: 9.8vh 1.2vh 9.8vh 1.2vh 9.8vh 1.2vh ;
+    grid-template-rows: 8.8vh 1.2vh 8.8vh 1.2vh 8.8vh 1.2vh ;
     /* border: 2px rgb(22, 22, 22) solid; */
 }
 
 .dozens {
     display: grid;
-    grid-template-columns: 6.76vw 27vw 27.05vw 27.7vw;
-    grid-template-rows: 10.5vh;
+    grid-template-columns: 6.77vw 27vw 27.05vw 27.7vw;
+    grid-template-rows: 9.5vh;
     color: rgb(22, 22, 22);
 }
 
 .even-money-bets {
     font-size: 4.5vmin;
     display: grid;
-    grid-template-columns: 6.76vw 13.5vw 13.5vw 13.52vw 13.52vw 13.86vw 13.86vw;
-    grid-template-rows: 10vh;
+    grid-template-columns: 6.76vw 13.5vw 13.52vw 13.52vw 13.52vw 13.86vw 13.86vw;
+    grid-template-rows: 9vh;
     color: rgb(22, 22, 22);
 }
 
@@ -166,7 +167,7 @@
 }
 
 .diamond {
-    height: 8.5vmin;
+    height: 7.8vmin;
 }
 
 .ribbon-div {
@@ -191,7 +192,7 @@
 
 .ribbon-img {
     position: absolute;
-    width: 37vmin;
+    width: 33vmin;
     margin-top: 0.5vh;
 }
 
@@ -206,7 +207,7 @@
     color: rgb(22, 22, 22);
     border-left: .75vw rgb(22, 22, 22) solid;
     border-right: .75vw rgb(22, 22, 22) solid;
-    font-size: 2.5vmin;
+    font-size: 2.4vmin;
 }
 
 .split, .basket, .corner, .street, .double-street {
