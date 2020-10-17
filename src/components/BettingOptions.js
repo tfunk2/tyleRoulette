@@ -264,6 +264,7 @@ export default function BettingOptions(props) {
             <div className="spin-img-div">
                 <div className="spin-circle-container">
                     <img alt="spin circle" onClick={props.spinTheWheel} className="spin-circle" src={SpinCircle}></img>
+                    <h3 className="spin-text">Spin</h3>
                 </div>
                 { !props.isSpinComplete ?
                     <div className="buttons-div">

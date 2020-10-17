@@ -96,7 +96,7 @@ html {
   align-items: center;
   width: 21vw;
   background: linear-gradient(0.25turn, rgb(167,120,51), rgb(0, 0, 0, 0));
-  /* text-shadow: rgb(238, 238, 238) 0px 0px 2px; */
+  text-shadow: rgb(167,120,51) 2px 2px 1px;
   border-radius: 14pt;
   padding-left: 0.5vw;
   margin-left: .5vw;
@@ -114,7 +114,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: yellowgreen;
+  background: linear-gradient(0.25turn, rgb(167,120,51), rgb(0, 0, 0, 0));
   z-index: 101;
   border-radius: 6pt;
   top: 10.5vmin;
@@ -127,7 +127,7 @@ html {
 .winnings-div > h3 {
   font-size: 3.5vmin;
   color: rgb(238, 238, 238);
-  text-shadow: grey 2px 2px 2px;
+  text-shadow: rgb(167,120,51) 2px 2px 1px;
   text-align: center;
 }
 
@@ -172,7 +172,7 @@ html {
   color: rgb(238, 238, 238);
   position: absolute;
   right: 8vw;
-  top: 7vh;
+  top: 6vmin;
 }
 
 .empty-pending-bet-span {
@@ -180,4 +180,8 @@ html {
   color: rgba(240, 248, 255, 0);
   position: absolute;
   right: 8vw;
+}
+
+.restart-button, .collect-winnings-button {
+  padding: 1vh;
 }

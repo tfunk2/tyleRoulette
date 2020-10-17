@@ -1124,7 +1124,7 @@ function App() {
                 whichMessage("lost")
               }
             </h3>
-            {chipCount < 1 && totalAmountWon === 0 ? 
+            {chipCount < 1 && totalAmountWon === 0 && isSpinComplete ? 
               <button className="restart-button" 
                 onClick={resetLayout}
               >+1000 Restart
@@ -1132,8 +1132,8 @@ function App() {
               <button className="collect-winnings-button" 
                 onClick={collectWinnings}
               >{totalAmountWon > 0 ? "Collect Winnings" : "Clear Layout"}
-            </button>
-          }
+              </button>
+            }
           </div> : <></>
         }
       </div>
