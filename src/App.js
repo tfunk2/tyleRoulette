@@ -52,7 +52,7 @@ function App() {
   ];
 
   const spinTheWheel = () => {
-    if(!isSpinComplete && pendingTotalBet > 0) {
+    if(!isSpinComplete && pendingTotalBet > 0 && !isWheelSpinning) {
       setIsWheelSpinning(true)
       setTimeout(() => {
         let randomIndex = Math.floor(Math.random() * Math.floor(38));
@@ -353,14 +353,14 @@ function App() {
 
   const whichMessage = (messageType) => {
     const goodMessages = [
-      `Nice one! Won ${totalAmountWon}`, 
-      `Nailed it! Won ${totalAmountWon}`,
-      `Chicken dinner! Won ${totalAmountWon}`
+      "Nice one! Won", 
+      "Nailed it! Won",
+      "Chicken dinner! Won"
     ]
     const badMessages = [
-      `Not this time. Lost ${pendingTotalBet}`, 
-      `Boooo, lost ${pendingTotalBet}. Try again?`, 
-      `It's only pretend luckily! Lost ${pendingTotalBet}`
+      "Not this time. Lost", 
+      "Boooo, lost", 
+      "It's only pretend luckily! Lost"
     ]
 
     if(messageType === "won") {
@@ -1063,16 +1063,16 @@ function App() {
           <h3 className="header-h3">Last 20: </h3> 
           <div className="previous-numbers-div">{wheelHistoryLine}</div>
         </div>
-        <div className="header-div">
-          <h3 className="header-h3">Chips: </h3>
-          <div className="chip-count-pending-bet">
+        <div className="header-div right-header">
+          <h3 className="header-h3">Chips: <span className="chip-count-text">{chipCount}</span></h3>
+          {/* <div className="chip-count-pending-bet">
             <span className="chip-count-text">{chipCount}</span>
-          </div>
+          </div> */}
           {pendingTotalBet > 0 ? 
             <span className="pending-bet-span">
               Pending Bet: -{pendingTotalBet}
-            </span> : 
-            <span className="empty-pending-bet-span">-</span>
+            </span> : <></>
+            // <span className="empty-pending-bet-span"> </span>
           }      
         </div>
       </header>
@@ -1114,29 +1114,11 @@ function App() {
         winningNumber={winningNumber}
         resetLayout={resetLayout}
         undoRecentBet={undoRecentBet}
+        whichMessage={whichMessage}
+        resetLayout={resetLayout}
+        collectWinnings={collectWinnings}
+        totalAmountWon={totalAmountWon}
       />
-      <div className="reset-button-div">
-        { isSpinComplete ? 
-          <div className="winnings-div">
-            <h3>
-              {totalAmountWon > 0 ? 
-                whichMessage("won") :
-                whichMessage("lost")
-              }
-            </h3>
-            {chipCount < 1 && totalAmountWon === 0 && isSpinComplete ? 
-              <button className="restart-button" 
-                onClick={resetLayout}
-              >+1000 Restart
-              </button> : 
-              <button className="collect-winnings-button" 
-                onClick={collectWinnings}
-              >{totalAmountWon > 0 ? "Collect Winnings" : "Clear Layout"}
-              </button>
-            }
-          </div> : <></>
-        }
-      </div>
       <div className="wood-railing">
         <Layout 
           chipCount={chipCount}

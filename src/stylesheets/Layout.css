@@ -25,7 +25,7 @@
 .zeroes {
     display: grid;
     grid-template-columns: 6vw;
-    grid-template-rows: 14.17vh 1.2vh 14.6vh;
+    grid-template-rows: 13.74vh 1.2vh 13.74vh;
     border-left: .8vw rgb(22, 22, 22) solid;
     /* border-top: 3px rgb(22, 22, 22) solid; */
     box-shadow: inset 0vh -1.15vh rgb(22, 22, 22);
@@ -123,7 +123,9 @@
 }
 
 .bet-box:hover {
-    background-color: rgba(172, 255, 47, 0.897);
+    background-color: gold;
+    /* background: linear-gradient(0.25turn, rgba(255, 217, 0, 0.85), gold, rgba(255, 217, 0, 0.85)); */
+
 }
 
 .zeroes-inside-columns {
@@ -192,7 +194,7 @@
 
 .ribbon-img {
     position: absolute;
-    width: 33vmin;
+    width: 32vmin;
     margin-top: 0.5vh;
 }
 

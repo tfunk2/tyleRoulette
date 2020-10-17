@@ -20,6 +20,7 @@ html {
 .app-header {
   display: flex;
   justify-content: space-between;
+  margin-top: 0.8vh;
 }
 
 .wheel-history {
@@ -27,7 +28,8 @@ html {
   width: 55vw;
   /* margin-left: 5vw; */
   /* margin-bottom: 1vw; */
-  background: linear-gradient(0.25turn, rgb(167,120,51), rgb(0, 0, 0, 0));
+  background-color: rgba(167, 121, 51, 0.6);
+
   border-radius: 14pt;
   padding-left: 0.5vw;
   margin-left: .5vw;
@@ -35,6 +37,7 @@ html {
   font-size: 1.5vw;
   align-items: center;
   font-weight: bold;
+  color: rgb(8, 8, 8);
 }
 
 .history-num {
@@ -93,42 +96,25 @@ html {
 
 .header-div {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   width: 21vw;
-  background: linear-gradient(0.25turn, rgb(167,120,51), rgb(0, 0, 0, 0));
+  height: 10vh;
+  background: linear-gradient(0.25turn, rgb(167,120,51), rgba(167, 121, 51, 0.6));
   text-shadow: rgb(167,120,51) 2px 2px 1px;
   border-radius: 14pt;
   padding-left: 0.5vw;
   margin-left: .5vw;
   font-family: 'Condiment', cursive;
   font-size: 2.5vw;
+  color: rgb(12, 12, 12);
 }
 
-.reset-button-div {
-  display: flex;
-  justify-content: center;
-}
-
-.winnings-div {
-  position: absolute;
-  display: flex;
+.right-header {
   flex-direction: column;
-  align-items: center;
-  background: linear-gradient(0.25turn, rgb(167,120,51), rgb(0, 0, 0, 0));
-  z-index: 101;
-  border-radius: 6pt;
-  top: 10.5vmin;
-  padding: 3vh;
-  width: 40vmin;
-  height: 15vmin;
-  font-family: 'Libre Baskerville', serif;
-}
-
-.winnings-div > h3 {
-  font-size: 3.5vmin;
-  color: rgb(238, 238, 238);
-  text-shadow: rgb(167,120,51) 2px 2px 1px;
-  text-align: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  background: linear-gradient(0.75turn, rgb(167,120,51), rgba(167, 121, 51, 0.6));
 }
 
 .wood-railing {
@@ -148,9 +134,10 @@ html {
 }
 
 .chip-count-text {
+  color: rgb(238, 238, 238);
   text-shadow: rgb(167,120,51) 2.5px 1px 3px;
-  font-size: 2.3vw;
-  font-family: 'Libre Baskerville', serif;
+  font-size: 2.5vw;
+  /* font-family: 'Libre Baskerville', serif; */
   margin-bottom: .9vh;
 }
 
@@ -170,18 +157,16 @@ html {
 .pending-bet-span {
   font-size: 1.2vw;
   color: rgb(238, 238, 238);
+  align-self: flex-end;
+  margin-right: 3vw;
   position: absolute;
-  right: 8vw;
-  top: 6vmin;
+  right: 2vw;
+  bottom: 0vmin;
 }
 
 .empty-pending-bet-span {
   font-size: 1vw;
   color: rgba(240, 248, 255, 0);
-  position: absolute;
-  right: 8vw;
-}
-
-.restart-button, .collect-winnings-button {
-  padding: 1vh;
+  /* position: absolute;
+  right: 8vw; */
 }

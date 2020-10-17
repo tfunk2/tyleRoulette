@@ -161,6 +161,26 @@ export default function BettingOptions(props) {
                     </h2>
                 </div> : <></>}
             </div>
+            <div className="reset-button-div">
+                { props.isSpinComplete ? 
+                    <div className="winnings-div">
+                        {props.totalAmountWon > 0 ? 
+                            <h3>{props.whichMessage("won")}<span className="winnings-div-num">{props.totalAmountWon}</span>!</h3> :
+                            <h3>{props.whichMessage("lost")}<span className="winnings-div-num">{props.pendingTotalBet}</span>.</h3>
+                        } 
+                        {props.chipCount < 1 && props.totalAmountWon === 0 && props.isSpinComplete ? 
+                            <button className="restart-button" 
+                                onClick={props.resetLayout}
+                            >+1000 Restart
+                            </button> : 
+                            <button className="collect-winnings-button" 
+                                onClick={props.collectWinnings}
+                            >{props.totalAmountWon > 0 ? "Collect Winnings" : "Clear Layout"}
+                            </button>
+                        }
+                    </div> : <></>
+                }
+            </div>
             <div className="chip-options-div">
                 {props.chipCount >= 1 ?
                     <div className="img-div">
@@ -264,12 +284,11 @@ export default function BettingOptions(props) {
             <div className="spin-img-div">
                 <div className="spin-circle-container">
                     <img alt="spin circle" onClick={props.spinTheWheel} className="spin-circle" src={SpinCircle}></img>
-                    <h3 className="spin-text">Spin</h3>
                 </div>
                 { !props.isSpinComplete ?
                     <div className="buttons-div">
                         {props.pendingTotalBet > 0 ? <button onClick={props.resetLayout} className="reset-button">Reset All Bets</button> : <></>}  
-                        {props.recentBet.length === 2 ? <button onClick={props.undoRecentBet} className={props.recentBet.length === 2 ? "undo-bet-button" : "greyed-button"}>Undo Last Bet</button> : <></>}
+                        {props.recentBet.length === 2 ? <button onClick={props.undoRecentBet} className="undo-bet-button">Undo Last Bet</button> : <></>}
                     </div> : <div className="filler-div"></div>
                 }
             </div>
