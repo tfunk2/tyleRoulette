@@ -20,21 +20,19 @@ html {
 .app-header {
   display: flex;
   justify-content: space-between;
-  margin-top: 0.8vh;
+  margin-top: 0.5vh;
+  height: auto;
 }
 
 .wheel-history {
   display: flex;
-  width: 55vw;
-  /* margin-left: 5vw; */
-  /* margin-bottom: 1vw; */
+  width: 63vw;
   background-color: rgba(167, 121, 51, 0.6);
-
   border-radius: 14pt;
   padding-left: 0.5vw;
-  margin-left: .5vw;
+  margin-left: .3vw;
   font-family: 'Condiment', cursive;
-  font-size: 1.5vw;
+  font-size: 1.7vw;
   align-items: center;
   font-weight: bold;
   color: rgb(8, 8, 8);
@@ -47,45 +45,45 @@ html {
 
 .green-previous-number {
   background-color: rgba(89, 161, 34, 0.9);
-  width: 2vw;
-  height: 2vw;
+  width: 2.45vw;
+  height: 2.45vw;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Libre Baskerville', serif;
   border-radius: 10pt;
   padding: .2vh;
-  font-size: 1.5vw;
+  font-size: 1.6vw;
   margin-bottom: 1.2vh;
   margin-left: .1vw;
 }
 
 .red-previous-number {
   background-color: rgba(254, 0, 0, 0.9);
-  width: 2vw;
-  height: 2vw;
+  width: 2.45vw;
+  height: 2.45vw;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Libre Baskerville', serif;
   border-radius: 10pt;
   padding: .2vh;
-  font-size: 1.5vw;
+  font-size: 1.6vw;
   margin-bottom: 1.2vh;
   margin-left: .1vw;
 }
 
 .black-previous-number {
   background-color: rgba(22, 22, 22, 0.9);
-  width: 2vw;
-  height: 2vw;
+  width: 2.45vw;
+  height: 2.45vw;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Libre Baskerville', serif;
   border-radius: 10pt;
   padding: .2vh;
-  font-size: 1.5vw;
+  font-size: 1.6vw;
   margin-bottom: 1.2vh;
   margin-left: .1vw;
 }
@@ -97,13 +95,14 @@ html {
 .header-div {
   display: flex;
   align-items: flex-start;
-  width: 21vw;
-  height: 10vh;
+  width: 13vw;
+  /* height: 10vh; */
+  height: 100%;
   background: linear-gradient(0.25turn, rgb(167,120,51), rgba(167, 121, 51, 0.6));
   text-shadow: rgb(167,120,51) 2px 2px 1px;
   border-radius: 14pt;
   padding-left: 0.5vw;
-  margin-left: .5vw;
+  margin-left: .3vw;
   font-family: 'Condiment', cursive;
   font-size: 2.5vw;
   color: rgb(12, 12, 12);
@@ -115,6 +114,8 @@ html {
   align-items: flex-start;
   position: relative;
   background: linear-gradient(0.75turn, rgb(167,120,51), rgba(167, 121, 51, 0.6));
+  margin-right: .3vw;
+  width: 21vw;
 }
 
 .wood-railing {

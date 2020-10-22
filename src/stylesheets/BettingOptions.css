@@ -162,7 +162,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(167,120,51, 0.7);
+    background-color: rgb(167,120,51, 0.85);
     z-index: 101;
     border-radius: 6pt;
     padding: 3vh;
