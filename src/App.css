@@ -171,3 +171,34 @@ html {
   /* position: absolute;
   right: 8vw; */
 }
+
+@media only screen and (min-width: 300px) and (max-width: 767px) {
+  html {
+    background-size: 100px 100px;
+    min-width: 300px;
+  }
+  
+  .wood-railing {
+    width: 70vh;
+    height: 96vw;
+    
+    margin-bottom: 0vh;
+    border: rgb(78, 9, 1) 4px solid; 
+    border-radius: 14pt;
+    /* justify-self: center; */
+    /* align-self: center; */
+    transform: rotate(90deg);
+  }
+}
+  
+@media only screen and (min-width: 375px) and (max-width: 767px) {
+
+}
+  
+@media only screen and (min-width: 425px) and (max-width: 767px) {
+
+}
+  
+@media only screen and (min-width: 768px) and (max-width: 1440px) {
+    
+}

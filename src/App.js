@@ -233,6 +233,9 @@ function App() {
         case "00":
             return "green-previous-number"     
             break;
+          default:
+            console.log("Something went wrong")
+            break;
       }
 }
 
