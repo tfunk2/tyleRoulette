@@ -1100,8 +1100,6 @@ function App() {
           chipCount={chipCount}
           setChipCount={setChipCount}
           currentBetValue={currentBetValue}
-          setCurrentBetValue={setCurrentBetValue}
-          spinTheWheel={spinTheWheel}
           isSpinComplete={isSpinComplete}
           setSplits={setSplits}
           splits={splits}
@@ -1127,12 +1125,8 @@ function App() {
           pendingTotalBet={pendingTotalBet}
           basket={basket}
           setBasket={setBasket}
-          recentBet={recentBet}
           setRecentBet={setRecentBet}
-          recentBetValue={recentBetValue}
           setRecentBetValue={setRecentBetValue}
-          isWheelSpinning={isWheelSpinning}
-          setIsWheelSpinning={setIsWheelSpinning}
           winningNumber={winningNumber}
         />
       </div>
