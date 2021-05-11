@@ -119,123 +119,53 @@ function App() {
 
   const whatColorNumber = (winningNum) => {
     switch(winningNum) {
+        // Green Numbers 
         case "0":
-            return "green-previous-number"       
-            break;
-        case "1":
-            return "red-previous-number"     
-            break;
-        case "2":
-            return "black-previous-number"       
-            break;
-        case "3":
-            return "red-previous-number"       
-            break;
-        case "4":
-            return "black-previous-number"      
-            break;
-        case "5":
-            return "red-previous-number"       
-            break;
-        case "6":
-            return "black-previous-number"       
-            break;
-        case "7":
-            return "red-previous-number"       
-            break;
-        case "8":
-            return "black-previous-number"       
-            break;
-        case "9":
-            return "red-previous-number"       
-            break;
-        case "10":
-            return "black-previous-number"     
-            break;
-        case "11":
-            return "black-previous-number"     
-            break;
-        case "12":
-            return "red-previous-number"     
-            break;
-        case "13":
-            return "black-previous-number"     
-            break;
-        case "14":
-            return "red-previous-number"     
-            break;
-        case "15":
-            return "black-previous-number"     
-            break;
-        case "16":
-            return "red-previous-number"     
-            break;
-        case "17":
-            return "black-previous-number"     
-            break;
-        case "18":
-            return "red-previous-number"     
-            break;
-        case "19":
-            return "red-previous-number"     
-            break;
-        case "20":
-            return "black-previous-number"     
-            break;
-        case "21":
-            return "red-previous-number"     
-            break;
-        case "22":
-            return "black-previous-number"     
-            break;
-        case "23":
-            return "red-previous-number"     
-            break;
-        case "24":
-            return "black-previous-number"     
-            break;
-        case "25":
-            return "red-previous-number"     
-            break;
-        case "26":
-            return "black-previous-number"     
-            break;
-        case "27":
-            return "red-previous-number"     
-            break;
-        case "28":
-            return "black-previous-number"     
-            break;
-        case "29":
-            return "black-previous-number"     
-            break;
-        case "30":
-            return "red-previous-number"     
-            break;
-        case "31":
-            return "black-previous-number"     
-            break;
-        case "32":
-            return "red-previous-number"     
-            break;
-        case "33":
-            return "black-previous-number"     
-            break;
-        case "34":
-            return "red-previous-number"     
-            break;
-        case "35":
-            return "black-previous-number"     
-            break;
-        case "36":
-            return "red-previous-number"     
-            break;
         case "00":
-            return "green-previous-number"     
-            break;
-          default:
-            console.log("Something went wrong")
-            break;
+          return "green-previous-number"       
+        // Red Numbers
+        case "1":
+        case "3":
+        case "5":
+        case "7":
+        case "9":
+        case "12":
+        case "14":
+        case "16":
+        case "18":
+        case "19":
+        case "21":
+        case "23":
+        case "25":
+        case "27":
+        case "30":
+        case "32":
+        case "34":
+        case "36":
+          return "red-previous-number"     
+        // Black Numbers
+        case "2":
+        case "4":
+        case "6":
+        case "8":
+        case "10":
+        case "11":
+        case "13":
+        case "15":
+        case "17":
+        case "20":
+        case "22":
+        case "24":
+        case "26":
+        case "28":
+        case "29":
+        case "31":
+        case "33":
+        case "35":
+          return "black-previous-number"       
+        default:
+          console.log("Something went wrong in App.js > WhatColorNumber()")
+          break;
       }
 }
 
@@ -381,9 +311,8 @@ function App() {
 
 
   // PAYOUT SECTION BELOW
-  let allPayouts = 0;
-
   useEffect(() => {
+    let allPayouts = 0;
     if(winningNumber) {
       setIsWheelSpinning(false)
       switch(winningNumber) {
@@ -1043,6 +972,9 @@ function App() {
             ((streets[0] * 11) + streets[0]) +
             ((streets[1] * 11) + streets[1]) +
             ((basket * 6) + basket)
+          break;
+          default:
+          console.log("Something went wrong in App.js > // Payout Section > UseEffect()")
           break;
       }
       setTotalAmountWon(totalAmountWon + allPayouts)
