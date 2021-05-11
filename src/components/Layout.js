@@ -46,7 +46,7 @@ export default function Layout({
     ) {
       let splitRegex = /split$/;
       let newSplits = splits.flat();
-      let newStraightUps = straightUps.flat();
+      let newStraightUps = {...straightUps};
       let newColumns = columns.flat();
       let newStreets = streets.flat();
       let newDoubleStreets = doubleStreets.flat();
@@ -68,16 +68,16 @@ export default function Layout({
           break;
         case "00 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[37] = straightUps[37] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["00"] = straightUps["00"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 37]);
           setRecentBetValue(currentBetValue);
           break;
         case "0 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[0] = straightUps[0] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["0"] = straightUps["0"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 0]);
           setRecentBetValue(currentBetValue);
@@ -92,8 +92,8 @@ export default function Layout({
           break;
         case "3 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[3] = straightUps[3] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["3"] = straightUps["3"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 3]);
           setRecentBetValue(currentBetValue);
@@ -108,8 +108,8 @@ export default function Layout({
           break;
         case "6 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[6] = straightUps[6] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["6"] = straightUps["6"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 6]);
           setRecentBetValue(currentBetValue);
@@ -124,8 +124,8 @@ export default function Layout({
           break;
         case "9 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[9] = straightUps[9] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["9"] = straightUps["9"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 9]);
           setRecentBetValue(currentBetValue);
@@ -140,8 +140,8 @@ export default function Layout({
           break;
         case "12 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[12] = straightUps[12] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["12"] = straightUps["12"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 12]);
           setRecentBetValue(currentBetValue);
@@ -156,8 +156,8 @@ export default function Layout({
           break;
         case "15 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[15] = straightUps[15] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["15"] = straightUps["15"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 15]);
           setRecentBetValue(currentBetValue);
@@ -172,8 +172,8 @@ export default function Layout({
           break;
         case "18 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[18] = straightUps[18] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["18"] = straightUps["18"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 18]);
           setRecentBetValue(currentBetValue);
@@ -188,8 +188,8 @@ export default function Layout({
           break;
         case "21 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[21] = straightUps[21] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["21"] = straightUps["21"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 21]);
           setRecentBetValue(currentBetValue);
@@ -204,8 +204,8 @@ export default function Layout({
           break;
         case "24 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[24] = straightUps[24] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["24"] = straightUps["24"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 24]);
           setRecentBetValue(currentBetValue);
@@ -220,8 +220,8 @@ export default function Layout({
           break;
         case "27 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[27] = straightUps[27] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["27"] = straightUps["27"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 27]);
           setRecentBetValue(currentBetValue);
@@ -236,8 +236,8 @@ export default function Layout({
           break;
         case "30 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[30] = straightUps[30] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["30"] = straightUps["30"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 30]);
           setRecentBetValue(currentBetValue);
@@ -252,8 +252,8 @@ export default function Layout({
           break;
         case "33 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[33] = straightUps[33] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["33"] = straightUps["33"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 33]);
           setRecentBetValue(currentBetValue);
@@ -268,8 +268,8 @@ export default function Layout({
           break;
         case "36 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[36] = straightUps[36] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["36"] = straightUps["36"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 36]);
           setRecentBetValue(currentBetValue);
@@ -484,8 +484,8 @@ export default function Layout({
           break;
         case "2 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[2] = straightUps[2] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["2"] = straightUps["2"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 2]);
           setRecentBetValue(currentBetValue);
@@ -500,8 +500,8 @@ export default function Layout({
           break;
         case "5 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[5] = straightUps[5] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["5"] = straightUps["5"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 5]);
           setRecentBetValue(currentBetValue);
@@ -516,8 +516,8 @@ export default function Layout({
           break;
         case "8 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[8] = straightUps[8] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["8"] = straightUps["8"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 8]);
           setRecentBetValue(currentBetValue);
@@ -532,8 +532,8 @@ export default function Layout({
           break;
         case "11 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[11] = straightUps[11] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["11"] = straightUps["11"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 11]);
           setRecentBetValue(currentBetValue);
@@ -548,8 +548,8 @@ export default function Layout({
           break;
         case "14 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[14] = straightUps[14] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["14"] = straightUps["14"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 14]);
           setRecentBetValue(currentBetValue);
@@ -564,8 +564,8 @@ export default function Layout({
           break;
         case "17 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[17] = straightUps[17] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["17"] = straightUps["17"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 17]);
           setRecentBetValue(currentBetValue);
@@ -580,8 +580,8 @@ export default function Layout({
           break;
         case "20 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[20] = straightUps[20] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["20"] = straightUps["20"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 20]);
           setRecentBetValue(currentBetValue);
@@ -596,8 +596,8 @@ export default function Layout({
           break;
         case "23 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[23] = straightUps[23] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["23"] = straightUps["23"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 23]);
           setRecentBetValue(currentBetValue);
@@ -612,8 +612,8 @@ export default function Layout({
           break;
         case "26 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[26] = straightUps[26] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["26"] = straightUps["26"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 26]);
           setRecentBetValue(currentBetValue);
@@ -628,8 +628,8 @@ export default function Layout({
           break;
         case "29 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[29] = straightUps[29] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["29"] = straightUps["29"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 29]);
           setRecentBetValue(currentBetValue);
@@ -644,8 +644,8 @@ export default function Layout({
           break;
         case "32 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[32] = straightUps[32] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["32"] = straightUps["32"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 32]);
           setRecentBetValue(currentBetValue);
@@ -660,8 +660,8 @@ export default function Layout({
           break;
         case "35 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[35] = straightUps[35] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["35"] = straightUps["35"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 35]);
           setRecentBetValue(currentBetValue);
@@ -883,8 +883,8 @@ export default function Layout({
           break;
         case "1 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[1] = straightUps[1] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["1"] = straightUps["1"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 1]);
           setRecentBetValue(currentBetValue);
@@ -899,8 +899,8 @@ export default function Layout({
           break;
         case "4 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[4] = straightUps[4] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["4"] = straightUps["4"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 4]);
           setRecentBetValue(currentBetValue);
@@ -915,8 +915,8 @@ export default function Layout({
           break;
         case "7 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[7] = straightUps[7] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["7"] = straightUps["7"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 7]);
           setRecentBetValue(currentBetValue);
@@ -931,8 +931,8 @@ export default function Layout({
           break;
         case "10 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[10] = straightUps[10] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["10"] = straightUps["10"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 10]);
           setRecentBetValue(currentBetValue);
@@ -947,8 +947,8 @@ export default function Layout({
           break;
         case "13 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[13] = straightUps[13] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["13"] = straightUps["13"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 13]);
           setRecentBetValue(currentBetValue);
@@ -963,8 +963,8 @@ export default function Layout({
           break;
         case "16 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[16] = straightUps[16] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["16"] = straightUps["16"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 16]);
           setRecentBetValue(currentBetValue);
@@ -979,8 +979,8 @@ export default function Layout({
           break;
         case "19 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[19] = straightUps[19] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["19"] = straightUps["19"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 19]);
           setRecentBetValue(currentBetValue);
@@ -995,8 +995,8 @@ export default function Layout({
           break;
         case "22 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[22] = straightUps[22] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["22"] = straightUps["22"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 22]);
           setRecentBetValue(currentBetValue);
@@ -1011,8 +1011,8 @@ export default function Layout({
           break;
         case "25 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[25] = straightUps[25] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["25"] = straightUps["25"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 25]);
           setRecentBetValue(currentBetValue);
@@ -1027,8 +1027,8 @@ export default function Layout({
           break;
         case "28 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[28] = straightUps[28] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["28"] = straightUps["28"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 28]);
           setRecentBetValue(currentBetValue);
@@ -1043,8 +1043,8 @@ export default function Layout({
           break;
         case "31 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[31] = straightUps[31] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["31"] = straightUps["31"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 31]);
           setRecentBetValue(currentBetValue);
@@ -1059,8 +1059,8 @@ export default function Layout({
           break;
         case "34 straight":
           setChipCount(chipCount - currentBetValue);
-          newStraightUps[34] = straightUps[34] + currentBetValue;
-          setStraightUps([...newStraightUps]);
+          newStraightUps["34"] = straightUps["34"] + currentBetValue;
+          setStraightUps({...newStraightUps});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 34]);
           setRecentBetValue(currentBetValue);
@@ -1374,14 +1374,14 @@ export default function Layout({
             onClick={() => increaseBet("00 straight")}
           >
             <div className="number green">
-              {straightUps[37] > 0 ? (
+              {straightUps["00"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[37]}</p>
+                  <p className="bet-text">{straightUps["00"]}</p>
                 </div>
               ) : (
                 <></>
