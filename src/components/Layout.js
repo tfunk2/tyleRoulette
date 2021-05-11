@@ -45,7 +45,7 @@ export default function Layout({
       currentBetValue > 0
     ) {
       let splitRegex = /split$/;
-      let newSplits = splits.flat();
+      let newSplits = {...splits};
       let newStraightUps = {...straightUps};
       let newColumns = columns.flat();
       let newStreets = streets.flat();
@@ -60,8 +60,8 @@ export default function Layout({
       switch (betToIncrease) {
         case "0-00 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[0] = splits[0] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["0-00"] = splits["0-00"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 0]);
           setRecentBetValue(currentBetValue);
@@ -84,8 +84,8 @@ export default function Layout({
           break;
         case "00-3 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[2] = splits[2] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["00-3"] = splits["00-3"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 2]);
           setRecentBetValue(currentBetValue);
@@ -100,8 +100,8 @@ export default function Layout({
           break;
         case "3-6 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[7] = splits[7] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["3-6"] = splits["3-6"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 7]);
           setRecentBetValue(currentBetValue);
@@ -116,8 +116,8 @@ export default function Layout({
           break;
         case "6-9 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[12] = splits[12] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["6-9"] = splits["6-9"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 12]);
           setRecentBetValue(currentBetValue);
@@ -132,8 +132,8 @@ export default function Layout({
           break;
         case "9-12 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[17] = splits[17] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["9-12"] = splits["9-12"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 17]);
           setRecentBetValue(currentBetValue);
@@ -148,8 +148,8 @@ export default function Layout({
           break;
         case "12-15 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[22] = splits[22] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["12-15"] = splits["12-15"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 22]);
           setRecentBetValue(currentBetValue);
@@ -164,8 +164,8 @@ export default function Layout({
           break;
         case "15-18 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[27] = splits[27] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["15-18"] = splits["15-18"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 27]);
           setRecentBetValue(currentBetValue);
@@ -180,8 +180,8 @@ export default function Layout({
           break;
         case "18-21 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[32] = splits[32] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["18-21"] = splits["18-21"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 32]);
           setRecentBetValue(currentBetValue);
@@ -196,8 +196,8 @@ export default function Layout({
           break;
         case "21-24 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[37] = splits[37] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["21-24"] = splits["21-24"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 37]);
           setRecentBetValue(currentBetValue);
@@ -212,8 +212,8 @@ export default function Layout({
           break;
         case "24-27 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[42] = splits[42] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["24-27"] = splits["24-27"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 42]);
           setRecentBetValue(currentBetValue);
@@ -228,8 +228,8 @@ export default function Layout({
           break;
         case "27-30 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[47] = splits[47] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["27-30"] = splits["27-30"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 47]);
           setRecentBetValue(currentBetValue);
@@ -244,8 +244,8 @@ export default function Layout({
           break;
         case "30-33 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[52] = splits[52] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["30-33"] = splits["30-33"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 52]);
           setRecentBetValue(currentBetValue);
@@ -260,8 +260,8 @@ export default function Layout({
           break;
         case "33-36 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[57] = splits[57] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["33-36"] = splits["33-36"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 57]);
           setRecentBetValue(currentBetValue);
@@ -292,8 +292,8 @@ export default function Layout({
           break;
         case "2-3 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[4] = splits[4] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["2-3"] = splits["2-3"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 4]);
           setRecentBetValue(currentBetValue);
@@ -308,8 +308,8 @@ export default function Layout({
           break;
         case "5-6 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[9] = splits[9] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["5-6"] = splits["5-6"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 9]);
           setRecentBetValue(currentBetValue);
@@ -324,8 +324,8 @@ export default function Layout({
           break;
         case "8-9 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[14] = splits[14] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["8-9"] = splits["8-9"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 14]);
           setRecentBetValue(currentBetValue);
@@ -340,8 +340,8 @@ export default function Layout({
           break;
         case "11-12 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[19] = splits[19] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["11-12"] = splits["11-12"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 19]);
           setRecentBetValue(currentBetValue);
@@ -356,8 +356,8 @@ export default function Layout({
           break;
         case "14-15 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[24] = splits[24] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["14-15"] = splits["14-15"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 24]);
           setRecentBetValue(currentBetValue);
@@ -372,8 +372,8 @@ export default function Layout({
           break;
         case "17-18 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[29] = splits[29] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["17-18"] = splits["17-18"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 29]);
           setRecentBetValue(currentBetValue);
@@ -388,8 +388,8 @@ export default function Layout({
           break;
         case "20-21 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[34] = splits[34] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["20-21"] = splits["20-21"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 34]);
           setRecentBetValue(currentBetValue);
@@ -404,8 +404,8 @@ export default function Layout({
           break;
         case "23-24 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[39] = splits[39] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["23-24"] = splits["23-24"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 39]);
           setRecentBetValue(currentBetValue);
@@ -420,8 +420,8 @@ export default function Layout({
           break;
         case "26-27 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[44] = splits[44] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["26-27"] = splits["26-27"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 44]);
           setRecentBetValue(currentBetValue);
@@ -436,8 +436,8 @@ export default function Layout({
           break;
         case "29-30 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[49] = splits[49] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["29-30"] = splits["29-30"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 49]);
           setRecentBetValue(currentBetValue);
@@ -452,8 +452,8 @@ export default function Layout({
           break;
         case "32-33 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[54] = splits[54] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["32-33"] = splits["32-33"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 54]);
           setRecentBetValue(currentBetValue);
@@ -468,8 +468,8 @@ export default function Layout({
           break;
         case "35-36 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[59] = splits[59] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["35-36"] = splits["35-36"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 59]);
           setRecentBetValue(currentBetValue);
@@ -492,8 +492,8 @@ export default function Layout({
           break;
         case "2-5 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[6] = splits[6] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["2-5"] = splits["2-5"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 6]);
           setRecentBetValue(currentBetValue);
@@ -508,8 +508,8 @@ export default function Layout({
           break;
         case "5-8 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[11] = splits[11] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["5-8"] = splits["5-8"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 11]);
           setRecentBetValue(currentBetValue);
@@ -524,8 +524,8 @@ export default function Layout({
           break;
         case "8-11 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[16] = splits[16] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["8-11"] = splits["8-11"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 16]);
           setRecentBetValue(currentBetValue);
@@ -540,8 +540,8 @@ export default function Layout({
           break;
         case "11-14 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[21] = splits[21] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["11-14"] = splits["11-14"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 21]);
           setRecentBetValue(currentBetValue);
@@ -556,8 +556,8 @@ export default function Layout({
           break;
         case "14-17 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[26] = splits[26] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["14-17"] = splits["14-17"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 26]);
           setRecentBetValue(currentBetValue);
@@ -572,8 +572,8 @@ export default function Layout({
           break;
         case "17-20 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[31] = splits[31] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["17-20"] = splits["17-20"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 31]);
           setRecentBetValue(currentBetValue);
@@ -588,8 +588,8 @@ export default function Layout({
           break;
         case "20-23 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[36] = splits[36] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["20-23"] = splits["20-23"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 36]);
           setRecentBetValue(currentBetValue);
@@ -604,8 +604,8 @@ export default function Layout({
           break;
         case "23-26 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[41] = splits[41] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["23-26"] = splits["23-26"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 41]);
           setRecentBetValue(currentBetValue);
@@ -620,8 +620,8 @@ export default function Layout({
           break;
         case "26-29 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[46] = splits[46] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["26-29"] = splits["26-29"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 46]);
           setRecentBetValue(currentBetValue);
@@ -636,8 +636,8 @@ export default function Layout({
           break;
         case "29-32 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[51] = splits[51] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["29-32"] = splits["29-32"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 51]);
           setRecentBetValue(currentBetValue);
@@ -652,8 +652,8 @@ export default function Layout({
           break;
         case "32-35 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[56] = splits[56] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["32-35"] = splits["32-35"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 56]);
           setRecentBetValue(currentBetValue);
@@ -691,8 +691,8 @@ export default function Layout({
           break;
         case "1-2 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[3] = splits[3] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["1-2"] = splits["1-2"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 3]);
           setRecentBetValue(currentBetValue);
@@ -707,8 +707,8 @@ export default function Layout({
           break;
         case "4-5 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[8] = splits[8] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["4-5"] = splits["4-5"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 8]);
           setRecentBetValue(currentBetValue);
@@ -723,8 +723,8 @@ export default function Layout({
           break;
         case "7-8 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[13] = splits[13] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["7-8"] = splits["7-8"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 13]);
           setRecentBetValue(currentBetValue);
@@ -739,8 +739,8 @@ export default function Layout({
           break;
         case "10-11 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[18] = splits[18] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["10-11"] = splits["10-11"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 18]);
           setRecentBetValue(currentBetValue);
@@ -755,8 +755,8 @@ export default function Layout({
           break;
         case "13-14 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[23] = splits[23] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["13-14"] = splits["13-14"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 23]);
           setRecentBetValue(currentBetValue);
@@ -771,8 +771,8 @@ export default function Layout({
           break;
         case "16-17 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[28] = splits[28] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["16-17"] = splits["16-17"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 28]);
           setRecentBetValue(currentBetValue);
@@ -787,8 +787,8 @@ export default function Layout({
           break;
         case "19-20 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[33] = splits[33] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["19-20"] = splits["19-20"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 33]);
           setRecentBetValue(currentBetValue);
@@ -803,8 +803,8 @@ export default function Layout({
           break;
         case "22-23 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[38] = splits[38] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["22-23"] = splits["22-23"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 38]);
           setRecentBetValue(currentBetValue);
@@ -819,8 +819,8 @@ export default function Layout({
           break;
         case "25-26 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[43] = splits[43] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["25-26"] = splits["25-26"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 43]);
           setRecentBetValue(currentBetValue);
@@ -835,8 +835,8 @@ export default function Layout({
           break;
         case "28-29 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[48] = splits[48] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["28-29"] = splits["28-29"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 48]);
           setRecentBetValue(currentBetValue);
@@ -851,8 +851,8 @@ export default function Layout({
           break;
         case "31-32 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[53] = splits[53] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["31-32"] = splits["31-32"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 53]);
           setRecentBetValue(currentBetValue);
@@ -867,16 +867,16 @@ export default function Layout({
           break;
         case "34-35 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[58] = splits[58] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["34-35"] = splits["34-35"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 58]);
           setRecentBetValue(currentBetValue);
           break;
         case "0-1 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[1] = splits[1] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["0-1"] = splits["0-1"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 1]);
           setRecentBetValue(currentBetValue);
@@ -891,8 +891,8 @@ export default function Layout({
           break;
         case "1-4 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[5] = splits[5] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["1-4"] = splits["1-4"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 5]);
           setRecentBetValue(currentBetValue);
@@ -907,8 +907,8 @@ export default function Layout({
           break;
         case "4-7 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[10] = splits[10] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["4-7"] = splits["4-7"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 10]);
           setRecentBetValue(currentBetValue);
@@ -923,8 +923,8 @@ export default function Layout({
           break;
         case "7-10 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[15] = splits[15] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["7-10"] = splits["7-10"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 15]);
           setRecentBetValue(currentBetValue);
@@ -939,8 +939,8 @@ export default function Layout({
           break;
         case "10-13 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[20] = splits[20] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["10-13"] = splits["10-13"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 20]);
           setRecentBetValue(currentBetValue);
@@ -955,8 +955,8 @@ export default function Layout({
           break;
         case "13-16 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[25] = splits[25] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["13-16"] = splits["13-16"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 25]);
           setRecentBetValue(currentBetValue);
@@ -971,8 +971,8 @@ export default function Layout({
           break;
         case "16-19 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[30] = splits[30] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["16-19"] = splits["16-19"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 30]);
           setRecentBetValue(currentBetValue);
@@ -987,8 +987,8 @@ export default function Layout({
           break;
         case "19-22 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[35] = splits[35] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["19-22"] = splits["19-22"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 35]);
           setRecentBetValue(currentBetValue);
@@ -1003,8 +1003,8 @@ export default function Layout({
           break;
         case "22-25 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[40] = splits[40] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["22-25"] = splits["22-25"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 40]);
           setRecentBetValue(currentBetValue);
@@ -1019,8 +1019,8 @@ export default function Layout({
           break;
         case "25-28 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[45] = splits[45] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["25-28"] = splits["25-28"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 45]);
           setRecentBetValue(currentBetValue);
@@ -1035,8 +1035,8 @@ export default function Layout({
           break;
         case "28-31 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[50] = splits[50] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["28-31"] = splits["28-31"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 50]);
           setRecentBetValue(currentBetValue);
@@ -1051,8 +1051,8 @@ export default function Layout({
           break;
         case "31-34 split":
           setChipCount(chipCount - currentBetValue);
-          newSplits[55] = splits[55] + currentBetValue;
-          setSplits([...newSplits]);
+          newSplits["31-34"] = splits["31-34"] + currentBetValue;
+          setSplits({...newSplits});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 55]);
           setRecentBetValue(currentBetValue);
@@ -1394,14 +1394,14 @@ export default function Layout({
             id="split"
             onClick={() => increaseBet("0-00 split")}
           >
-            {splits[0] > 0 ? (
+            {splits["0-00"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[0]}</p>
+                <p className="bet-text">{splits["0-00"]}</p>
               </div>
             ) : (
               <></>
@@ -1417,14 +1417,14 @@ export default function Layout({
             onClick={() => increaseBet("0 straight")}
           >
             <div className="number green">
-              {straightUps[0] > 0 ? (
+              {straightUps["0"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[0]}</p>
+                  <p className="bet-text">{straightUps["0"]}</p>
                 </div>
               ) : (
                 <></>
@@ -1438,14 +1438,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("00-3 split")}
           >
-            {splits[2] > 0 ? (
+            {splits["00-3"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[2]}</p>
+                <p className="bet-text">{splits["00-3"]}</p>
               </div>
             ) : (
               <></>
@@ -1461,14 +1461,14 @@ export default function Layout({
             onClick={() => increaseBet("3 straight")}
           >
             <div className="number red">
-              {straightUps[3] > 0 ? (
+              {straightUps["3"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[3]}</p>
+                  <p className="bet-text">{straightUps["3"]}</p>
                 </div>
               ) : (
                 <></>
@@ -1480,14 +1480,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("3-6 split")}
           >
-            {splits[7] > 0 ? (
+            {splits["3-6"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[7]}</p>
+                <p className="bet-text">{splits["3-6"]}</p>
               </div>
             ) : (
               <></>
@@ -1503,14 +1503,14 @@ export default function Layout({
             onClick={() => increaseBet("6 straight")}
           >
             <div className="number black">
-              {straightUps[6] > 0 ? (
+              {straightUps["6"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[6]}</p>
+                  <p className="bet-text">{straightUps["6"]}</p>
                 </div>
               ) : (
                 <></>
@@ -1522,14 +1522,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("6-9 split")}
           >
-            {splits[12] > 0 ? (
+            {splits["6-9"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[12]}</p>
+                <p className="bet-text">{splits["6-9"]}</p>
               </div>
             ) : (
               <></>
@@ -1545,14 +1545,14 @@ export default function Layout({
             onClick={() => increaseBet("9 straight")}
           >
             <div className="number red">
-              {straightUps[9] > 0 ? (
+              {straightUps["9"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[9]}</p>
+                  <p className="bet-text">{straightUps["9"]}</p>
                 </div>
               ) : (
                 <></>
@@ -1564,14 +1564,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("9-12 split")}
           >
-            {splits[17] > 0 ? (
+            {splits["9-12"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[17]}</p>
+                <p className="bet-text">{splits["9-12"]}</p>
               </div>
             ) : (
               <></>
@@ -1587,14 +1587,14 @@ export default function Layout({
             onClick={() => increaseBet("12 straight")}
           >
             <div className="number red">
-              {straightUps[12] > 0 ? (
+              {straightUps["12"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[12]}</p>
+                  <p className="bet-text">{straightUps["12"]}</p>
                 </div>
               ) : (
                 <></>
@@ -1606,14 +1606,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("12-15 split")}
           >
-            {splits[22] > 0 ? (
+            {splits["12-15"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[22]}</p>
+                <p className="bet-text">{splits["12-15"]}</p>
               </div>
             ) : (
               <></>
@@ -1629,14 +1629,14 @@ export default function Layout({
             onClick={() => increaseBet("15 straight")}
           >
             <div className="number black">
-              {straightUps[15] > 0 ? (
+              {straightUps["15"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[15]}</p>
+                  <p className="bet-text">{straightUps["15"]}</p>
                 </div>
               ) : (
                 <></>
@@ -1648,14 +1648,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("15-18 split")}
           >
-            {splits[27] > 0 ? (
+            {splits["15-18"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[27]}</p>
+                <p className="bet-text">{splits["15-18"]}</p>
               </div>
             ) : (
               <></>
@@ -1671,14 +1671,14 @@ export default function Layout({
             onClick={() => increaseBet("18 straight")}
           >
             <div className="number red">
-              {straightUps[18] > 0 ? (
+              {straightUps["18"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[18]}</p>
+                  <p className="bet-text">{straightUps["18"]}</p>
                 </div>
               ) : (
                 <></>
@@ -1690,14 +1690,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("18-21 split")}
           >
-            {splits[32] > 0 ? (
+            {splits["18-21"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[32]}</p>
+                <p className="bet-text">{splits["18-21"]}</p>
               </div>
             ) : (
               <></>
@@ -1713,14 +1713,14 @@ export default function Layout({
             onClick={() => increaseBet("21 straight")}
           >
             <div className="number red">
-              {straightUps[21] > 0 ? (
+              {straightUps["21"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[21]}</p>
+                  <p className="bet-text">{straightUps["21"]}</p>
                 </div>
               ) : (
                 <></>
@@ -1732,14 +1732,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("21-24 split")}
           >
-            {splits[37] > 0 ? (
+            {splits["21-24"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[37]}</p>
+                <p className="bet-text">{splits["21-24"]}</p>
               </div>
             ) : (
               <></>
@@ -1755,14 +1755,14 @@ export default function Layout({
             onClick={() => increaseBet("24 straight")}
           >
             <div className="number black">
-              {straightUps[24] > 0 ? (
+              {straightUps["24"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[24]}</p>
+                  <p className="bet-text">{straightUps["24"]}</p>
                 </div>
               ) : (
                 <></>
@@ -1774,14 +1774,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("24-27 split")}
           >
-            {splits[42] > 0 ? (
+            {splits["24-27"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[42]}</p>
+                <p className="bet-text">{splits["24-27"]}</p>
               </div>
             ) : (
               <></>
@@ -1797,14 +1797,14 @@ export default function Layout({
             onClick={() => increaseBet("27 straight")}
           >
             <div className="number red">
-              {straightUps[27] > 0 ? (
+              {straightUps["27"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[27]}</p>
+                  <p className="bet-text">{straightUps["27"]}</p>
                 </div>
               ) : (
                 <></>
@@ -1816,14 +1816,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("27-30 split")}
           >
-            {splits[47] > 0 ? (
+            {splits["27-30"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[47]}</p>
+                <p className="bet-text">{splits["27-30"]}</p>
               </div>
             ) : (
               <></>
@@ -1839,14 +1839,14 @@ export default function Layout({
             onClick={() => increaseBet("30 straight")}
           >
             <div className="number red">
-              {straightUps[30] > 0 ? (
+              {straightUps["30"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[30]}</p>
+                  <p className="bet-text">{straightUps["30"]}</p>
                 </div>
               ) : (
                 <></>
@@ -1858,14 +1858,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("30-33 split")}
           >
-            {splits[52] > 0 ? (
+            {splits["30-33"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[52]}</p>
+                <p className="bet-text">{splits["30-33"]}</p>
               </div>
             ) : (
               <></>
@@ -1881,14 +1881,14 @@ export default function Layout({
             onClick={() => increaseBet("33 straight")}
           >
             <div className="number black">
-              {straightUps[33] > 0 ? (
+              {straightUps["33"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[33]}</p>
+                  <p className="bet-text">{straightUps["33"]}</p>
                 </div>
               ) : (
                 <></>
@@ -1900,14 +1900,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("33-36 split")}
           >
-            {splits[57] > 0 ? (
+            {splits["33-36"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[57]}</p>
+                <p className="bet-text">{splits["33-36"]}</p>
               </div>
             ) : (
               <></>
@@ -1923,14 +1923,14 @@ export default function Layout({
             onClick={() => increaseBet("36 straight")}
           >
             <div className="number red">
-              {straightUps[36] > 0 ? (
+              {straightUps["36"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[36]}</p>
+                  <p className="bet-text">{straightUps["36"]}</p>
                 </div>
               ) : (
                 <></>
@@ -1977,14 +1977,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("2-3 split")}
           >
-            {splits[4] > 0 ? (
+            {splits["2-3"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[4]}</p>
+                <p className="bet-text">{splits["2-3"]}</p>
               </div>
             ) : (
               <></>
@@ -2011,14 +2011,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("5-6 split")}
           >
-            {splits[9] > 0 ? (
+            {splits["5-6"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[9]}</p>
+                <p className="bet-text">{splits["5-6"]}</p>
               </div>
             ) : (
               <></>
@@ -2045,14 +2045,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("8-9 split")}
           >
-            {splits[14] > 0 ? (
+            {splits["8-9"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[14]}</p>
+                <p className="bet-text">{splits["8-9"]}</p>
               </div>
             ) : (
               <></>
@@ -2079,14 +2079,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("11-12 split")}
           >
-            {splits[19] > 0 ? (
+            {splits["11-12"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[19]}</p>
+                <p className="bet-text">{splits["11-12"]}</p>
               </div>
             ) : (
               <></>
@@ -2113,14 +2113,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("14-15 split")}
           >
-            {splits[24] > 0 ? (
+            {splits["14-15"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[24]}</p>
+                <p className="bet-text">{splits["14-15"]}</p>
               </div>
             ) : (
               <></>
@@ -2147,14 +2147,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("17-18 split")}
           >
-            {splits[29] > 0 ? (
+            {splits["17-18"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[29]}</p>
+                <p className="bet-text">{splits["17-18"]}</p>
               </div>
             ) : (
               <></>
@@ -2181,14 +2181,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("20-21 split")}
           >
-            {splits[34] > 0 ? (
+            {splits["20-21"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[34]}</p>
+                <p className="bet-text">{splits["20-21"]}</p>
               </div>
             ) : (
               <></>
@@ -2215,14 +2215,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("23-24 split")}
           >
-            {splits[39] > 0 ? (
+            {splits["23-24"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[39]}</p>
+                <p className="bet-text">{splits["23-24"]}</p>
               </div>
             ) : (
               <></>
@@ -2249,14 +2249,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("26-27 split")}
           >
-            {splits[44] > 0 ? (
+            {splits["26-27"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[44]}</p>
+                <p className="bet-text">{splits["26-27"]}</p>
               </div>
             ) : (
               <></>
@@ -2283,14 +2283,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("29-30 split")}
           >
-            {splits[49] > 0 ? (
+            {splits["29-30"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[49]}</p>
+                <p className="bet-text">{splits["29-30"]}</p>
               </div>
             ) : (
               <></>
@@ -2317,14 +2317,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("32-33 split")}
           >
-            {splits[54] > 0 ? (
+            {splits["32-33"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[54]}</p>
+                <p className="bet-text">{splits["32-33"]}</p>
               </div>
             ) : (
               <></>
@@ -2351,14 +2351,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("35-36 split")}
           >
-            {splits[59] > 0 ? (
+            {splits["35-36"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[59]}</p>
+                <p className="bet-text">{splits["35-36"]}</p>
               </div>
             ) : (
               <></>
@@ -2393,14 +2393,14 @@ export default function Layout({
             onClick={() => increaseBet("2 straight")}
           >
             <div className="number black">
-              {straightUps[2] > 0 ? (
+              {straightUps["2"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[2]}</p>
+                  <p className="bet-text">{straightUps["2"]}</p>
                 </div>
               ) : (
                 <></>
@@ -2412,14 +2412,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("2-5 split")}
           >
-            {splits[6] > 0 ? (
+            {splits["2-5"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[6]}</p>
+                <p className="bet-text">{splits["2-5"]}</p>
               </div>
             ) : (
               <></>
@@ -2435,14 +2435,14 @@ export default function Layout({
             onClick={() => increaseBet("5 straight")}
           >
             <div className="number red">
-              {straightUps[5] > 0 ? (
+              {straightUps["5"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[5]}</p>
+                  <p className="bet-text">{straightUps["5"]}</p>
                 </div>
               ) : (
                 <></>
@@ -2454,14 +2454,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("5-8 split")}
           >
-            {splits[11] > 0 ? (
+            {splits["5-8"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[11]}</p>
+                <p className="bet-text">{splits["5-8"]}</p>
               </div>
             ) : (
               <></>
@@ -2477,14 +2477,14 @@ export default function Layout({
             onClick={() => increaseBet("8 straight")}
           >
             <div className="number black">
-              {straightUps[8] > 0 ? (
+              {straightUps["8"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[8]}</p>
+                  <p className="bet-text">{straightUps["8"]}</p>
                 </div>
               ) : (
                 <></>
@@ -2496,14 +2496,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("8-11 split")}
           >
-            {splits[16] > 0 ? (
+            {splits["8-11"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[16]}</p>
+                <p className="bet-text">{splits["8-11"]}</p>
               </div>
             ) : (
               <></>
@@ -2519,14 +2519,14 @@ export default function Layout({
             onClick={() => increaseBet("11 straight")}
           >
             <div className="number black">
-              {straightUps[11] > 0 ? (
+              {straightUps["11"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[11]}</p>
+                  <p className="bet-text">{straightUps["11"]}</p>
                 </div>
               ) : (
                 <></>
@@ -2538,14 +2538,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("11-14 split")}
           >
-            {splits[21] > 0 ? (
+            {splits["11-14"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[21]}</p>
+                <p className="bet-text">{splits["11-14"]}</p>
               </div>
             ) : (
               <></>
@@ -2561,14 +2561,14 @@ export default function Layout({
             onClick={() => increaseBet("14 straight")}
           >
             <div className="number red">
-              {straightUps[14] > 0 ? (
+              {straightUps["14"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[14]}</p>
+                  <p className="bet-text">{straightUps["14"]}</p>
                 </div>
               ) : (
                 <></>
@@ -2580,14 +2580,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("14-17 split")}
           >
-            {splits[26] > 0 ? (
+            {splits["14-17"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[26]}</p>
+                <p className="bet-text">{splits["14-17"]}</p>
               </div>
             ) : (
               <></>
@@ -2603,14 +2603,14 @@ export default function Layout({
             onClick={() => increaseBet("17 straight")}
           >
             <div className="number black">
-              {straightUps[17] > 0 ? (
+              {straightUps["17"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[17]}</p>
+                  <p className="bet-text">{straightUps["17"]}</p>
                 </div>
               ) : (
                 <></>
@@ -2622,14 +2622,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("17-20 split")}
           >
-            {splits[31] > 0 ? (
+            {splits["17-20"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[31]}</p>
+                <p className="bet-text">{splits["17-20"]}</p>
               </div>
             ) : (
               <></>
@@ -2645,14 +2645,14 @@ export default function Layout({
             onClick={() => increaseBet("20 straight")}
           >
             <div className="number black">
-              {straightUps[20] > 0 ? (
+              {straightUps["20"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[20]}</p>
+                  <p className="bet-text">{straightUps["20"]}</p>
                 </div>
               ) : (
                 <></>
@@ -2664,14 +2664,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("20-23 split")}
           >
-            {splits[36] > 0 ? (
+            {splits["20-23"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[36]}</p>
+                <p className="bet-text">{splits["20-23"]}</p>
               </div>
             ) : (
               <></>
@@ -2687,14 +2687,14 @@ export default function Layout({
             onClick={() => increaseBet("23 straight")}
           >
             <div className="number red">
-              {straightUps[23] > 0 ? (
+              {straightUps["23"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[23]}</p>
+                  <p className="bet-text">{straightUps["23"]}</p>
                 </div>
               ) : (
                 <></>
@@ -2706,14 +2706,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("23-26 split")}
           >
-            {splits[41] > 0 ? (
+            {splits["23-26"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[41]}</p>
+                <p className="bet-text">{splits["23-26"]}</p>
               </div>
             ) : (
               <></>
@@ -2729,14 +2729,14 @@ export default function Layout({
             onClick={() => increaseBet("26 straight")}
           >
             <div className="number black">
-              {straightUps[26] > 0 ? (
+              {straightUps["26"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[26]}</p>
+                  <p className="bet-text">{straightUps["26"]}</p>
                 </div>
               ) : (
                 <></>
@@ -2748,14 +2748,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("26-29 split")}
           >
-            {splits[46] > 0 ? (
+            {splits["26-29"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[46]}</p>
+                <p className="bet-text">{splits["26-29"]}</p>
               </div>
             ) : (
               <></>
@@ -2771,14 +2771,14 @@ export default function Layout({
             onClick={() => increaseBet("29 straight")}
           >
             <div className="number black">
-              {straightUps[29] > 0 ? (
+              {straightUps["29"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[29]}</p>
+                  <p className="bet-text">{straightUps["29"]}</p>
                 </div>
               ) : (
                 <></>
@@ -2790,14 +2790,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("29-32 split")}
           >
-            {splits[51] > 0 ? (
+            {splits["29-32"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[51]}</p>
+                <p className="bet-text">{splits["29-32"]}</p>
               </div>
             ) : (
               <></>
@@ -2813,14 +2813,14 @@ export default function Layout({
             onClick={() => increaseBet("32 straight")}
           >
             <div className="number red">
-              {straightUps[32] > 0 ? (
+              {straightUps["32"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[32]}</p>
+                  <p className="bet-text">{straightUps["32"]}</p>
                 </div>
               ) : (
                 <></>
@@ -2832,14 +2832,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("32-35 split")}
           >
-            {splits[56] > 0 ? (
+            {splits["32-35"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[56]}</p>
+                <p className="bet-text">{splits["32-35"]}</p>
               </div>
             ) : (
               <></>
@@ -2855,14 +2855,14 @@ export default function Layout({
             onClick={() => increaseBet("35 straight")}
           >
             <div className="number black">
-              {straightUps[35] > 0 ? (
+              {straightUps["35"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[35]}</p>
+                  <p className="bet-text">{straightUps["35"]}</p>
                 </div>
               ) : (
                 <></>
@@ -2909,14 +2909,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("1-2 split")}
           >
-            {splits[3] > 0 ? (
+            {splits["1-2"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[3]}</p>
+                <p className="bet-text">{splits["1-2"]}</p>
               </div>
             ) : (
               <></>
@@ -2943,14 +2943,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("4-5 split")}
           >
-            {splits[8] > 0 ? (
+            {splits["4-5"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[8]}</p>
+                <p className="bet-text">{splits["4-5"]}</p>
               </div>
             ) : (
               <></>
@@ -2977,14 +2977,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("7-8 split")}
           >
-            {splits[13] > 0 ? (
+            {splits["7-8"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[13]}</p>
+                <p className="bet-text">{splits["7-8"]}</p>
               </div>
             ) : (
               <></>
@@ -3011,14 +3011,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("10-11 split")}
           >
-            {splits[18] > 0 ? (
+            {splits["10-11"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[18]}</p>
+                <p className="bet-text">{splits["10-11"]}</p>
               </div>
             ) : (
               <></>
@@ -3045,14 +3045,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("13-14 split")}
           >
-            {splits[23] > 0 ? (
+            {splits["13-14"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[23]}</p>
+                <p className="bet-text">{splits["13-14"]}</p>
               </div>
             ) : (
               <></>
@@ -3079,14 +3079,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("16-17 split")}
           >
-            {splits[28] > 0 ? (
+            {splits["16-17"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[28]}</p>
+                <p className="bet-text">{splits["16-17"]}</p>
               </div>
             ) : (
               <></>
@@ -3113,14 +3113,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("19-20 split")}
           >
-            {splits[33] > 0 ? (
+            {splits["19-20"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[33]}</p>
+                <p className="bet-text">{splits["19-20"]}</p>
               </div>
             ) : (
               <></>
@@ -3147,14 +3147,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("22-23 split")}
           >
-            {splits[38] > 0 ? (
+            {splits["22-23"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[38]}</p>
+                <p className="bet-text">{splits["22-23"]}</p>
               </div>
             ) : (
               <></>
@@ -3181,14 +3181,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("25-26 split")}
           >
-            {splits[43] > 0 ? (
+            {splits["25-26"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[43]}</p>
+                <p className="bet-text">{splits["25-26"]}</p>
               </div>
             ) : (
               <></>
@@ -3215,14 +3215,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("28-29 split")}
           >
-            {splits[48] > 0 ? (
+            {splits["28-29"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[48]}</p>
+                <p className="bet-text">{splits["28-29"]}</p>
               </div>
             ) : (
               <></>
@@ -3249,14 +3249,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("31-32 split")}
           >
-            {splits[53] > 0 ? (
+            {splits["31-32"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[53]}</p>
+                <p className="bet-text">{splits["31-32"]}</p>
               </div>
             ) : (
               <></>
@@ -3283,14 +3283,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("34-35 split")}
           >
-            {splits[58] > 0 ? (
+            {splits["34-35"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[58]}</p>
+                <p className="bet-text">{splits["34-35"]}</p>
               </div>
             ) : (
               <></>
@@ -3302,14 +3302,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("0-1 split")}
           >
-            {splits[1] > 0 ? (
+            {splits["0-1"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[1]}</p>
+                <p className="bet-text">{splits["0-1"]}</p>
               </div>
             ) : (
               <></>
@@ -3325,14 +3325,14 @@ export default function Layout({
             onClick={() => increaseBet("1 straight")}
           >
             <div className="number red">
-              {straightUps[1] > 0 ? (
+              {straightUps["1"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[1]}</p>
+                  <p className="bet-text">{straightUps["1"]}</p>
                 </div>
               ) : (
                 <></>
@@ -3344,14 +3344,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("1-4 split")}
           >
-            {splits[5] > 0 ? (
+            {splits["1-4"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[5]}</p>
+                <p className="bet-text">{splits["1-4"]}</p>
               </div>
             ) : (
               <></>
@@ -3367,14 +3367,14 @@ export default function Layout({
             onClick={() => increaseBet("4 straight")}
           >
             <div className="number black">
-              {straightUps[4] > 0 ? (
+              {straightUps["4"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[4]}</p>
+                  <p className="bet-text">{straightUps["4"]}</p>
                 </div>
               ) : (
                 <></>
@@ -3386,14 +3386,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("4-7 split")}
           >
-            {splits[10] > 0 ? (
+            {splits["4-7"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[10]}</p>
+                <p className="bet-text">{splits["4-7"]}</p>
               </div>
             ) : (
               <></>
@@ -3409,14 +3409,14 @@ export default function Layout({
             onClick={() => increaseBet("7 straight")}
           >
             <div className="number red">
-              {straightUps[7] > 0 ? (
+              {straightUps["7"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[7]}</p>
+                  <p className="bet-text">{straightUps["7"]}</p>
                 </div>
               ) : (
                 <></>
@@ -3428,14 +3428,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("7-10 split")}
           >
-            {splits[15] > 0 ? (
+            {splits["7-10"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[15]}</p>
+                <p className="bet-text">{splits["7-10"]}</p>
               </div>
             ) : (
               <></>
@@ -3451,14 +3451,14 @@ export default function Layout({
             onClick={() => increaseBet("10 straight")}
           >
             <div className="number black">
-              {straightUps[10] > 0 ? (
+              {straightUps["10"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[10]}</p>
+                  <p className="bet-text">{straightUps["10"]}</p>
                 </div>
               ) : (
                 <></>
@@ -3470,14 +3470,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("10-13 split")}
           >
-            {splits[20] > 0 ? (
+            {splits["10-13"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[20]}</p>
+                <p className="bet-text">{splits["10-13"]}</p>
               </div>
             ) : (
               <></>
@@ -3493,14 +3493,14 @@ export default function Layout({
             onClick={() => increaseBet("13 straight")}
           >
             <div className="number black">
-              {straightUps[13] > 0 ? (
+              {straightUps["13"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[13]}</p>
+                  <p className="bet-text">{straightUps["13"]}</p>
                 </div>
               ) : (
                 <></>
@@ -3512,14 +3512,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("13-16 split")}
           >
-            {splits[25] > 0 ? (
+            {splits["13-16"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[25]}</p>
+                <p className="bet-text">{splits["13-16"]}</p>
               </div>
             ) : (
               <></>
@@ -3535,14 +3535,14 @@ export default function Layout({
             onClick={() => increaseBet("16 straight")}
           >
             <div className="number red">
-              {straightUps[16] > 0 ? (
+              {straightUps["16"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[16]}</p>
+                  <p className="bet-text">{straightUps["16"]}</p>
                 </div>
               ) : (
                 <></>
@@ -3554,14 +3554,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("16-19 split")}
           >
-            {splits[30] > 0 ? (
+            {splits["16-19"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[30]}</p>
+                <p className="bet-text">{splits["16-19"]}</p>
               </div>
             ) : (
               <></>
@@ -3577,14 +3577,14 @@ export default function Layout({
             onClick={() => increaseBet("19 straight")}
           >
             <div className="number red">
-              {straightUps[19] > 0 ? (
+              {straightUps["19"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[19]}</p>
+                  <p className="bet-text">{straightUps["19"]}</p>
                 </div>
               ) : (
                 <></>
@@ -3596,14 +3596,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("19-22 split")}
           >
-            {splits[35] > 0 ? (
+            {splits["19-22"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[35]}</p>
+                <p className="bet-text">{splits["19-22"]}</p>
               </div>
             ) : (
               <></>
@@ -3619,14 +3619,14 @@ export default function Layout({
             onClick={() => increaseBet("22 straight")}
           >
             <div className="number black">
-              {straightUps[22] > 0 ? (
+              {straightUps["22"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[22]}</p>
+                  <p className="bet-text">{straightUps["22"]}</p>
                 </div>
               ) : (
                 <></>
@@ -3638,14 +3638,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("22-25 split")}
           >
-            {splits[40] > 0 ? (
+            {splits["22-25"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[40]}</p>
+                <p className="bet-text">{splits["22-25"]}</p>
               </div>
             ) : (
               <></>
@@ -3661,14 +3661,14 @@ export default function Layout({
             onClick={() => increaseBet("25 straight")}
           >
             <div className="number red">
-              {straightUps[25] > 0 ? (
+              {straightUps["25"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[25]}</p>
+                  <p className="bet-text">{straightUps["25"]}</p>
                 </div>
               ) : (
                 <></>
@@ -3680,14 +3680,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("25-28 split")}
           >
-            {splits[45] > 0 ? (
+            {splits["25-28"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[45]}</p>
+                <p className="bet-text">{splits["25-28"]}</p>
               </div>
             ) : (
               <></>
@@ -3703,14 +3703,14 @@ export default function Layout({
             onClick={() => increaseBet("28 straight")}
           >
             <div className="number black">
-              {straightUps[28] > 0 ? (
+              {straightUps["28"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[28]}</p>
+                  <p className="bet-text">{straightUps["28"]}</p>
                 </div>
               ) : (
                 <></>
@@ -3722,14 +3722,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("28-31 split")}
           >
-            {splits[50] > 0 ? (
+            {splits["28-31"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[50]}</p>
+                <p className="bet-text">{splits["28-31"]}</p>
               </div>
             ) : (
               <></>
@@ -3745,14 +3745,14 @@ export default function Layout({
             onClick={() => increaseBet("31 straight")}
           >
             <div className="number black">
-              {straightUps[31] > 0 ? (
+              {straightUps["31"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[31]}</p>
+                  <p className="bet-text">{straightUps["31"]}</p>
                 </div>
               ) : (
                 <></>
@@ -3764,14 +3764,14 @@ export default function Layout({
             className="bet-box split"
             onClick={() => increaseBet("31-34 split")}
           >
-            {splits[55] > 0 ? (
+            {splits["31-34"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{splits[55]}</p>
+                <p className="bet-text">{splits["31-34"]}</p>
               </div>
             ) : (
               <></>
@@ -3787,14 +3787,14 @@ export default function Layout({
             onClick={() => increaseBet("34 straight")}
           >
             <div className="number red">
-              {straightUps[34] > 0 ? (
+              {straightUps["34"] > 0 ? (
                 <div className="chip-and-bet">
                   <img
                     className="blank-chip"
                     alt="blank chip"
                     src={BlankChip}
                   ></img>
-                  <p className="bet-text">{straightUps[34]}</p>
+                  <p className="bet-text">{straightUps["34"]}</p>
                 </div>
               ) : (
                 <></>
