@@ -28,7 +28,7 @@ export default function BettingOptions({
   whichMessage,
   resetLayout,
   collectWinnings,
-  totalAmountWon
+  totalAmountWon,
 }) {
   const handleChipClick = (value) => {
     if (!isSpinComplete) {
@@ -42,83 +42,50 @@ export default function BettingOptions({
   const whatColorNumber = () => {
     switch (winningNumber) {
       case "0":
-        return "green-wheel-number";
-      case "1":
-        return "red-wheel-number";
-      case "2":
-        return "black-wheel-number";
-      case "3":
-        return "red-wheel-number";
-      case "4":
-        return "black-wheel-number";
-      case "5":
-        return "red-wheel-number";
-      case "6":
-        return "black-wheel-number";
-      case "7":
-        return "red-wheel-number";
-      case "8":
-        return "black-wheel-number";
-      case "9":
-        return "red-wheel-number";
-      case "10":
-        return "black-wheel-number";
-      case "11":
-        return "black-wheel-number";
-      case "12":
-        return "red-wheel-number";
-      case "13":
-        return "black-wheel-number";
-      case "14":
-        return "red-wheel-number";
-      case "15":
-        return "black-wheel-number";
-      case "16":
-        return "red-wheel-number";
-      case "17":
-        return "black-wheel-number";
-      case "18":
-        return "red-wheel-number";
-      case "19":
-        return "red-wheel-number";
-      case "20":
-        return "black-wheel-number";
-      case "21":
-        return "red-wheel-number";
-      case "22":
-        return "black-wheel-number";
-      case "23":
-        return "red-wheel-number";
-      case "24":
-        return "black-wheel-number";
-      case "25":
-        return "red-wheel-number";
-      case "26":
-        return "black-wheel-number";
-      case "27":
-        return "red-wheel-number";
-      case "28":
-        return "black-wheel-number";
-      case "29":
-        return "black-wheel-number";
-      case "30":
-        return "red-wheel-number";
-      case "31":
-        return "black-wheel-number";
-      case "32":
-        return "red-wheel-number";
-      case "33":
-        return "black-wheel-number";
-      case "34":
-        return "red-wheel-number";
-      case "35":
-        return "black-wheel-number";
-      case "36":
-        return "red-wheel-number";
       case "00":
         return "green-wheel-number";
-      default: 
-        console.log("Something went wrong in BettingOptions.js > WhatColorNumber()")
+      case "1":
+      case "3":
+      case "5":
+      case "7":
+      case "9":
+      case "12":
+      case "14":
+      case "16":
+      case "18":
+      case "19":
+      case "21":
+      case "23":
+      case "25":
+      case "27":
+      case "30":
+      case "32":
+      case "34":
+      case "36":
+        return "red-wheel-number";
+      case "2":
+      case "4":
+      case "6":
+      case "8":
+      case "10":
+      case "11":
+      case "13":
+      case "15":
+      case "17":
+      case "20":
+      case "22":
+      case "24":
+      case "26":
+      case "28":
+      case "29":
+      case "31":
+      case "33":
+      case "35":
+        return "black-wheel-number";
+      default:
+        console.log(
+          "Something went wrong in BettingOptions.js > WhatColorNumber()"
+        );
         break;
     }
   };

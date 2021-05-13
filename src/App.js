@@ -337,8 +337,8 @@ function App() {
           allPayouts =
             straightUps["0"] * 35 +
             straightUps["0"] +
-            (splits[0] * 17 + splits[0]) +
-            (splits[1] * 17 + splits[1]) +
+            (splits["0-00"] * 17 + splits["0-00"]) +
+            (splits["0-1"] * 17 + splits["0-1"]) +
             (streets[1] * 11 + streets[1]) +
             (streets[2] * 11 + streets[2]) +
             (basket * 6 + basket);
@@ -347,9 +347,9 @@ function App() {
           allPayouts =
             straightUps["1"] * 35 +
             straightUps["1"] +
-            (splits[1] * 17 + splits[1]) +
-            (splits[3] * 17 + splits[3]) +
-            (splits[5] * 17 + splits[5]) +
+            (splits["0-1"] * 17 + splits["0-1"]) +
+            (splits["1-2"] * 17 + splits["1-2"]) +
+            (splits["1-4"] * 17 + splits["1-4"]) +
             (streets[2] * 11 + streets[2]) +
             (streets[3] * 11 + streets[3]) +
             (corners[0] * 8 + corners[0]) +
@@ -365,9 +365,9 @@ function App() {
           allPayouts =
             straightUps["2"] * 35 +
             straightUps["2"] +
-            (splits[3] * 17 + splits[3]) +
-            (splits[4] * 17 + splits[4]) +
-            (splits[6] * 17 + splits[6]) +
+            (splits["1-2"] * 17 + splits["1-2"]) +
+            (splits["2-3"] * 17 + splits["2-3"]) +
+            (splits["2-5"] * 17 + splits["2-5"]) +
             (streets[0] * 11 + streets[0]) +
             (streets[1] * 11 + streets[1]) +
             (streets[2] * 11 + streets[2]) +
@@ -386,9 +386,9 @@ function App() {
           allPayouts =
             straightUps["3"] * 35 +
             straightUps["3"] +
-            (splits[2] * 17 + splits[2]) +
-            (splits[4] * 17 + splits[4]) +
-            (splits[7] * 17 + splits[7]) +
+            (splits["00-3"] * 17 + splits["00-3"]) +
+            (splits["2-3"] * 17 + splits["2-3"]) +
+            (splits["3-6"] * 17 + splits["3-6"]) +
             (streets[0] * 11 + streets[0]) +
             (streets[3] * 11 + streets[3]) +
             (corners[1] * 8 + corners[1]) +
@@ -404,9 +404,9 @@ function App() {
           allPayouts =
             straightUps["4"] * 35 +
             straightUps["4"] +
-            (splits[5] * 17 + splits[5]) +
-            (splits[8] * 17 + splits[8]) +
-            (splits[10] * 17 + splits[10]) +
+            (splits["1-4"] * 17 + splits["1-4"]) +
+            (splits["4-5"] * 17 + splits["4-5"]) +
+            (splits["4-7"] * 17 + splits["4-7"]) +
             (streets[4] * 11 + streets[4]) +
             (corners[0] * 8 + corners[0]) +
             (corners[2] * 8 + corners[2]) +
@@ -422,10 +422,10 @@ function App() {
           allPayouts =
             straightUps["5"] * 35 +
             straightUps["5"] +
-            (splits[6] * 17 + splits[6]) +
-            (splits[8] * 17 + splits[8]) +
-            (splits[9] * 17 + splits[9]) +
-            (splits[11] * 17 + splits[11]) +
+            (splits["2-5"] * 17 + splits["2-5"]) +
+            (splits["4-5"] * 17 + splits["4-5"]) +
+            (splits["5-6"] * 17 + splits["5-6"]) +
+            (splits["5-8"] * 17 + splits["5-8"]) +
             (streets[4] * 11 + streets[4]) +
             (corners[0] * 8 + corners[0]) +
             (corners[1] * 8 + corners[1]) +
@@ -443,9 +443,9 @@ function App() {
           allPayouts =
             straightUps["6"] * 35 +
             straightUps["6"] +
-            (splits[7] * 17 + splits[7]) +
-            (splits[9] * 17 + splits[9]) +
-            (splits[12] * 17 + splits[12]) +
+            (splits["3-6"] * 17 + splits["3-6"]) +
+            (splits["5-6"] * 17 + splits["5-6"]) +
+            (splits["6-9"] * 17 + splits["6-9"]) +
             (streets[4] * 11 + streets[4]) +
             (corners[1] * 8 + corners[1]) +
             (corners[3] * 8 + corners[3]) +
@@ -461,9 +461,9 @@ function App() {
           allPayouts =
             straightUps["7"] * 35 +
             straightUps["7"] +
-            (splits[10] * 17 + splits[10]) +
-            (splits[13] * 17 + splits[13]) +
-            (splits[15] * 17 + splits[15]) +
+            (splits["4-7"] * 17 + splits["4-7"]) +
+            (splits["7-8"] * 17 + splits["7-8"]) +
+            (splits["7-10"] * 17 + splits["7-10"]) +
             (streets[5] * 11 + streets[5]) +
             (corners[2] * 8 + corners[2]) +
             (corners[4] * 8 + corners[4]) +
@@ -479,10 +479,10 @@ function App() {
           allPayouts =
             straightUps["8"] * 35 +
             straightUps["8"] +
-            (splits[11] * 17 + splits[11]) +
-            (splits[13] * 17 + splits[13]) +
-            (splits[14] * 17 + splits[14]) +
-            (splits[16] * 17 + splits[16]) +
+            (splits["5-8"] * 17 + splits["5-8"]) +
+            (splits["7-8"] * 17 + splits["7-8"]) +
+            (splits["8-9"] * 17 + splits["8-9"]) +
+            (splits["8-11"] * 17 + splits["8-11"]) +
             (streets[5] * 11 + streets[5]) +
             (corners[2] * 8 + corners[2]) +
             (corners[3] * 8 + corners[3]) +
@@ -500,9 +500,9 @@ function App() {
           allPayouts =
             straightUps["9"] * 35 +
             straightUps["9"] +
-            (splits[12] * 17 + splits[12]) +
-            (splits[14] * 17 + splits[14]) +
-            (splits[17] * 17 + splits[17]) +
+            (splits["6-9"] * 17 + splits["6-9"]) +
+            (splits["8-9"] * 17 + splits["8-9"]) +
+            (splits["9-12"] * 17 + splits["9-12"]) +
             (streets[5] * 11 + streets[5]) +
             (corners[3] * 8 + corners[3]) +
             (corners[5] * 8 + corners[5]) +
@@ -518,9 +518,9 @@ function App() {
           allPayouts =
             straightUps["10"] * 35 +
             straightUps["10"] +
-            (splits[15] * 17 + splits[15]) +
-            (splits[18] * 17 + splits[18]) +
-            (splits[20] * 17 + splits[20]) +
+            (splits["7-10"] * 17 + splits["7-10"]) +
+            (splits["10-11"] * 17 + splits["10-11"]) +
+            (splits["10-13"] * 17 + splits["10-13"]) +
             (streets[6] * 11 + streets[6]) +
             (corners[4] * 8 + corners[4]) +
             (corners[6] * 8 + corners[6]) +
@@ -536,10 +536,10 @@ function App() {
           allPayouts =
             straightUps["11"] * 35 +
             straightUps["11"] +
-            (splits[16] * 17 + splits[16]) +
-            (splits[18] * 17 + splits[18]) +
-            (splits[19] * 17 + splits[19]) +
-            (splits[21] * 17 + splits[21]) +
+            (splits["8-11"] * 17 + splits["8-11"]) +
+            (splits["10-11"] * 17 + splits["10-11"]) +
+            (splits["11-12"] * 17 + splits["11-12"]) +
+            (splits["11-14"] * 17 + splits["11-14"]) +
             (streets[6] * 11 + streets[6]) +
             (corners[4] * 8 + corners[4]) +
             (corners[5] * 8 + corners[5]) +
@@ -557,9 +557,9 @@ function App() {
           allPayouts =
             straightUps["12"] * 35 +
             straightUps["12"] +
-            (splits[17] * 17 + splits[17]) +
-            (splits[19] * 17 + splits[19]) +
-            (splits[22] * 17 + splits[22]) +
+            (splits["9-12"] * 17 + splits["9-12"]) +
+            (splits["11-12"] * 17 + splits["11-12"]) +
+            (splits["12-15"] * 17 + splits["12-15"]) +
             (streets[6] * 11 + streets[6]) +
             (corners[5] * 8 + corners[5]) +
             (corners[7] * 8 + corners[7]) +
@@ -575,9 +575,9 @@ function App() {
           allPayouts =
             straightUps["13"] * 35 +
             straightUps["13"] +
-            (splits[20] * 17 + splits[20]) +
-            (splits[23] * 17 + splits[23]) +
-            (splits[25] * 17 + splits[25]) +
+            (splits["10-13"] * 17 + splits["10-13"]) +
+            (splits["13-14"] * 17 + splits["13-14"]) +
+            (splits["13-16"] * 17 + splits["13-16"]) +
             (streets[7] * 11 + streets[7]) +
             (corners[6] * 8 + corners[6]) +
             (corners[8] * 8 + corners[8]) +
@@ -593,10 +593,10 @@ function App() {
           allPayouts =
             straightUps["14"] * 35 +
             straightUps["14"] +
-            (splits[21] * 17 + splits[21]) +
-            (splits[23] * 17 + splits[23]) +
-            (splits[24] * 17 + splits[24]) +
-            (splits[26] * 17 + splits[26]) +
+            (splits["11-14"] * 17 + splits["11-14"]) +
+            (splits["13-14"] * 17 + splits["13-14"]) +
+            (splits["14-15"] * 17 + splits["14-15"]) +
+            (splits["14-17"] * 17 + splits["14-17"]) +
             (streets[7] * 11 + streets[7]) +
             (corners[6] * 8 + corners[6]) +
             (corners[7] * 8 + corners[7]) +
@@ -614,9 +614,9 @@ function App() {
           allPayouts =
             straightUps["15"] * 35 +
             straightUps["15"] +
-            (splits[22] * 17 + splits[22]) +
-            (splits[24] * 17 + splits[24]) +
-            (splits[27] * 17 + splits[27]) +
+            (splits["12-15"] * 17 + splits["12-15"]) +
+            (splits["14-15"] * 17 + splits["14-15"]) +
+            (splits["15-18"] * 17 + splits["15-18"]) +
             (streets[7] * 11 + streets[7]) +
             (corners[7] * 8 + corners[7]) +
             (corners[9] * 8 + corners[9]) +
@@ -632,9 +632,9 @@ function App() {
           allPayouts =
             straightUps["16"] * 35 +
             straightUps["16"] +
-            (splits[25] * 17 + splits[25]) +
-            (splits[28] * 17 + splits[28]) +
-            (splits[30] * 17 + splits[30]) +
+            (splits["13-16"] * 17 + splits["13-16"]) +
+            (splits["16-17"] * 17 + splits["16-17"]) +
+            (splits["16-19"] * 17 + splits["16-19"]) +
             (streets[8] * 11 + streets[8]) +
             (corners[8] * 8 + corners[8]) +
             (corners[10] * 8 + corners[10]) +
@@ -650,10 +650,10 @@ function App() {
           allPayouts =
             straightUps["17"] * 35 +
             straightUps["17"] +
-            (splits[26] * 17 + splits[26]) +
-            (splits[28] * 17 + splits[28]) +
-            (splits[29] * 17 + splits[29]) +
-            (splits[32] * 17 + splits[32]) +
+            (splits["14-17"] * 17 + splits["14-17"]) +
+            (splits["16-17"] * 17 + splits["16-17"]) +
+            (splits["17-18"] * 17 + splits["17-18"]) +
+            (splits["18-21"] * 17 + splits["18-21"]) +
             (streets[8] * 11 + streets[8]) +
             (corners[8] * 8 + corners[8]) +
             (corners[9] * 8 + corners[9]) +
@@ -671,9 +671,9 @@ function App() {
           allPayouts =
             straightUps["18"] * 35 +
             straightUps["18"] +
-            (splits[27] * 17 + splits[27]) +
-            (splits[29] * 17 + splits[29]) +
-            (splits[32] * 17 + splits[32]) +
+            (splits["15-18"] * 17 + splits["15-18"]) +
+            (splits["17-18"] * 17 + splits["17-18"]) +
+            (splits["18-21"] * 17 + splits["18-21"]) +
             (streets[8] * 11 + streets[8]) +
             (corners[9] * 8 + corners[9]) +
             (corners[11] * 8 + corners[11]) +
@@ -689,9 +689,9 @@ function App() {
           allPayouts =
             straightUps["19"] * 35 +
             straightUps["19"] +
-            (splits[30] * 17 + splits[30]) +
-            (splits[33] * 17 + splits[33]) +
-            (splits[35] * 17 + splits[35]) +
+            (splits["16-19"] * 17 + splits["16-19"]) +
+            (splits["19-20"] * 17 + splits["19-20"]) +
+            (splits["19-22"] * 17 + splits["19-22"]) +
             (streets[9] * 11 + streets[9]) +
             (corners[10] * 8 + corners[10]) +
             (corners[12] * 8 + corners[12]) +
@@ -707,10 +707,10 @@ function App() {
           allPayouts =
             straightUps["20"] * 35 +
             straightUps["20"] +
-            (splits[31] * 17 + splits[31]) +
-            (splits[33] * 17 + splits[33]) +
-            (splits[34] * 17 + splits[34]) +
-            (splits[36] * 17 + splits[36]) +
+            (splits["17-20"] * 17 + splits["17-20"]) +
+            (splits["19-20"] * 17 + splits["19-20"]) +
+            (splits["20-21"] * 17 + splits["20-21"]) +
+            (splits["20-23"] * 17 + splits["20-23"]) +
             (streets[9] * 11 + streets[9]) +
             (corners[10] * 8 + corners[10]) +
             (corners[11] * 8 + corners[11]) +
@@ -728,9 +728,9 @@ function App() {
           allPayouts =
             straightUps["21"] * 35 +
             straightUps["21"] +
-            (splits[32] * 17 + splits[32]) +
-            (splits[34] * 17 + splits[34]) +
-            (splits[37] * 17 + splits[37]) +
+            (splits["18-21"] * 17 + splits["18-21"]) +
+            (splits["20-21"] * 17 + splits["20-21"]) +
+            (splits["21-24"] * 17 + splits["21-24"]) +
             (streets[9] * 11 + streets[9]) +
             (corners[11] * 8 + corners[11]) +
             (corners[13] * 8 + corners[13]) +
@@ -746,9 +746,9 @@ function App() {
           allPayouts =
             straightUps["22"] * 35 +
             straightUps["22"] +
-            (splits[35] * 17 + splits[35]) +
-            (splits[38] * 17 + splits[38]) +
-            (splits[40] * 17 + splits[40]) +
+            (splits["19-22"] * 17 + splits["19-22"]) +
+            (splits["22-23"] * 17 + splits["22-23"]) +
+            (splits["22-25"] * 17 + splits["22-25"]) +
             (streets[10] * 11 + streets[10]) +
             (corners[12] * 8 + corners[12]) +
             (corners[14] * 8 + corners[14]) +
@@ -764,10 +764,10 @@ function App() {
           allPayouts =
             straightUps["23"] * 35 +
             straightUps["23"] +
-            (splits[36] * 17 + splits[36]) +
-            (splits[38] * 17 + splits[38]) +
-            (splits[39] * 17 + splits[39]) +
-            (splits[41] * 17 + splits[41]) +
+            (splits["20-23"] * 17 + splits["20-23"]) +
+            (splits["22-23"] * 17 + splits["22-23"]) +
+            (splits["23-24"] * 17 + splits["23-24"]) +
+            (splits["23-26"] * 17 + splits["23-26"]) +
             (streets[10] * 11 + streets[10]) +
             (corners[12] * 8 + corners[12]) +
             (corners[13] * 8 + corners[13]) +
@@ -785,9 +785,9 @@ function App() {
           allPayouts =
             straightUps["24"] * 35 +
             straightUps["24"] +
-            (splits[37] * 17 + splits[37]) +
-            (splits[39] * 17 + splits[39]) +
-            (splits[42] * 17 + splits[42]) +
+            (splits["21-24"] * 17 + splits["21-24"]) +
+            (splits["23-24"] * 17 + splits["23-24"]) +
+            (splits["24-27"] * 17 + splits["24-27"]) +
             (streets[10] * 11 + streets[10]) +
             (corners[13] * 8 + corners[13]) +
             (corners[15] * 8 + corners[15]) +
@@ -803,9 +803,9 @@ function App() {
           allPayouts =
             straightUps["25"] * 35 +
             straightUps["25"] +
-            (splits[40] * 17 + splits[40]) +
-            (splits[43] * 17 + splits[43]) +
-            (splits[45] * 17 + splits[45]) +
+            (splits["22-25"] * 17 + splits["22-25"]) +
+            (splits["25-26"] * 17 + splits["25-26"]) +
+            (splits["25-28"] * 17 + splits["25-28"]) +
             (streets[11] * 11 + streets[11]) +
             (corners[14] * 8 + corners[14]) +
             (corners[16] * 8 + corners[16]) +
@@ -821,10 +821,10 @@ function App() {
           allPayouts =
             straightUps["26"] * 35 +
             straightUps["26"] +
-            (splits[41] * 17 + splits[41]) +
-            (splits[43] * 17 + splits[43]) +
-            (splits[44] * 17 + splits[44]) +
-            (splits[46] * 17 + splits[46]) +
+            (splits["23-26"] * 17 + splits["23-26"]) +
+            (splits["25-26"] * 17 + splits["25-26"]) +
+            (splits["26-27"] * 17 + splits["26-27"]) +
+            (splits["26-29"] * 17 + splits["26-29"]) +
             (streets[11] * 11 + streets[11]) +
             (corners[14] * 8 + corners[14]) +
             (corners[15] * 8 + corners[15]) +
@@ -842,9 +842,9 @@ function App() {
           allPayouts =
             straightUps["27"] * 35 +
             straightUps["27"] +
-            (splits[42] * 17 + splits[42]) +
-            (splits[44] * 17 + splits[44]) +
-            (splits[47] * 17 + splits[47]) +
+            (splits["24-27"] * 17 + splits["24-27"]) +
+            (splits["26-27"] * 17 + splits["26-27"]) +
+            (splits["27-30"] * 17 + splits["27-30"]) +
             (streets[11] * 11 + streets[11]) +
             (corners[15] * 8 + corners[15]) +
             (corners[17] * 8 + corners[17]) +
@@ -860,9 +860,9 @@ function App() {
           allPayouts =
             straightUps["28"] * 35 +
             straightUps["28"] +
-            (splits[42] * 17 + splits[42]) +
-            (splits[44] * 17 + splits[44]) +
-            (splits[47] * 17 + splits[47]) +
+            (splits["24-27"] * 17 + splits["24-27"]) +
+            (splits["26-27"] * 17 + splits["26-27"]) +
+            (splits["27-30"] * 17 + splits["27-30"]) +
             (streets[12] * 11 + streets[12]) +
             (corners[15] * 8 + corners[15]) +
             (corners[17] * 8 + corners[17]) +
@@ -878,10 +878,10 @@ function App() {
           allPayouts =
             straightUps["29"] * 35 +
             straightUps["29"] +
-            (splits[46] * 17 + splits[46]) +
-            (splits[48] * 17 + splits[48]) +
-            (splits[49] * 17 + splits[49]) +
-            (splits[51] * 17 + splits[51]) +
+            (splits["26-29"] * 17 + splits["26-29"]) +
+            (splits["28-29"] * 17 + splits["28-29"]) +
+            (splits["29-30"] * 17 + splits["29-30"]) +
+            (splits["29-32"] * 17 + splits["29-32"]) +
             (streets[12] * 11 + streets[12]) +
             (corners[15] * 8 + corners[15]) +
             (corners[16] * 8 + corners[16]) +
@@ -899,9 +899,9 @@ function App() {
           allPayouts =
             straightUps["30"] * 35 +
             straightUps["30"] +
-            (splits[47] * 17 + splits[47]) +
-            (splits[49] * 17 + splits[49]) +
-            (splits[52] * 17 + splits[52]) +
+            (splits["27-30"] * 17 + splits["27-30"]) +
+            (splits["29-30"] * 17 + splits["29-30"]) +
+            (splits["30-33"] * 17 + splits["30-33"]) +
             (streets[12] * 11 + streets[12]) +
             (corners[16] * 8 + corners[16]) +
             (corners[18] * 8 + corners[18]) +
@@ -917,9 +917,9 @@ function App() {
           allPayouts =
             straightUps["31"] * 35 +
             straightUps["31"] +
-            (splits[50] * 17 + splits[50]) +
-            (splits[53] * 17 + splits[53]) +
-            (splits[55] * 17 + splits[55]) +
+            (splits["28-31"] * 17 + splits["28-31"]) +
+            (splits["31-32"] * 17 + splits["31-32"]) +
+            (splits["31-34"] * 17 + splits["31-34"]) +
             (streets[13] * 11 + streets[13]) +
             (corners[17] * 8 + corners[17]) +
             (corners[19] * 8 + corners[19]) +
@@ -935,10 +935,10 @@ function App() {
           allPayouts =
             straightUps["32"] * 35 +
             straightUps["32"] +
-            (splits[51] * 17 + splits[51]) +
-            (splits[53] * 17 + splits[53]) +
-            (splits[54] * 17 + splits[54]) +
-            (splits[55] * 17 + splits[55]) +
+            (splits["29-32"] * 17 + splits["29-32"]) +
+            (splits["31-32"] * 17 + splits["31-32"]) +
+            (splits["32-33"] * 17 + splits["32-33"]) +
+            (splits["31-34"] * 17 + splits["31-34"]) +
             (streets[13] * 11 + streets[13]) +
             (corners[17] * 8 + corners[17]) +
             (corners[18] * 8 + corners[18]) +
@@ -956,9 +956,9 @@ function App() {
           allPayouts =
             straightUps["33"] * 35 +
             straightUps["33"] +
-            (splits[52] * 17 + splits[52]) +
-            (splits[54] * 17 + splits[54]) +
-            (splits[57] * 17 + splits[57]) +
+            (splits["30-33"] * 17 + splits["30-33"]) +
+            (splits["32-33"] * 17 + splits["32-33"]) +
+            (splits["33-36"] * 17 + splits["33-36"]) +
             (streets[13] * 11 + streets[13]) +
             (corners[18] * 8 + corners[18]) +
             (corners[20] * 8 + corners[20]) +
@@ -974,8 +974,8 @@ function App() {
           allPayouts =
             straightUps["34"] * 35 +
             straightUps["34"] +
-            (splits[55] * 17 + splits[55]) +
-            (splits[58] * 17 + splits[58]) +
+            (splits["31-34"] * 17 + splits["31-34"]) +
+            (splits["34-35"] * 17 + splits["34-35"]) +
             (streets[14] * 11 + streets[14]) +
             (corners[19] * 8 + corners[19]) +
             (corners[21] * 8 + corners[21]) +
@@ -990,9 +990,9 @@ function App() {
           allPayouts =
             straightUps["35"] * 35 +
             straightUps["35"] +
-            (splits[56] * 17 + splits[56]) +
-            (splits[58] * 17 + splits[58]) +
-            (splits[59] * 17 + splits[59]) +
+            (splits["32-35"] * 17 + splits["32-35"]) +
+            (splits["34-35"] * 17 + splits["34-35"]) +
+            (splits["35-36"] * 17 + splits["35-36"]) +
             (streets[14] * 11 + streets[14]) +
             (corners[20] * 8 + corners[20]) +
             (corners[21] * 8 + corners[21]) +
@@ -1007,8 +1007,8 @@ function App() {
           allPayouts =
             straightUps["36"] * 35 +
             straightUps["36"] +
-            (splits[57] * 17 + splits[57]) +
-            (splits[59] * 17 + splits[59]) +
+            (splits["33-36"] * 17 + splits["33-36"]) +
+            (splits["35-36"] * 17 + splits["35-36"]) +
             (streets[14] * 11 + streets[14]) +
             (corners[21] * 8 + corners[21]) +
             (doubleStreets[10] * 5 + doubleStreets[10]) +
@@ -1022,8 +1022,8 @@ function App() {
           allPayouts =
             straightUps["00"] * 35 +
             straightUps["00"] +
-            (splits[0] * 17 + splits[0]) +
-            (splits[2] * 17 + splits[2]) +
+            (splits["0-00"] * 17 + splits["0-00"]) +
+            (splits["00-3"] * 17 + splits["00-3"]) +
             (streets[0] * 11 + streets[0]) +
             (streets[1] * 11 + streets[1]) +
             (basket * 6 + basket);
