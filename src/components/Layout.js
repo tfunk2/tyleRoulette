@@ -48,7 +48,7 @@ export default function Layout({
       let newSplits = {...splits};
       let newStraightUps = {...straightUps};
       let newColumns = columns.flat();
-      let newStreets = streets.flat();
+      let newStreets = {...streets};
       let newDoubleStreets = doubleStreets.flat();
       let newHighLow = highLow.flat();
       let newOddEven = oddEven.flat();
@@ -284,8 +284,8 @@ export default function Layout({
           break;
         case "00-2-3 street":
           setChipCount(chipCount - currentBetValue);
-          newStreets[0] = streets[0] + currentBetValue;
-          setStreets([...newStreets]);
+          newStreets["00-2-3"] = streets["00-2-3"] + currentBetValue;
+          setStreets({...newStreets});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 0]);
           setRecentBetValue(currentBetValue);
@@ -476,8 +476,8 @@ export default function Layout({
           break;
         case "0-00-2 street":
           setChipCount(chipCount - currentBetValue);
-          newStreets[1] = streets[1] + currentBetValue;
-          setStreets([...newStreets]);
+          newStreets["0-00-2"] = streets["0-00-2"] + currentBetValue;
+          setStreets({...newStreets});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 1]);
           setRecentBetValue(currentBetValue);
@@ -683,8 +683,8 @@ export default function Layout({
           break;
         case "0-1-2 street":
           setChipCount(chipCount - currentBetValue);
-          newStreets[2] = streets[2] + currentBetValue;
-          setStreets([...newStreets]);
+          newStreets["0-1-2"] = streets["0-1-2"] + currentBetValue;
+          setStreets({...newStreets});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 2]);
           setRecentBetValue(currentBetValue);
@@ -1075,8 +1075,8 @@ export default function Layout({
           break;
         case "1-2-3 street":
           setChipCount(chipCount - currentBetValue);
-          newStreets[3] = streets[3] + currentBetValue;
-          setStreets([...newStreets]);
+          newStreets["1-2-3"] = streets["1-2-3"] + currentBetValue;
+          setStreets({...newStreets});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 3]);
           setRecentBetValue(currentBetValue);
@@ -1091,8 +1091,8 @@ export default function Layout({
           break;
         case "4-5-6 street":
           setChipCount(chipCount - currentBetValue);
-          newStreets[4] = streets[4] + currentBetValue;
-          setStreets([...newStreets]);
+          newStreets["4-5-6"] = streets["4-5-6"] + currentBetValue;
+          setStreets({...newStreets});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 4]);
           setRecentBetValue(currentBetValue);
@@ -1107,8 +1107,8 @@ export default function Layout({
           break;
         case "7-8-9 street":
           setChipCount(chipCount - currentBetValue);
-          newStreets[5] = streets[5] + currentBetValue;
-          setStreets([...newStreets]);
+          newStreets["7-8-9"] = streets["7-8-9"] + currentBetValue;
+          setStreets({...newStreets});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 5]);
           setRecentBetValue(currentBetValue);
@@ -1123,8 +1123,8 @@ export default function Layout({
           break;
         case "10-11-12 street":
           setChipCount(chipCount - currentBetValue);
-          newStreets[6] = streets[6] + currentBetValue;
-          setStreets([...newStreets]);
+          newStreets["10-11-12"] = streets["10-11-12"] + currentBetValue;
+          setStreets({...newStreets});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 6]);
           setRecentBetValue(currentBetValue);
@@ -1139,8 +1139,8 @@ export default function Layout({
           break;
         case "13-14-15 street":
           setChipCount(chipCount - currentBetValue);
-          newStreets[7] = streets[7] + currentBetValue;
-          setStreets([...newStreets]);
+          newStreets["13-14-15"] = streets["13-14-15"] + currentBetValue;
+          setStreets({...newStreets});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 7]);
           setRecentBetValue(currentBetValue);
@@ -1155,8 +1155,8 @@ export default function Layout({
           break;
         case "16-17-18 street":
           setChipCount(chipCount - currentBetValue);
-          newStreets[8] = streets[8] + currentBetValue;
-          setStreets([...newStreets]);
+          newStreets["16-17-18"] = streets["16-17-18"] + currentBetValue;
+          setStreets({...newStreets});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 8]);
           setRecentBetValue(currentBetValue);
@@ -1171,8 +1171,8 @@ export default function Layout({
           break;
         case "19-20-21 street":
           setChipCount(chipCount - currentBetValue);
-          newStreets[9] = streets[9] + currentBetValue;
-          setStreets([...newStreets]);
+          newStreets["19-20-21"] = streets["19-20-21"] + currentBetValue;
+          setStreets({...newStreets});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 9]);
           setRecentBetValue(currentBetValue);
@@ -1187,8 +1187,8 @@ export default function Layout({
           break;
         case "22-23-24 street":
           setChipCount(chipCount - currentBetValue);
-          newStreets[10] = streets[10] + currentBetValue;
-          setStreets([...newStreets]);
+          newStreets["22-23-24"] = streets["22-23-24"] + currentBetValue;
+          setStreets({...newStreets});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 10]);
           setRecentBetValue(currentBetValue);
@@ -1203,8 +1203,8 @@ export default function Layout({
           break;
         case "25-26-27 street":
           setChipCount(chipCount - currentBetValue);
-          newStreets[11] = streets[11] + currentBetValue;
-          setStreets([...newStreets]);
+          newStreets["25-26-27"] = streets["25-26-27"] + currentBetValue;
+          setStreets({...newStreets});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 11]);
           setRecentBetValue(currentBetValue);
@@ -1219,8 +1219,8 @@ export default function Layout({
           break;
         case "28-29-30 street":
           setChipCount(chipCount - currentBetValue);
-          newStreets[12] = streets[12] + currentBetValue;
-          setStreets([...newStreets]);
+          newStreets["28-29-30"] = streets["28-29-30"] + currentBetValue;
+          setStreets({...newStreets});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 12]);
           setRecentBetValue(currentBetValue);
@@ -1235,8 +1235,8 @@ export default function Layout({
           break;
         case "31-32-33 street":
           setChipCount(chipCount - currentBetValue);
-          newStreets[13] = streets[13] + currentBetValue;
-          setStreets([...newStreets]);
+          newStreets["31-32-33"] = streets["31-32-33"] + currentBetValue;
+          setStreets({...newStreets});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 13]);
           setRecentBetValue(currentBetValue);
@@ -1251,8 +1251,8 @@ export default function Layout({
           break;
         case "34-35-36 street":
           setChipCount(chipCount - currentBetValue);
-          newStreets[14] = streets[14] + currentBetValue;
-          setStreets([...newStreets]);
+          newStreets["34-35-36"] = streets["34-35-36"] + currentBetValue;
+          setStreets({...newStreets});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 14]);
           setRecentBetValue(currentBetValue);
@@ -1960,14 +1960,14 @@ export default function Layout({
             className="bet-box street"
             onClick={() => increaseBet("00-2-3 street")}
           >
-            {streets[0] > 0 ? (
+            {streets["00-2-3"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{streets[0]}</p>
+                <p className="bet-text">{streets["00-2-3"]}</p>
               </div>
             ) : (
               <></>
@@ -2370,14 +2370,14 @@ export default function Layout({
             className="bet-box street"
             onClick={() => increaseBet("0-00-2 street")}
           >
-            {streets[1] > 0 ? (
+            {streets["0-00-2"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{streets[1]}</p>
+                <p className="bet-text">{streets["0-00-2"]}</p>
               </div>
             ) : (
               <></>
@@ -2892,14 +2892,14 @@ export default function Layout({
             className="bet-box street"
             onClick={() => increaseBet("0-1-2 street")}
           >
-            {streets[2] > 0 ? (
+            {streets["0-1-2"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{streets[2]}</p>
+                <p className="bet-text">{streets["0-1-2"]}</p>
               </div>
             ) : (
               <></>
@@ -3838,14 +3838,14 @@ export default function Layout({
             className="bet-box street"
             onClick={() => increaseBet("1-2-3 street")}
           >
-            {streets[3] > 0 ? (
+            {streets["1-2-3"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{streets[3]}</p>
+                <p className="bet-text">{streets["1-2-3"]}</p>
               </div>
             ) : (
               <></>
@@ -3872,14 +3872,14 @@ export default function Layout({
             className="bet-box street"
             onClick={() => increaseBet("4-5-6 street")}
           >
-            {streets[4] > 0 ? (
+            {streets["4-5-6"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{streets[4]}</p>
+                <p className="bet-text">{streets["4-5-6"]}</p>
               </div>
             ) : (
               <></>
@@ -3906,14 +3906,14 @@ export default function Layout({
             className="bet-box street"
             onClick={() => increaseBet("7-8-9 street")}
           >
-            {streets[5] > 0 ? (
+            {streets["7-8-9"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{streets[5]}</p>
+                <p className="bet-text">{streets["7-8-9"]}</p>
               </div>
             ) : (
               <></>
@@ -3940,14 +3940,14 @@ export default function Layout({
             className="bet-box street"
             onClick={() => increaseBet("10-11-12 street")}
           >
-            {streets[6] > 0 ? (
+            {streets["10-11-12"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{streets[6]}</p>
+                <p className="bet-text">{streets["10-11-12"]}</p>
               </div>
             ) : (
               <></>
@@ -3974,14 +3974,14 @@ export default function Layout({
             className="bet-box street"
             onClick={() => increaseBet("13-14-15 street")}
           >
-            {streets[7] > 0 ? (
+            {streets["13-14-15"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{streets[7]}</p>
+                <p className="bet-text">{streets["13-14-15"]}</p>
               </div>
             ) : (
               <></>
@@ -4008,14 +4008,14 @@ export default function Layout({
             className="bet-box street"
             onClick={() => increaseBet("16-17-18 street")}
           >
-            {streets[8] > 0 ? (
+            {streets["16-17-18"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{streets[8]}</p>
+                <p className="bet-text">{streets["16-17-18"]}</p>
               </div>
             ) : (
               <></>
@@ -4042,14 +4042,14 @@ export default function Layout({
             className="bet-box street"
             onClick={() => increaseBet("19-20-21 street")}
           >
-            {streets[9] > 0 ? (
+            {streets["19-20-21"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{streets[9]}</p>
+                <p className="bet-text">{streets["19-20-21"]}</p>
               </div>
             ) : (
               <></>
@@ -4076,14 +4076,14 @@ export default function Layout({
             className="bet-box street"
             onClick={() => increaseBet("22-23-24 street")}
           >
-            {streets[10] > 0 ? (
+            {streets["22-23-24"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{streets[10]}</p>
+                <p className="bet-text">{streets["22-23-24"]}</p>
               </div>
             ) : (
               <></>
@@ -4110,14 +4110,14 @@ export default function Layout({
             className="bet-box street"
             onClick={() => increaseBet("25-26-27 street")}
           >
-            {streets[11] > 0 ? (
+            {streets["25-26-27"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{streets[11]}</p>
+                <p className="bet-text">{streets["25-26-27"]}</p>
               </div>
             ) : (
               <></>
@@ -4144,14 +4144,14 @@ export default function Layout({
             className="bet-box street"
             onClick={() => increaseBet("28-29-30 street")}
           >
-            {streets[12] > 0 ? (
+            {streets["28-29-30"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{streets[12]}</p>
+                <p className="bet-text">{streets["28-29-30"]}</p>
               </div>
             ) : (
               <></>
@@ -4178,14 +4178,14 @@ export default function Layout({
             className="bet-box street"
             onClick={() => increaseBet("31-32-33 street")}
           >
-            {streets[13] > 0 ? (
+            {streets["31-32-33"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{streets[13]}</p>
+                <p className="bet-text">{streets["31-32-33"]}</p>
               </div>
             ) : (
               <></>
@@ -4212,14 +4212,14 @@ export default function Layout({
             className="bet-box street"
             onClick={() => increaseBet("34-35-36 street")}
           >
-            {streets[14] > 0 ? (
+            {streets["34-35-36"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{streets[14]}</p>
+                <p className="bet-text">{streets["34-35-36"]}</p>
               </div>
             ) : (
               <></>
