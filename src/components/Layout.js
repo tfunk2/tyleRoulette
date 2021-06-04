@@ -54,7 +54,7 @@ export default function Layout({
       let newOddEven = oddEven.flat();
       let newRedBlack = redBlack.flat();
       let newDozens = dozens.flat();
-      let newCorners = corners.flat();
+      let newCorners = {...corners};
       let betTypeRegex = /[a-z]+-?[a-z]+?$|low|high/;
 
       switch (betToIncrease) {
@@ -300,10 +300,10 @@ export default function Layout({
           break;
         case "2-3-5-6 corner":
           setChipCount(chipCount - currentBetValue);
-          newCorners[1] = corners[1] + currentBetValue;
-          setCorners([...newCorners]);
+          newCorners["2-3-5-6"] = corners["2-3-5-6"] + currentBetValue;
+          setCorners({...newCorners});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 1]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "2-3-5-6"]);
           setRecentBetValue(currentBetValue);
           break;
         case "5-6 split":
@@ -316,10 +316,10 @@ export default function Layout({
           break;
         case "5-6-8-9 corner":
           setChipCount(chipCount - currentBetValue);
-          newCorners[3] = corners[3] + currentBetValue;
-          setCorners([...newCorners]);
+          newCorners["5-6-8-9"] = corners["5-6-8-9"] + currentBetValue;
+          setCorners({...newCorners});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 3]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "5-6-8-9"]);
           setRecentBetValue(currentBetValue);
           break;
         case "8-9 split":
@@ -332,10 +332,10 @@ export default function Layout({
           break;
         case "8-9-11-12 corner":
           setChipCount(chipCount - currentBetValue);
-          newCorners[5] = corners[5] + currentBetValue;
-          setCorners([...newCorners]);
+          newCorners["8-9-11-12"] = corners["8-9-11-12"] + currentBetValue;
+          setCorners({...newCorners});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 5]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "8-9-11-12"]);
           setRecentBetValue(currentBetValue);
           break;
         case "11-12 split":
@@ -348,10 +348,10 @@ export default function Layout({
           break;
         case "11-12-14-15 corner":
           setChipCount(chipCount - currentBetValue);
-          newCorners[7] = corners[7] + currentBetValue;
-          setCorners([...newCorners]);
+          newCorners["11-12-14-15"] = corners["11-12-14-15"] + currentBetValue;
+          setCorners({...newCorners});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 7]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "11-12-14-15"]);
           setRecentBetValue(currentBetValue);
           break;
         case "14-15 split":
@@ -364,10 +364,10 @@ export default function Layout({
           break;
         case "14-15-17-18 corner":
           setChipCount(chipCount - currentBetValue);
-          newCorners[9] = corners[9] + currentBetValue;
-          setCorners([...newCorners]);
+          newCorners["14-15-17-18"] = corners["14-15-17-18"] + currentBetValue;
+          setCorners({...newCorners});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 9]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "14-15-17-18"]);
           setRecentBetValue(currentBetValue);
           break;
         case "17-18 split":
@@ -380,10 +380,10 @@ export default function Layout({
           break;
         case "17-18-20-21 corner":
           setChipCount(chipCount - currentBetValue);
-          newCorners[11] = corners[11] + currentBetValue;
-          setCorners([...newCorners]);
+          newCorners["17-18-20-21"] = corners["17-18-20-21"] + currentBetValue;
+          setCorners({...newCorners});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 11]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "17-18-20-21"]);
           setRecentBetValue(currentBetValue);
           break;
         case "20-21 split":
@@ -396,10 +396,10 @@ export default function Layout({
           break;
         case "20-21-23-24 corner":
           setChipCount(chipCount - currentBetValue);
-          newCorners[13] = corners[13] + currentBetValue;
-          setCorners([...newCorners]);
+          newCorners["20-21-23-24"] = corners["20-21-23-24"] + currentBetValue;
+          setCorners({...newCorners});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 13]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "20-21-23-24"]);
           setRecentBetValue(currentBetValue);
           break;
         case "23-24 split":
@@ -412,10 +412,10 @@ export default function Layout({
           break;
         case "23-24-26-27 corner":
           setChipCount(chipCount - currentBetValue);
-          newCorners[15] = corners[15] + currentBetValue;
-          setCorners([...newCorners]);
+          newCorners["23-24-26-27"] = corners["23-24-26-27"] + currentBetValue;
+          setCorners({...newCorners});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 15]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "23-24-26-27"]);
           setRecentBetValue(currentBetValue);
           break;
         case "26-27 split":
@@ -428,10 +428,10 @@ export default function Layout({
           break;
         case "26-27-29-30 corner":
           setChipCount(chipCount - currentBetValue);
-          newCorners[17] = corners[17] + currentBetValue;
-          setCorners([...newCorners]);
+          newCorners["26-27-29-30"] = corners["26-27-29-30"] + currentBetValue;
+          setCorners({...newCorners});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 17]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "26-27-29-30"]);
           setRecentBetValue(currentBetValue);
           break;
         case "29-30 split":
@@ -444,10 +444,10 @@ export default function Layout({
           break;
         case "29-30-32-33 corner":
           setChipCount(chipCount - currentBetValue);
-          newCorners[19] = corners[19] + currentBetValue;
-          setCorners([...newCorners]);
+          newCorners["29-30-32-33"] = corners["29-30-32-33"] + currentBetValue;
+          setCorners({...newCorners});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 19]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "29-30-32-33"]);
           setRecentBetValue(currentBetValue);
           break;
         case "32-33 split":
@@ -460,10 +460,10 @@ export default function Layout({
           break;
         case "32-33-35-36 corner":
           setChipCount(chipCount - currentBetValue);
-          newCorners[21] = corners[21] + currentBetValue;
-          setCorners([...newCorners]);
+          newCorners["32-33-35-36"] = corners["32-33-35-36"] + currentBetValue;
+          setCorners({...newCorners});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 21]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "32-33-35-36"]);
           setRecentBetValue(currentBetValue);
           break;
         case "35-36 split":
@@ -699,10 +699,10 @@ export default function Layout({
           break;
         case "1-2-4-5 corner":
           setChipCount(chipCount - currentBetValue);
-          newCorners[0] = corners[0] + currentBetValue;
-          setCorners([...newCorners]);
+          newCorners["1-2-4-5"] = corners["1-2-4-5"] + currentBetValue;
+          setCorners({...newCorners});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 0]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "1-2-4-5"]);
           setRecentBetValue(currentBetValue);
           break;
         case "4-5 split":
@@ -715,10 +715,10 @@ export default function Layout({
           break;
         case "4-5-7-8 corner":
           setChipCount(chipCount - currentBetValue);
-          newCorners[2] = corners[2] + currentBetValue;
-          setCorners([...newCorners]);
+          newCorners["4-5-7-8"] = corners["4-5-7-8"] + currentBetValue;
+          setCorners({...newCorners});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 2]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "4-5-7-8"]);
           setRecentBetValue(currentBetValue);
           break;
         case "7-8 split":
@@ -731,10 +731,10 @@ export default function Layout({
           break;
         case "7-8-10-11 corner":
           setChipCount(chipCount - currentBetValue);
-          newCorners[4] = corners[4] + currentBetValue;
-          setCorners([...newCorners]);
+          newCorners["7-8-10-11"] = corners["7-8-10-11"] + currentBetValue;
+          setCorners({...newCorners});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 4]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "7-8-10-11"]);
           setRecentBetValue(currentBetValue);
           break;
         case "10-11 split":
@@ -747,10 +747,10 @@ export default function Layout({
           break;
         case "10-11-13-14 corner":
           setChipCount(chipCount - currentBetValue);
-          newCorners[6] = corners[6] + currentBetValue;
-          setCorners([...newCorners]);
+          newCorners["10-11-13-14"] = corners["10-11-13-14"] + currentBetValue;
+          setCorners({...newCorners});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 6]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "10-11-13-14"]);
           setRecentBetValue(currentBetValue);
           break;
         case "13-14 split":
@@ -763,10 +763,10 @@ export default function Layout({
           break;
         case "13-14-16-17 corner":
           setChipCount(chipCount - currentBetValue);
-          newCorners[8] = corners[8] + currentBetValue;
-          setCorners([...newCorners]);
+          newCorners["13-14-16-17"] = corners["13-14-16-17"] + currentBetValue;
+          setCorners({...newCorners});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 8]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "13-14-16-17"]);
           setRecentBetValue(currentBetValue);
           break;
         case "16-17 split":
@@ -779,10 +779,10 @@ export default function Layout({
           break;
         case "16-17-19-20 corner":
           setChipCount(chipCount - currentBetValue);
-          newCorners[10] = corners[10] + currentBetValue;
-          setCorners([...newCorners]);
+          newCorners["16-17-19-20"] = corners["16-17-19-20"] + currentBetValue;
+          setCorners({...newCorners});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 10]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "16-17-19-20"]);
           setRecentBetValue(currentBetValue);
           break;
         case "19-20 split":
@@ -795,10 +795,10 @@ export default function Layout({
           break;
         case "19-20-22-23 corner":
           setChipCount(chipCount - currentBetValue);
-          newCorners[12] = corners[12] + currentBetValue;
-          setCorners([...newCorners]);
+          newCorners["19-20-22-23"] = corners["19-20-22-23"] + currentBetValue;
+          setCorners({...newCorners});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 12]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "19-20-22-23"]);
           setRecentBetValue(currentBetValue);
           break;
         case "22-23 split":
@@ -811,10 +811,10 @@ export default function Layout({
           break;
         case "22-23-25-26 corner":
           setChipCount(chipCount - currentBetValue);
-          newCorners[14] = corners[14] + currentBetValue;
-          setCorners([...newCorners]);
+          newCorners["22-23-25-26"] = corners["22-23-25-26"] + currentBetValue;
+          setCorners({...newCorners});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 14]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "22-23-25-26"]);
           setRecentBetValue(currentBetValue);
           break;
         case "25-26 split":
@@ -827,10 +827,10 @@ export default function Layout({
           break;
         case "25-26-28-29 corner":
           setChipCount(chipCount - currentBetValue);
-          newCorners[16] = corners[16] + currentBetValue;
-          setCorners([...newCorners]);
+          newCorners["25-26-28-29"] = corners["25-26-28-29"] + currentBetValue;
+          setCorners({...newCorners});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 16]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "25-26-28-29"]);
           setRecentBetValue(currentBetValue);
           break;
         case "28-29 split":
@@ -843,10 +843,10 @@ export default function Layout({
           break;
         case "28-29-31-32 corner":
           setChipCount(chipCount - currentBetValue);
-          newCorners[18] = corners[18] + currentBetValue;
-          setCorners([...newCorners]);
+          newCorners["28-29-31-32"] = corners["28-29-31-32"] + currentBetValue;
+          setCorners({...newCorners});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 18]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "28-29-31-32"]);
           setRecentBetValue(currentBetValue);
           break;
         case "31-32 split":
@@ -859,10 +859,10 @@ export default function Layout({
           break;
         case "31-32-34-35 corner":
           setChipCount(chipCount - currentBetValue);
-          newCorners[20] = corners[20] + currentBetValue;
-          setCorners([...newCorners]);
+          newCorners["31-32-34-35"] = corners["31-32-34-35"] + currentBetValue;
+          setCorners({...newCorners});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 20]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "31-32-34-35"]);
           setRecentBetValue(currentBetValue);
           break;
         case "34-35 split":
@@ -1994,14 +1994,14 @@ export default function Layout({
             className="bet-box corner"
             onClick={() => increaseBet("2-3-5-6 corner")}
           >
-            {corners[1] > 0 ? (
+            {corners["2-3-5-6"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{corners[1]}</p>
+                <p className="bet-text">{corners["2-3-5-6"]}</p>
               </div>
             ) : (
               <></>
@@ -2028,14 +2028,14 @@ export default function Layout({
             className="bet-box corner"
             onClick={() => increaseBet("5-6-8-9 corner")}
           >
-            {corners[3] > 0 ? (
+            {corners["5-6-8-9"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{corners[3]}</p>
+                <p className="bet-text">{corners["5-6-8-9"]}</p>
               </div>
             ) : (
               <></>
@@ -2062,14 +2062,14 @@ export default function Layout({
             className="bet-box corner"
             onClick={() => increaseBet("8-9-11-12 corner")}
           >
-            {corners[5] > 0 ? (
+            {corners["8-9-11-12"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{corners[5]}</p>
+                <p className="bet-text">{corners["8-9-11-12"]}</p>
               </div>
             ) : (
               <></>
@@ -2096,14 +2096,14 @@ export default function Layout({
             className="bet-box corner"
             onClick={() => increaseBet("11-12-14-15 corner")}
           >
-            {corners[7] > 0 ? (
+            {corners["11-12-14-15"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{corners[7]}</p>
+                <p className="bet-text">{corners["11-12-14-15"]}</p>
               </div>
             ) : (
               <></>
@@ -2130,14 +2130,14 @@ export default function Layout({
             className="bet-box corner"
             onClick={() => increaseBet("14-15-17-18 corner")}
           >
-            {corners[9] > 0 ? (
+            {corners["14-15-17-18"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{corners[9]}</p>
+                <p className="bet-text">{corners["14-15-17-18"]}</p>
               </div>
             ) : (
               <></>
@@ -2164,14 +2164,14 @@ export default function Layout({
             className="bet-box corner"
             onClick={() => increaseBet("17-18-20-21 corner")}
           >
-            {corners[11] > 0 ? (
+            {corners["17-18-20-21"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{corners[11]}</p>
+                <p className="bet-text">{corners["17-18-20-21"]}</p>
               </div>
             ) : (
               <></>
@@ -2198,14 +2198,14 @@ export default function Layout({
             className="bet-box corner"
             onClick={() => increaseBet("20-21-23-24 corner")}
           >
-            {corners[13] > 0 ? (
+            {corners["20-21-23-24"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{corners[13]}</p>
+                <p className="bet-text">{corners["20-21-23-24"]}</p>
               </div>
             ) : (
               <></>
@@ -2232,14 +2232,14 @@ export default function Layout({
             className="bet-box corner"
             onClick={() => increaseBet("23-24-26-27 corner")}
           >
-            {corners[15] > 0 ? (
+            {corners["23-24-26-27"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{corners[15]}</p>
+                <p className="bet-text">{corners["23-24-26-27"]}</p>
               </div>
             ) : (
               <></>
@@ -2266,14 +2266,14 @@ export default function Layout({
             className="bet-box corner"
             onClick={() => increaseBet("26-27-29-30 corner")}
           >
-            {corners[17] > 0 ? (
+            {corners["26-27-29-30"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{corners[17]}</p>
+                <p className="bet-text">{corners["26-27-29-30"]}</p>
               </div>
             ) : (
               <></>
@@ -2300,14 +2300,14 @@ export default function Layout({
             className="bet-box corner"
             onClick={() => increaseBet("29-30-32-33 corner")}
           >
-            {corners[19] > 0 ? (
+            {corners["29-30-32-33"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{corners[19]}</p>
+                <p className="bet-text">{corners["29-30-32-33"]}</p>
               </div>
             ) : (
               <></>
@@ -2334,14 +2334,14 @@ export default function Layout({
             className="bet-box corner"
             onClick={() => increaseBet("32-33-35-36 corner")}
           >
-            {corners[21] > 0 ? (
+            {corners["32-33-35-36"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{corners[21]}</p>
+                <p className="bet-text">{corners["32-33-35-36"]}</p>
               </div>
             ) : (
               <></>
@@ -2926,14 +2926,14 @@ export default function Layout({
             className="bet-box corner"
             onClick={() => increaseBet("1-2-4-5 corner")}
           >
-            {corners[0] > 0 ? (
+            {corners["1-2-4-5"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{corners[0]}</p>
+                <p className="bet-text">{corners["1-2-4-5"]}</p>
               </div>
             ) : (
               <></>
@@ -2960,14 +2960,14 @@ export default function Layout({
             className="bet-box corner"
             onClick={() => increaseBet("4-5-7-8 corner")}
           >
-            {corners[2] > 0 ? (
+            {corners["4-5-7-8"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{corners[2]}</p>
+                <p className="bet-text">{corners["4-5-7-8"]}</p>
               </div>
             ) : (
               <></>
@@ -2994,14 +2994,14 @@ export default function Layout({
             className="bet-box corner"
             onClick={() => increaseBet("7-8-10-11 corner")}
           >
-            {corners[4] > 0 ? (
+            {corners["7-8-10-11"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{corners[4]}</p>
+                <p className="bet-text">{corners["7-8-10-11"]}</p>
               </div>
             ) : (
               <></>
@@ -3028,14 +3028,14 @@ export default function Layout({
             className="bet-box corner"
             onClick={() => increaseBet("10-11-13-14 corner")}
           >
-            {corners[6] > 0 ? (
+            {corners["10-11-13-14"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{corners[6]}</p>
+                <p className="bet-text">{corners["10-11-13-14"]}</p>
               </div>
             ) : (
               <></>
@@ -3062,14 +3062,14 @@ export default function Layout({
             className="bet-box corner"
             onClick={() => increaseBet("13-14-16-17 corner")}
           >
-            {corners[8] > 0 ? (
+            {corners["13-14-16-17"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{corners[8]}</p>
+                <p className="bet-text">{corners["13-14-16-17"]}</p>
               </div>
             ) : (
               <></>
@@ -3096,14 +3096,14 @@ export default function Layout({
             className="bet-box corner"
             onClick={() => increaseBet("16-17-19-20 corner")}
           >
-            {corners[10] > 0 ? (
+            {corners["16-17-19-20"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{corners[10]}</p>
+                <p className="bet-text">{corners["16-17-19-20"]}</p>
               </div>
             ) : (
               <></>
@@ -3130,14 +3130,14 @@ export default function Layout({
             className="bet-box corner"
             onClick={() => increaseBet("19-20-22-23 corner")}
           >
-            {corners[12] > 0 ? (
+            {corners["19-20-22-23"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{corners[12]}</p>
+                <p className="bet-text">{corners["19-20-22-23"]}</p>
               </div>
             ) : (
               <></>
@@ -3164,14 +3164,14 @@ export default function Layout({
             className="bet-box corner"
             onClick={() => increaseBet("22-23-25-26 corner")}
           >
-            {corners[14] > 0 ? (
+            {corners["22-23-25-26"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{corners[14]}</p>
+                <p className="bet-text">{corners["22-23-25-26"]}</p>
               </div>
             ) : (
               <></>
@@ -3198,14 +3198,14 @@ export default function Layout({
             className="bet-box corner"
             onClick={() => increaseBet("25-26-28-29 corner")}
           >
-            {corners[16] > 0 ? (
+            {corners["25-26-28-29"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{corners[16]}</p>
+                <p className="bet-text">{corners["25-26-28-29"]}</p>
               </div>
             ) : (
               <></>
@@ -3232,14 +3232,14 @@ export default function Layout({
             className="bet-box corner"
             onClick={() => increaseBet("28-29-31-32 corner")}
           >
-            {corners[18] > 0 ? (
+            {corners["28-29-31-32"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{corners[18]}</p>
+                <p className="bet-text">{corners["28-29-31-32"]}</p>
               </div>
             ) : (
               <></>
@@ -3266,14 +3266,14 @@ export default function Layout({
             className="bet-box corner"
             onClick={() => increaseBet("31-32-34-35 corner")}
           >
-            {corners[20] > 0 ? (
+            {corners["31-32-34-35"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{corners[20]}</p>
+                <p className="bet-text">{corners["31-32-34-35"]}</p>
               </div>
             ) : (
               <></>
