@@ -53,7 +53,7 @@ function App() {
     "28 to 33": 0, "31 to 36": 0
   });
   const [basket, setBasket] = useState(0);
-  const [columns, setColumns] = useState([0, 0, 0]);
+  const [columns, setColumns] = useState({"1st column": 0, "2nd column": 0, "3rd column": 0});
   const [dozens, setDozens] = useState([0, 0, 0]);
   const [redBlack, setRedBlack] = useState([0, 0]);
   const [oddEven, setOddEven] = useState([0, 0]);
@@ -140,7 +140,7 @@ function App() {
       "31-32-34-35": 0, "32-33-35-36": 0
     });
     setBasket(0);
-    setColumns([0, 0, 0]);
+    setColumns({"1st column": 0, "2nd column": 0, "3rd column": 0});
     setDozens([0, 0, 0]);
     setRedBlack([0, 0]);
     setOddEven([0, 0]);
@@ -383,10 +383,10 @@ function App() {
             (splits["1-4"] * 17 + splits["1-4"]) +
             (streets["0-1-2"] * 11 + streets["0-1-2"]) +
             (streets["1-2-3"] * 11 + streets["1-2-3"]) +
-            (corners[0] * 8 + corners[0]) +
+            (corners["1-2-4-5"] * 8 + corners["1-2-4-5"]) +
             (basket * 6 + basket) +
             (doubleStreets["1 to 6"] * 5 + doubleStreets["1 to 6"]) +
-            columns[0] * 3 +
+            columns["1st column"] * 3 +
             dozens[0] * 3 +
             oddEven[0] * 2 +
             highLow[0] * 2 +
@@ -403,11 +403,11 @@ function App() {
             (streets["0-00-2"] * 11 + streets["0-00-2"]) +
             (streets["0-1-2"] * 11 + streets["0-1-2"]) +
             (streets["1-2-3"] * 11 + streets["1-2-3"]) +
-            (corners[0] * 8 + corners[0]) +
-            (corners[1] * 8 + corners[1]) +
+            (corners["1-2-4-5"] * 8 + corners["1-2-4-5"]) +
+            (corners["2-3-5-6"] * 8 + corners["2-3-5-6"]) +
             (basket * 6 + basket) +
             (doubleStreets["1 to 6"] * 5 + doubleStreets["1 to 6"]) +
-            columns[1] * 3 +
+            columns["2nd column"] * 3 +
             dozens[0] * 3 +
             oddEven[1] * 2 +
             highLow[0] * 2 +
@@ -422,10 +422,10 @@ function App() {
             (splits["3-6"] * 17 + splits["3-6"]) +
             (streets["00-2-3"] * 11 + streets["00-2-3"]) +
             (streets["1-2-3"] * 11 + streets["1-2-3"]) +
-            (corners[1] * 8 + corners[1]) +
+            (corners["2-3-5-6"] * 8 + corners["2-3-5-6"]) +
             (basket * 6 + basket) +
             (doubleStreets["1 to 6"] * 5 + doubleStreets["1 to 6"]) +
-            columns[2] * 3 +
+            columns["3rd column"] * 3 +
             dozens[0] * 3 +
             oddEven[0] * 2 +
             highLow[0] * 2 +
@@ -439,11 +439,11 @@ function App() {
             (splits["4-5"] * 17 + splits["4-5"]) +
             (splits["4-7"] * 17 + splits["4-7"]) +
             (streets["4-5-6"] * 11 + streets["4-5-6"]) +
-            (corners[0] * 8 + corners[0]) +
-            (corners[2] * 8 + corners[2]) +
+            (corners["1-2-4-5"] * 8 + corners["1-2-4-5"]) +
+            (corners["4-5-7-8"] * 8 + corners["4-5-7-8"]) +
             (doubleStreets["1 to 6"] * 5 + doubleStreets["1 to 6"]) +
             (doubleStreets["4 to 9"] * 5 + doubleStreets["4 to 9"]) +
-            columns[0] * 3 +
+            columns["1st column"] * 3 +
             dozens[0] * 3 +
             oddEven[1] * 2 +
             highLow[0] * 2 +
@@ -458,13 +458,13 @@ function App() {
             (splits["5-6"] * 17 + splits["5-6"]) +
             (splits["5-8"] * 17 + splits["5-8"]) +
             (streets["4-5-6"] * 11 + streets["4-5-6"]) +
-            (corners[0] * 8 + corners[0]) +
-            (corners[1] * 8 + corners[1]) +
-            (corners[2] * 8 + corners[2]) +
-            (corners[3] * 8 + corners[3]) +
+            (corners["1-2-4-5"] * 8 + corners["1-2-4-5"]) +
+            (corners["2-3-5-6"] * 8 + corners["2-3-5-6"]) +
+            (corners["4-5-7-8"] * 8 + corners["4-5-7-8"]) +
+            (corners["5-6-8-9"] * 8 + corners["5-6-8-9"]) +
             (doubleStreets["1 to 6"] * 5 + doubleStreets["1 to 6"]) +
             (doubleStreets["4 to 9"] * 5 + doubleStreets["4 to 9"]) +
-            columns[1] * 3 +
+            columns["2nd column"] * 3 +
             dozens[0] * 3 +
             oddEven[0] * 2 +
             highLow[0] * 2 +
@@ -478,11 +478,11 @@ function App() {
             (splits["5-6"] * 17 + splits["5-6"]) +
             (splits["6-9"] * 17 + splits["6-9"]) +
             (streets["4-5-6"] * 11 + streets["4-5-6"]) +
-            (corners[1] * 8 + corners[1]) +
-            (corners[3] * 8 + corners[3]) +
+            (corners["2-3-5-6"] * 8 + corners["2-3-5-6"]) +
+            (corners["5-6-8-9"] * 8 + corners["5-6-8-9"]) +
             (doubleStreets["1 to 6"] * 5 + doubleStreets["1 to 6"]) +
             (doubleStreets["4 to 9"] * 5 + doubleStreets["4 to 9"]) +
-            columns[2] * 3 +
+            columns["3rd column"] * 3 +
             dozens[0] * 3 +
             oddEven[1] * 2 +
             highLow[0] * 2 +
@@ -496,11 +496,11 @@ function App() {
             (splits["7-8"] * 17 + splits["7-8"]) +
             (splits["7-10"] * 17 + splits["7-10"]) +
             (streets["7-8-9"] * 11 + streets["7-8-9"]) +
-            (corners[2] * 8 + corners[2]) +
-            (corners[4] * 8 + corners[4]) +
+            (corners["4-5-7-8"] * 8 + corners["4-5-7-8"]) +
+            (corners["7-8-10-11"] * 8 + corners["7-8-10-11"]) +
             (doubleStreets["4 to 9"] * 5 + doubleStreets["4 to 9"]) +
             (doubleStreets["7 to 12"] * 5 + doubleStreets["7 to 12"]) +
-            columns[0] * 3 +
+            columns["1st column"] * 3 +
             dozens[0] * 3 +
             oddEven[0] * 2 +
             highLow[0] * 2 +
@@ -515,13 +515,13 @@ function App() {
             (splits["8-9"] * 17 + splits["8-9"]) +
             (splits["8-11"] * 17 + splits["8-11"]) +
             (streets["7-8-9"] * 11 + streets["7-8-9"]) +
-            (corners[2] * 8 + corners[2]) +
-            (corners[3] * 8 + corners[3]) +
-            (corners[4] * 8 + corners[4]) +
-            (corners[5] * 8 + corners[5]) +
+            (corners["4-5-7-8"] * 8 + corners["4-5-7-8"]) +
+            (corners["5-6-8-9"] * 8 + corners["5-6-8-9"]) +
+            (corners["7-8-10-11"] * 8 + corners["7-8-10-11"]) +
+            (corners["8-9-11-12"] * 8 + corners["8-9-11-12"]) +
             (doubleStreets["4 to 9"] * 5 + doubleStreets["4 to 9"]) +
             (doubleStreets["7 to 12"] * 5 + doubleStreets["7 to 12"]) +
-            columns[1] * 3 +
+            columns["2nd column"] * 3 +
             dozens[0] * 3 +
             oddEven[1] * 2 +
             highLow[0] * 2 +
@@ -535,11 +535,11 @@ function App() {
             (splits["8-9"] * 17 + splits["8-9"]) +
             (splits["9-12"] * 17 + splits["9-12"]) +
             (streets["7-8-9"] * 11 + streets["7-8-9"]) +
-            (corners[3] * 8 + corners[3]) +
-            (corners[5] * 8 + corners[5]) +
+            (corners["5-6-8-9"] * 8 + corners["5-6-8-9"]) +
+            (corners["8-9-11-12"] * 8 + corners["8-9-11-12"]) +
             (doubleStreets["4 to 9"] * 5 + doubleStreets["4 to 9"]) +
             (doubleStreets["7 to 12"] * 5 + doubleStreets["7 to 12"]) +
-            columns[2] * 3 +
+            columns["3rd column"] * 3 +
             dozens[0] * 3 +
             oddEven[0] * 2 +
             highLow[0] * 2 +
@@ -553,11 +553,11 @@ function App() {
             (splits["10-11"] * 17 + splits["10-11"]) +
             (splits["10-13"] * 17 + splits["10-13"]) +
             (streets["10-11-12"] * 11 + streets["10-11-12"]) +
-            (corners[4] * 8 + corners[4]) +
-            (corners[6] * 8 + corners[6]) +
+            (corners["7-8-10-11"] * 8 + corners["7-8-10-11"]) +
+            (corners["10-11-13-14"] * 8 + corners["10-11-13-14"]) +
             (doubleStreets["7 to 12"] * 5 + doubleStreets["7 to 12"]) +
             (doubleStreets["10 to 15"] * 5 + doubleStreets["10 to 15"]) +
-            columns[0] * 3 +
+            columns["1st column"] * 3 +
             dozens[0] * 3 +
             oddEven[1] * 2 +
             highLow[0] * 2 +
@@ -572,13 +572,13 @@ function App() {
             (splits["11-12"] * 17 + splits["11-12"]) +
             (splits["11-14"] * 17 + splits["11-14"]) +
             (streets["10-11-12"] * 11 + streets["10-11-12"]) +
-            (corners[4] * 8 + corners[4]) +
-            (corners[5] * 8 + corners[5]) +
-            (corners[6] * 8 + corners[6]) +
-            (corners[7] * 8 + corners[7]) +
+            (corners["7-8-10-11"] * 8 + corners["7-8-10-11"]) +
+            (corners["8-9-11-12"] * 8 + corners["8-9-11-12"]) +
+            (corners["10-11-13-14"] * 8 + corners["10-11-13-14"]) +
+            (corners["11-12-14-15"] * 8 + corners["11-12-14-15"]) +
             (doubleStreets["7 to 12"] * 5 + doubleStreets["7 to 12"]) +
             (doubleStreets["10 to 15"] * 5 + doubleStreets["10 to 15"]) +
-            columns[1] * 3 +
+            columns["2nd column"] * 3 +
             dozens[0] * 3 +
             oddEven[0] * 2 +
             highLow[0] * 2 +
@@ -592,11 +592,11 @@ function App() {
             (splits["11-12"] * 17 + splits["11-12"]) +
             (splits["12-15"] * 17 + splits["12-15"]) +
             (streets["10-11-12"] * 11 + streets["10-11-12"]) +
-            (corners[5] * 8 + corners[5]) +
-            (corners[7] * 8 + corners[7]) +
+            (corners["8-9-11-12"] * 8 + corners["8-9-11-12"]) +
+            (corners["11-12-14-15"] * 8 + corners["11-12-14-15"]) +
             (doubleStreets["7 to 12"] * 5 + doubleStreets["7 to 12"]) +
             (doubleStreets["10 to 15"] * 5 + doubleStreets["10 to 15"]) +
-            columns[2] * 3 +
+            columns["3rd column"] * 3 +
             dozens[0] * 3 +
             oddEven[1] * 2 +
             highLow[0] * 2 +
@@ -610,11 +610,11 @@ function App() {
             (splits["13-14"] * 17 + splits["13-14"]) +
             (splits["13-16"] * 17 + splits["13-16"]) +
             (streets["13-14-15"] * 11 + streets["13-14-15"]) +
-            (corners[6] * 8 + corners[6]) +
-            (corners[8] * 8 + corners[8]) +
+            (corners["10-11-13-14"] * 8 + corners["10-11-13-14"]) +
+            (corners["13-14-16-17"] * 8 + corners["13-14-16-17"]) +
             (doubleStreets["10 to 15"] * 5 + doubleStreets["10 to 15"]) +
             (doubleStreets["13 to 18"] * 5 + doubleStreets["13 to 18"]) +
-            columns[0] * 3 +
+            columns["1st column"] * 3 +
             dozens[1] * 3 +
             oddEven[0] * 2 +
             highLow[0] * 2 +
@@ -629,13 +629,13 @@ function App() {
             (splits["14-15"] * 17 + splits["14-15"]) +
             (splits["14-17"] * 17 + splits["14-17"]) +
             (streets["13-14-15"] * 11 + streets["13-14-15"]) +
-            (corners[6] * 8 + corners[6]) +
-            (corners[7] * 8 + corners[7]) +
-            (corners[8] * 8 + corners[8]) +
-            (corners[9] * 8 + corners[9]) +
+            (corners["10-11-13-14"] * 8 + corners["10-11-13-14"]) +
+            (corners["11-12-14-15"] * 8 + corners["11-12-14-15"]) +
+            (corners["13-14-16-17"] * 8 + corners["13-14-16-17"]) +
+            (corners["14-15-17-18"] * 8 + corners["14-15-17-18"]) +
             (doubleStreets["10 to 15"] * 5 + doubleStreets["10 to 15"]) +
             (doubleStreets["13 to 18"] * 5 + doubleStreets["13 to 18"]) +
-            columns[1] * 3 +
+            columns["2nd column"] * 3 +
             dozens[1] * 3 +
             oddEven[1] * 2 +
             highLow[0] * 2 +
@@ -649,11 +649,11 @@ function App() {
             (splits["14-15"] * 17 + splits["14-15"]) +
             (splits["15-18"] * 17 + splits["15-18"]) +
             (streets["13-14-15"] * 11 + streets["13-14-15"]) +
-            (corners[7] * 8 + corners[7]) +
-            (corners[9] * 8 + corners[9]) +
+            (corners["11-12-14-15"] * 8 + corners["11-12-14-15"]) +
+            (corners["14-15-17-18"] * 8 + corners["14-15-17-18"]) +
             (doubleStreets["10 to 15"] * 5 + doubleStreets["10 to 15"]) +
             (doubleStreets["13 to 18"] * 5 + doubleStreets["13 to 18"]) +
-            columns[2] * 3 +
+            columns["3rd column"] * 3 +
             dozens[1] * 3 +
             oddEven[0] * 2 +
             highLow[0] * 2 +
@@ -667,11 +667,11 @@ function App() {
             (splits["16-17"] * 17 + splits["16-17"]) +
             (splits["16-19"] * 17 + splits["16-19"]) +
             (streets["16-17-18"] * 11 + streets["16-17-18"]) +
-            (corners[8] * 8 + corners[8]) +
-            (corners[10] * 8 + corners[10]) +
+            (corners["13-14-16-17"] * 8 + corners["13-14-16-17"]) +
+            (corners["16-17-19-20"] * 8 + corners["16-17-19-20"]) +
             (doubleStreets["13 to 18"] * 5 + doubleStreets["13 to 18"]) +
             (doubleStreets["16 to 21"] * 5 + doubleStreets["16 to 21"]) +
-            columns[0] * 3 +
+            columns["1st column"] * 3 +
             dozens[1] * 3 +
             oddEven[1] * 2 +
             highLow[0] * 2 +
@@ -686,13 +686,13 @@ function App() {
             (splits["17-18"] * 17 + splits["17-18"]) +
             (splits["18-21"] * 17 + splits["18-21"]) +
             (streets["16-17-18"] * 11 + streets["16-17-18"]) +
-            (corners[8] * 8 + corners[8]) +
-            (corners[9] * 8 + corners[9]) +
-            (corners[10] * 8 + corners[10]) +
-            (corners[11] * 8 + corners[11]) +
+            (corners["13-14-16-17"] * 8 + corners["13-14-16-17"]) +
+            (corners["14-15-17-18"] * 8 + corners["14-15-17-18"]) +
+            (corners["16-17-19-20"] * 8 + corners["16-17-19-20"]) +
+            (corners["17-18-20-21"] * 8 + corners["17-18-20-21"]) +
             (doubleStreets["13 to 18"] * 5 + doubleStreets["13 to 18"]) +
             (doubleStreets["16 to 21"] * 5 + doubleStreets["16 to 21"]) +
-            columns[1] * 3 +
+            columns["2nd column"] * 3 +
             dozens[1] * 3 +
             oddEven[0] * 2 +
             highLow[0] * 2 +
@@ -706,11 +706,11 @@ function App() {
             (splits["17-18"] * 17 + splits["17-18"]) +
             (splits["18-21"] * 17 + splits["18-21"]) +
             (streets["16-17-18"] * 11 + streets["16-17-18"]) +
-            (corners[9] * 8 + corners[9]) +
-            (corners[11] * 8 + corners[11]) +
+            (corners["14-15-17-18"] * 8 + corners["14-15-17-18"]) +
+            (corners["17-18-20-21"] * 8 + corners["17-18-20-21"]) +
             (doubleStreets["13 to 18"] * 5 + doubleStreets["13 to 18"]) +
             (doubleStreets["16 to 21"] * 5 + doubleStreets["16 to 21"]) +
-            columns[2] * 3 +
+            columns["3rd column"] * 3 +
             dozens[1] * 3 +
             oddEven[1] * 2 +
             highLow[0] * 2 +
@@ -724,11 +724,11 @@ function App() {
             (splits["19-20"] * 17 + splits["19-20"]) +
             (splits["19-22"] * 17 + splits["19-22"]) +
             (streets["19-20-21"] * 11 + streets["19-20-21"]) +
-            (corners[10] * 8 + corners[10]) +
-            (corners[12] * 8 + corners[12]) +
+            (corners["16-17-19-20"] * 8 + corners["16-17-19-20"]) +
+            (corners["19-20-22-23"] * 8 + corners["19-20-22-23"]) +
             (doubleStreets["16 to 21"] * 5 + doubleStreets["16 to 21"]) +
             (doubleStreets["19 to 24"] * 5 + doubleStreets["19 to 24"]) +
-            columns[0] * 3 +
+            columns["1st column"] * 3 +
             dozens[1] * 3 +
             oddEven[0] * 2 +
             highLow[1] * 2 +
@@ -743,13 +743,13 @@ function App() {
             (splits["20-21"] * 17 + splits["20-21"]) +
             (splits["20-23"] * 17 + splits["20-23"]) +
             (streets["19-20-21"] * 11 + streets["19-20-21"]) +
-            (corners[10] * 8 + corners[10]) +
-            (corners[11] * 8 + corners[11]) +
-            (corners[12] * 8 + corners[12]) +
-            (corners[13] * 8 + corners[13]) +
+            (corners["16-17-19-20"] * 8 + corners["16-17-19-20"]) +
+            (corners["17-18-20-21"] * 8 + corners["17-18-20-21"]) +
+            (corners["19-20-22-23"] * 8 + corners["19-20-22-23"]) +
+            (corners["20-21-23-24"] * 8 + corners["20-21-23-24"]) +
             (doubleStreets["16 to 21"] * 5 + doubleStreets["16 to 21"]) +
             (doubleStreets["19 to 24"] * 5 + doubleStreets["19 to 24"]) +
-            columns[1] * 3 +
+            columns["2nd column"] * 3 +
             dozens[1] * 3 +
             oddEven[1] * 2 +
             highLow[1] * 2 +
@@ -763,11 +763,11 @@ function App() {
             (splits["20-21"] * 17 + splits["20-21"]) +
             (splits["21-24"] * 17 + splits["21-24"]) +
             (streets["19-20-21"] * 11 + streets["19-20-21"]) +
-            (corners[11] * 8 + corners[11]) +
-            (corners[13] * 8 + corners[13]) +
+            (corners["17-18-20-21"] * 8 + corners["17-18-20-21"]) +
+            (corners["20-21-23-24"] * 8 + corners["20-21-23-24"]) +
             (doubleStreets["16 to 21"] * 5 + doubleStreets["16 to 21"]) +
             (doubleStreets["19 to 24"] * 5 + doubleStreets["19 to 24"]) +
-            columns[2] * 3 +
+            columns["3rd column"] * 3 +
             dozens[1] * 3 +
             oddEven[0] * 2 +
             highLow[1] * 2 +
@@ -781,11 +781,11 @@ function App() {
             (splits["22-23"] * 17 + splits["22-23"]) +
             (splits["22-25"] * 17 + splits["22-25"]) +
             (streets["22-23-24"] * 11 + streets["22-23-24"]) +
-            (corners[12] * 8 + corners[12]) +
-            (corners[14] * 8 + corners[14]) +
+            (corners["19-20-22-23"] * 8 + corners["19-20-22-23"]) +
+            (corners["22-23-25-26"] * 8 + corners["22-23-25-26"]) +
             (doubleStreets["19 to 24"] * 5 + doubleStreets["19 to 24"]) +
             (doubleStreets["22 to 27"] * 5 + doubleStreets["22 to 27"]) +
-            columns[0] * 3 +
+            columns["1st column"] * 3 +
             dozens[1] * 3 +
             oddEven[1] * 2 +
             highLow[1] * 2 +
@@ -800,13 +800,13 @@ function App() {
             (splits["23-24"] * 17 + splits["23-24"]) +
             (splits["23-26"] * 17 + splits["23-26"]) +
             (streets["22-23-24"] * 11 + streets["22-23-24"]) +
-            (corners[12] * 8 + corners[12]) +
-            (corners[13] * 8 + corners[13]) +
-            (corners[14] * 8 + corners[14]) +
-            (corners[15] * 8 + corners[15]) +
+            (corners["19-20-22-23"] * 8 + corners["19-20-22-23"]) +
+            (corners["20-21-23-24"] * 8 + corners["20-21-23-24"]) +
+            (corners["22-23-25-26"] * 8 + corners["22-23-25-26"]) +
+            (corners["23-24-26-27"] * 8 + corners["23-24-26-27"]) +
             (doubleStreets["19 to 24"] * 5 + doubleStreets["19 to 24"]) +
             (doubleStreets["22 to 27"] * 5 + doubleStreets["22 to 27"]) +
-            columns[1] * 3 +
+            columns["2nd column"] * 3 +
             dozens[1] * 3 +
             oddEven[0] * 2 +
             highLow[1] * 2 +
@@ -820,11 +820,11 @@ function App() {
             (splits["23-24"] * 17 + splits["23-24"]) +
             (splits["24-27"] * 17 + splits["24-27"]) +
             (streets["22-23-24"] * 11 + streets["22-23-24"]) +
-            (corners[13] * 8 + corners[13]) +
-            (corners[15] * 8 + corners[15]) +
+            (corners["20-21-23-24"] * 8 + corners["20-21-23-24"]) +
+            (corners["23-24-26-27"] * 8 + corners["23-24-26-27"]) +
             (doubleStreets["19 to 24"] * 5 + doubleStreets["19 to 24"]) +
             (doubleStreets["22 to 27"] * 5 + doubleStreets["22 to 27"]) +
-            columns[2] * 3 +
+            columns["3rd column"] * 3 +
             dozens[1] * 3 +
             oddEven[1] * 2 +
             highLow[1] * 2 +
@@ -838,11 +838,11 @@ function App() {
             (splits["25-26"] * 17 + splits["25-26"]) +
             (splits["25-28"] * 17 + splits["25-28"]) +
             (streets["25-26-27"] * 11 + streets["25-26-27"]) +
-            (corners[14] * 8 + corners[14]) +
-            (corners[16] * 8 + corners[16]) +
+            (corners["22-23-25-26"] * 8 + corners["22-23-25-26"]) +
+            (corners["25-26-28-29"] * 8 + corners["25-26-28-29"]) +
             (doubleStreets["22 to 27"] * 5 + doubleStreets["22 to 27"]) +
             (doubleStreets["25 to 30"] * 5 + doubleStreets["25 to 30"]) +
-            columns[0] * 3 +
+            columns["1st column"] * 3 +
             dozens[2] * 3 +
             oddEven[0] * 2 +
             highLow[1] * 2 +
@@ -857,13 +857,13 @@ function App() {
             (splits["26-27"] * 17 + splits["26-27"]) +
             (splits["26-29"] * 17 + splits["26-29"]) +
             (streets["25-26-27"] * 11 + streets["25-26-27"]) +
-            (corners[14] * 8 + corners[14]) +
-            (corners[15] * 8 + corners[15]) +
-            (corners[16] * 8 + corners[16]) +
-            (corners[17] * 8 + corners[17]) +
+            (corners["22-23-25-26"] * 8 + corners["22-23-25-26"]) +
+            (corners["23-24-26-27"] * 8 + corners["23-24-26-27"]) +
+            (corners["25-26-28-29"] * 8 + corners["25-26-28-29"]) +
+            (corners["26-27-29-30"] * 8 + corners["26-27-29-30"]) +
             (doubleStreets["22 to 27"] * 5 + doubleStreets["22 to 27"]) +
             (doubleStreets["25 to 30"] * 5 + doubleStreets["25 to 30"]) +
-            columns[1] * 3 +
+            columns["2nd column"] * 3 +
             dozens[2] * 3 +
             oddEven[1] * 2 +
             highLow[1] * 2 +
@@ -877,11 +877,11 @@ function App() {
             (splits["26-27"] * 17 + splits["26-27"]) +
             (splits["27-30"] * 17 + splits["27-30"]) +
             (streets["25-26-27"] * 11 + streets["25-26-27"]) +
-            (corners[15] * 8 + corners[15]) +
-            (corners[17] * 8 + corners[17]) +
+            (corners["23-24-26-27"] * 8 + corners["23-24-26-27"]) +
+            (corners["26-27-29-30"] * 8 + corners["26-27-29-30"]) +
             (doubleStreets["22 to 27"] * 5 + doubleStreets["22 to 27"]) +
             (doubleStreets["25 to 30"] * 5 + doubleStreets["25 to 30"]) +
-            columns[2] * 3 +
+            columns["3rd column"] * 3 +
             dozens[2] * 3 +
             oddEven[0] * 2 +
             highLow[1] * 2 +
@@ -895,11 +895,11 @@ function App() {
             (splits["26-27"] * 17 + splits["26-27"]) +
             (splits["27-30"] * 17 + splits["27-30"]) +
             (streets["28-29-30"] * 11 + streets["28-29-30"]) +
-            (corners[15] * 8 + corners[15]) +
-            (corners[17] * 8 + corners[17]) +
+            (corners["25-26-28-29"] * 8 + corners["25-26-28-29"]) +
+            (corners["28-29-31-32"] * 8 + corners["28-29-31-32"]) +
             (doubleStreets["25 to 30"] * 5 + doubleStreets["25 to 30"]) +
             (doubleStreets["28 to 33"] * 5 + doubleStreets["28 to 33"]) +
-            columns[0] * 3 +
+            columns["1st column"] * 3 +
             dozens[2] * 3 +
             oddEven[1] * 2 +
             highLow[1] * 2 +
@@ -914,13 +914,13 @@ function App() {
             (splits["29-30"] * 17 + splits["29-30"]) +
             (splits["29-32"] * 17 + splits["29-32"]) +
             (streets["28-29-30"] * 11 + streets["28-29-30"]) +
-            (corners[15] * 8 + corners[15]) +
-            (corners[16] * 8 + corners[16]) +
-            (corners[17] * 8 + corners[17]) +
-            (corners[18] * 8 + corners[18]) +
+            (corners["25-26-28-29"] * 8 + corners["25-26-28-29"]) +
+            (corners["26-27-29-30"] * 8 + corners["26-27-29-30"]) +
+            (corners["28-29-31-32"] * 8 + corners["28-29-31-32"]) +
+            (corners["29-30-32-33"] * 8 + corners["29-30-32-33"]) +
             (doubleStreets["25 to 30"] * 5 + doubleStreets["25 to 30"]) +
             (doubleStreets["28 to 33"] * 5 + doubleStreets["28 to 33"]) +
-            columns[1] * 3 +
+            columns["2nd column"] * 3 +
             dozens[2] * 3 +
             oddEven[0] * 2 +
             highLow[1] * 2 +
@@ -934,11 +934,11 @@ function App() {
             (splits["29-30"] * 17 + splits["29-30"]) +
             (splits["30-33"] * 17 + splits["30-33"]) +
             (streets["28-29-30"] * 11 + streets["28-29-30"]) +
-            (corners[16] * 8 + corners[16]) +
-            (corners[18] * 8 + corners[18]) +
+            (corners["26-27-29-30"] * 8 + corners["26-27-29-30"]) +
+            (corners["29-30-32-33"] * 8 + corners["29-30-32-33"]) +
             (doubleStreets["25 to 30"] * 5 + doubleStreets["25 to 30"]) +
             (doubleStreets["28 to 33"] * 5 + doubleStreets["28 to 33"]) +
-            columns[2] * 3 +
+            columns["3rd column"] * 3 +
             dozens[2] * 3 +
             oddEven[1] * 2 +
             highLow[1] * 2 +
@@ -952,11 +952,11 @@ function App() {
             (splits["31-32"] * 17 + splits["31-32"]) +
             (splits["31-34"] * 17 + splits["31-34"]) +
             (streets["31-32-33"] * 11 + streets["31-32-33"]) +
-            (corners[17] * 8 + corners[17]) +
-            (corners[19] * 8 + corners[19]) +
+            (corners["28-29-31-32"] * 8 + corners["28-29-31-32"]) +
+            (corners["31-32-34-35"] * 8 + corners["31-32-34-35"]) +
             (doubleStreets["28 to 33"] * 5 + doubleStreets["28 to 33"]) +
             (doubleStreets["31 to 36"] * 5 + doubleStreets["31 to 36"]) +
-            columns[0] * 3 +
+            columns["1st column"] * 3 +
             dozens[2] * 3 +
             oddEven[0] * 2 +
             highLow[1] * 2 +
@@ -971,13 +971,13 @@ function App() {
             (splits["32-33"] * 17 + splits["32-33"]) +
             (splits["31-34"] * 17 + splits["31-34"]) +
             (streets["31-32-33"] * 11 + streets["31-32-33"]) +
-            (corners[17] * 8 + corners[17]) +
-            (corners[18] * 8 + corners[18]) +
-            (corners[19] * 8 + corners[19]) +
-            (corners[20] * 8 + corners[20]) +
+            (corners["28-29-31-32"] * 8 + corners["28-29-31-32"]) +
+            (corners["29-30-32-33"] * 8 + corners["29-30-32-33"]) +
+            (corners["31-32-34-35"] * 8 + corners["31-32-34-35"]) +
+            (corners["32-33-35-36"] * 8 + corners["32-33-35-36"]) +
             (doubleStreets["28 to 33"] * 5 + doubleStreets["28 to 33"]) +
             (doubleStreets["31 to 36"] * 5 + doubleStreets["31 to 36"]) +
-            columns[1] * 3 +
+            columns["2nd column"] * 3 +
             dozens[2] * 3 +
             oddEven[1] * 2 +
             highLow[1] * 2 +
@@ -991,11 +991,11 @@ function App() {
             (splits["32-33"] * 17 + splits["32-33"]) +
             (splits["33-36"] * 17 + splits["33-36"]) +
             (streets["31-32-33"] * 11 + streets["31-32-33"]) +
-            (corners[18] * 8 + corners[18]) +
-            (corners[20] * 8 + corners[20]) +
+            (corners["29-30-32-33"] * 8 + corners["29-30-32-33"]) +
+            (corners["32-33-35-36"] * 8 + corners["32-33-35-36"]) +
             (doubleStreets["28 to 33"] * 5 + doubleStreets["28 to 33"]) +
             (doubleStreets["31 to 36"] * 5 + doubleStreets["31 to 36"]) +
-            columns[2] * 3 +
+            columns["3rd column"] * 3 +
             dozens[2] * 3 +
             oddEven[0] * 2 +
             highLow[1] * 2 +
@@ -1008,10 +1008,9 @@ function App() {
             (splits["31-34"] * 17 + splits["31-34"]) +
             (splits["34-35"] * 17 + splits["34-35"]) +
             (streets["34-35-36"] * 11 + streets["34-35-36"]) +
-            (corners[19] * 8 + corners[19]) +
-            (corners[21] * 8 + corners[21]) +
+            (corners["31-32-34-35"] * 8 + corners["31-32-34-35"]) +
             (doubleStreets["31 to 36"] * 5 + doubleStreets["31 to 36"]) +
-            columns[0] * 3 +
+            columns["1st column"] * 3 +
             dozens[2] * 3 +
             oddEven[1] * 2 +
             highLow[1] * 2 +
@@ -1025,10 +1024,10 @@ function App() {
             (splits["34-35"] * 17 + splits["34-35"]) +
             (splits["35-36"] * 17 + splits["35-36"]) +
             (streets["34-35-36"] * 11 + streets["34-35-36"]) +
-            (corners[20] * 8 + corners[20]) +
-            (corners[21] * 8 + corners[21]) +
+            (corners["31-32-34-35"] * 8 + corners["31-32-34-35"]) +
+            (corners["32-33-35-36"] * 8 + corners["32-33-35-36"]) +
             (doubleStreets["31 to 36"] * 5 + doubleStreets["31 to 36"]) +
-            columns[1] * 3 +
+            columns["2nd column"] * 3 +
             dozens[2] * 3 +
             oddEven[0] * 2 +
             highLow[1] * 2 +
@@ -1041,9 +1040,9 @@ function App() {
             (splits["33-36"] * 17 + splits["33-36"]) +
             (splits["35-36"] * 17 + splits["35-36"]) +
             (streets["34-35-36"] * 11 + streets["34-35-36"]) +
-            (corners[21] * 8 + corners[21]) +
+            (corners["32-33-35-36"] * 8 + corners["32-33-35-36"]) +
             (doubleStreets["31 to 36"] * 5 + doubleStreets["31 to 36"]) +
-            columns[2] * 3 +
+            columns["3rd column"] * 3 +
             dozens[2] * 3 +
             oddEven[1] * 2 +
             highLow[1] * 2 +

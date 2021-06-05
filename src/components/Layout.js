@@ -47,7 +47,7 @@ export default function Layout({
       let splitRegex = /split$/;
       let newSplits = {...splits};
       let newStraightUps = {...straightUps};
-      let newColumns = columns.flat();
+      let newColumns = {...columns};
       let newStreets = {...streets};
       let newDoubleStreets = {...doubleStreets};
       let newHighLow = highLow.flat();
@@ -276,10 +276,10 @@ export default function Layout({
           break;
         case "3rd column":
           setChipCount(chipCount - currentBetValue);
-          newColumns[2] = columns[2] + currentBetValue;
-          setColumns([...newColumns]);
+          newColumns["3rd column"] = columns["3rd column"] + currentBetValue;
+          setColumns({...newColumns});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 2]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "3rd column"]);
           setRecentBetValue(currentBetValue);
           break;
         case "00-2-3 street":
@@ -668,10 +668,10 @@ export default function Layout({
           break;
         case "2nd column":
           setChipCount(chipCount - currentBetValue);
-          newColumns[1] = columns[1] + currentBetValue;
-          setColumns([...newColumns]);
+          newColumns["2nd column"] = columns["2nd column"] + currentBetValue;
+          setColumns({...newColumns});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 1]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "2nd column"]);
           setRecentBetValue(currentBetValue);
           break;
         case "basket":
@@ -1067,10 +1067,10 @@ export default function Layout({
           break;
         case "1st column":
           setChipCount(chipCount - currentBetValue);
-          newColumns[0] = columns[0] + currentBetValue;
-          setColumns([...newColumns]);
+          newColumns["1st column"] = columns["1st column"] + currentBetValue;
+          setColumns({...newColumns});
           setPendingTotalBet(pendingTotalBet + currentBetValue);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 0]);
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "1st column"]);
           setRecentBetValue(currentBetValue);
           break;
         case "1-2-3 street":
@@ -1942,14 +1942,14 @@ export default function Layout({
             className="bet-box column"
             onClick={() => increaseBet("3rd column")}
           >
-            {columns[2] > 0 ? (
+            {columns["3rd column"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{columns[2]}</p>
+                <p className="bet-text">{columns["3rd column"]}</p>
               </div>
             ) : (
               <></>
@@ -2874,14 +2874,14 @@ export default function Layout({
             className="bet-box column"
             onClick={() => increaseBet("2nd column")}
           >
-            {columns[1] > 0 ? (
+            {columns["2nd column"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{columns[1]}</p>
+                <p className="bet-text">{columns["2nd column"]}</p>
               </div>
             ) : (
               <></>
@@ -3806,14 +3806,14 @@ export default function Layout({
             className="bet-box column"
             onClick={() => increaseBet("1st column")}
           >
-            {columns[0] > 0 ? (
+            {columns["1st column"] > 0 ? (
               <div className="chip-and-bet">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{columns[0]}</p>
+                <p className="bet-text">{columns["1st column"]}</p>
               </div>
             ) : (
               <></>
