@@ -106,6 +106,10 @@
     text-align: center;
     /* border: 1px rgb(22, 22, 22) solid; */
     /* cursor: url(../images/1-chip-cursor.png), auto; */
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
 }
 
 .bet-box > .green {
