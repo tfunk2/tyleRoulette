@@ -6,37 +6,37 @@ import Ribbon from "../images/ribbon.png";
 import BlankChip from "../images/blank-chip.png";
 
 export default function Layout({
-  chipCount,
-  setChipCount,
-  currentBetValue,
-  isSpinComplete,
-  setSplits,
-  splits,
-  straightUps,
-  setStraightUps,
-  columns,
-  setColumns,
-  setCorners,
-  corners,
-  setStreets,
-  streets,
-  setDoubleStreets,
-  doubleStreets,
-  setHighLow,
-  highLow,
-  setOddEven,
-  oddEven,
-  setRedBlack,
-  redBlack,
-  setDozens,
-  dozens,
-  setPendingTotalBet,
-  pendingTotalBet,
-  basket,
-  setBasket,
-  setRecentBet,
-  setRecentBetValue,
-  winningNumber,
+  basket, 
+  chipCount, 
+  columns, 
+  corners, 
+  currentBetValue, 
+  doubleStreets, 
+  dozens, 
+  highLow, 
+  isSpinComplete, 
+  oddEven, 
+  pendingTotalBet, 
+  redBlack, 
+  setBasket, 
+  setChipCount, 
+  setColumns, 
+  setCorners, 
+  setDoubleStreets, 
+  setDozens, 
+  setHighLow, 
+  setOddEven, 
+  setPendingTotalBet, 
+  setRecentBet, 
+  setRecentBetValue, 
+  setRedBlack, 
+  setSplits, 
+  setStraightUps, 
+  setStreets, 
+  splits, 
+  straightUps, 
+  streets, 
+  winningNumber
 }) {
   const increaseBet = (betToIncrease) => {
     if (
@@ -59,1277 +59,803 @@ export default function Layout({
 
       switch (betToIncrease) {
         case "0-00 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["0-00"] = splits["0-00"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "0-00"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "00 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["00"] = straightUps["00"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "00"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "0 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["0"] = straightUps["0"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "0"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "00-3 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["00-3"] = splits["00-3"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "00-3"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "3 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["3"] = straightUps["3"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "3"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "3-6 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["3-6"] = splits["3-6"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "3-6"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "6 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["6"] = straightUps["6"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "6"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "6-9 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["6-9"] = splits["6-9"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "6-9"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "9 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["9"] = straightUps["9"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "9"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "9-12 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["9-12"] = splits["9-12"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "9-12"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "12 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["12"] = straightUps["12"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "12"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "12-15 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["12-15"] = splits["12-15"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "12-15"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "15 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["15"] = straightUps["15"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "15"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "15-18 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["15-18"] = splits["15-18"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "15-18"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "18 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["18"] = straightUps["18"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "18"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "18-21 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["18-21"] = splits["18-21"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "18-21"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "21 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["21"] = straightUps["21"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "21"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "21-24 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["21-24"] = splits["21-24"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "21-24"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "24 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["24"] = straightUps["24"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "24"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "24-27 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["24-27"] = splits["24-27"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "24-27"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "27 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["27"] = straightUps["27"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "27"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "27-30 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["27-30"] = splits["27-30"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "27-30"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "30 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["30"] = straightUps["30"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "30"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "30-33 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["30-33"] = splits["30-33"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "30-33"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "33 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["33"] = straightUps["33"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "33"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "33-36 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["33-36"] = splits["33-36"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "33-36"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "36 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["36"] = straightUps["36"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "36"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "3rd column":
-          setChipCount(chipCount - currentBetValue);
           newColumns["3rd column"] = columns["3rd column"] + currentBetValue;
           setColumns({...newColumns});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "3rd column"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "00-2-3 street":
-          setChipCount(chipCount - currentBetValue);
           newStreets["00-2-3"] = streets["00-2-3"] + currentBetValue;
           setStreets({...newStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "00-2-3"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "2-3 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["2-3"] = splits["2-3"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "2-3"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "2-3-5-6 corner":
-          setChipCount(chipCount - currentBetValue);
           newCorners["2-3-5-6"] = corners["2-3-5-6"] + currentBetValue;
           setCorners({...newCorners});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "2-3-5-6"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "5-6 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["5-6"] = splits["5-6"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "5-6"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "5-6-8-9 corner":
-          setChipCount(chipCount - currentBetValue);
           newCorners["5-6-8-9"] = corners["5-6-8-9"] + currentBetValue;
           setCorners({...newCorners});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "5-6-8-9"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "8-9 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["8-9"] = splits["8-9"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "8-9"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "8-9-11-12 corner":
-          setChipCount(chipCount - currentBetValue);
           newCorners["8-9-11-12"] = corners["8-9-11-12"] + currentBetValue;
           setCorners({...newCorners});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "8-9-11-12"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "11-12 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["11-12"] = splits["11-12"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "11-12"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "11-12-14-15 corner":
-          setChipCount(chipCount - currentBetValue);
           newCorners["11-12-14-15"] = corners["11-12-14-15"] + currentBetValue;
           setCorners({...newCorners});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "11-12-14-15"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "14-15 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["14-15"] = splits["14-15"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "14-15"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "14-15-17-18 corner":
-          setChipCount(chipCount - currentBetValue);
           newCorners["14-15-17-18"] = corners["14-15-17-18"] + currentBetValue;
           setCorners({...newCorners});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "14-15-17-18"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "17-18 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["17-18"] = splits["17-18"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "17-18"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "17-18-20-21 corner":
-          setChipCount(chipCount - currentBetValue);
           newCorners["17-18-20-21"] = corners["17-18-20-21"] + currentBetValue;
           setCorners({...newCorners});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "17-18-20-21"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "20-21 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["20-21"] = splits["20-21"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "20-21"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "20-21-23-24 corner":
-          setChipCount(chipCount - currentBetValue);
           newCorners["20-21-23-24"] = corners["20-21-23-24"] + currentBetValue;
           setCorners({...newCorners});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "20-21-23-24"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "23-24 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["23-24"] = splits["23-24"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "23-24"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "23-24-26-27 corner":
-          setChipCount(chipCount - currentBetValue);
           newCorners["23-24-26-27"] = corners["23-24-26-27"] + currentBetValue;
           setCorners({...newCorners});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "23-24-26-27"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "26-27 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["26-27"] = splits["26-27"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "26-27"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "26-27-29-30 corner":
-          setChipCount(chipCount - currentBetValue);
           newCorners["26-27-29-30"] = corners["26-27-29-30"] + currentBetValue;
           setCorners({...newCorners});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "26-27-29-30"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "29-30 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["29-30"] = splits["29-30"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "29-30"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "29-30-32-33 corner":
-          setChipCount(chipCount - currentBetValue);
           newCorners["29-30-32-33"] = corners["29-30-32-33"] + currentBetValue;
           setCorners({...newCorners});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "29-30-32-33"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "32-33 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["32-33"] = splits["32-33"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "32-33"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "32-33-35-36 corner":
-          setChipCount(chipCount - currentBetValue);
           newCorners["32-33-35-36"] = corners["32-33-35-36"] + currentBetValue;
           setCorners({...newCorners});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "32-33-35-36"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "35-36 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["35-36"] = splits["35-36"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "35-36"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "0-00-2 street":
-          setChipCount(chipCount - currentBetValue);
           newStreets["0-00-2"] = streets["0-00-2"] + currentBetValue;
           setStreets({...newStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "0-00-2"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "2 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["2"] = straightUps["2"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "2"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "2-5 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["2-5"] = splits["2-5"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "2-5"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "5 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["5"] = straightUps["5"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "5"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "5-8 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["5-8"] = splits["5-8"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "5-8"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "8 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["8"] = straightUps["8"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "8"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "8-11 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["8-11"] = splits["8-11"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "8-11"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "11 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["11"] = straightUps["11"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "11"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "11-14 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["11-14"] = splits["11-14"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "11-14"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "14 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["14"] = straightUps["14"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "14"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "14-17 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["14-17"] = splits["14-17"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "14-17"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "17 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["17"] = straightUps["17"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "17"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "17-20 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["17-20"] = splits["17-20"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "17-20"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "20 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["20"] = straightUps["20"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "20"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "20-23 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["20-23"] = splits["20-23"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "20-23"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "23 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["23"] = straightUps["23"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "23"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "23-26 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["23-26"] = splits["23-26"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "23-26"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "26 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["26"] = straightUps["26"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "26"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "26-29 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["26-29"] = splits["26-29"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "26-29"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "29 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["29"] = straightUps["29"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "29"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "29-32 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["29-32"] = splits["29-32"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "29-32"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "32 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["32"] = straightUps["32"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "32"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "32-35 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["32-35"] = splits["32-35"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "32-35"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "35 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["35"] = straightUps["35"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "35"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "2nd column":
-          setChipCount(chipCount - currentBetValue);
           newColumns["2nd column"] = columns["2nd column"] + currentBetValue;
           setColumns({...newColumns});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "2nd column"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "basket":
-          setChipCount(chipCount - currentBetValue);
           setBasket(basket + currentBetValue);
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet(["basket", null]);
-          setRecentBetValue(currentBetValue);
           break;
         case "0-1-2 street":
-          setChipCount(chipCount - currentBetValue);
           newStreets["0-1-2"] = streets["0-1-2"] + currentBetValue;
           setStreets({...newStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "0-1-2"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "1-2 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["1-2"] = splits["1-2"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "1-2"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "1-2-4-5 corner":
-          setChipCount(chipCount - currentBetValue);
           newCorners["1-2-4-5"] = corners["1-2-4-5"] + currentBetValue;
           setCorners({...newCorners});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "1-2-4-5"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "4-5 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["4-5"] = splits["4-5"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "4-5"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "4-5-7-8 corner":
-          setChipCount(chipCount - currentBetValue);
           newCorners["4-5-7-8"] = corners["4-5-7-8"] + currentBetValue;
           setCorners({...newCorners});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "4-5-7-8"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "7-8 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["7-8"] = splits["7-8"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "7-8"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "7-8-10-11 corner":
-          setChipCount(chipCount - currentBetValue);
           newCorners["7-8-10-11"] = corners["7-8-10-11"] + currentBetValue;
           setCorners({...newCorners});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "7-8-10-11"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "10-11 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["10-11"] = splits["10-11"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "10-11"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "10-11-13-14 corner":
-          setChipCount(chipCount - currentBetValue);
           newCorners["10-11-13-14"] = corners["10-11-13-14"] + currentBetValue;
           setCorners({...newCorners});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "10-11-13-14"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "13-14 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["13-14"] = splits["13-14"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "13-14"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "13-14-16-17 corner":
-          setChipCount(chipCount - currentBetValue);
           newCorners["13-14-16-17"] = corners["13-14-16-17"] + currentBetValue;
           setCorners({...newCorners});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "13-14-16-17"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "16-17 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["16-17"] = splits["16-17"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "16-17"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "16-17-19-20 corner":
-          setChipCount(chipCount - currentBetValue);
           newCorners["16-17-19-20"] = corners["16-17-19-20"] + currentBetValue;
           setCorners({...newCorners});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "16-17-19-20"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "19-20 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["19-20"] = splits["19-20"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "19-20"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "19-20-22-23 corner":
-          setChipCount(chipCount - currentBetValue);
           newCorners["19-20-22-23"] = corners["19-20-22-23"] + currentBetValue;
           setCorners({...newCorners});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "19-20-22-23"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "22-23 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["22-23"] = splits["22-23"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "22-23"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "22-23-25-26 corner":
-          setChipCount(chipCount - currentBetValue);
           newCorners["22-23-25-26"] = corners["22-23-25-26"] + currentBetValue;
           setCorners({...newCorners});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "22-23-25-26"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "25-26 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["25-26"] = splits["25-26"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "25-26"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "25-26-28-29 corner":
-          setChipCount(chipCount - currentBetValue);
           newCorners["25-26-28-29"] = corners["25-26-28-29"] + currentBetValue;
           setCorners({...newCorners});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "25-26-28-29"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "28-29 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["28-29"] = splits["28-29"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "28-29"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "28-29-31-32 corner":
-          setChipCount(chipCount - currentBetValue);
           newCorners["28-29-31-32"] = corners["28-29-31-32"] + currentBetValue;
           setCorners({...newCorners});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "28-29-31-32"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "31-32 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["31-32"] = splits["31-32"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "31-32"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "31-32-34-35 corner":
-          setChipCount(chipCount - currentBetValue);
           newCorners["31-32-34-35"] = corners["31-32-34-35"] + currentBetValue;
           setCorners({...newCorners});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "31-32-34-35"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "34-35 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["34-35"] = splits["34-35"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "34-35"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "0-1 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["0-1"] = splits["0-1"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "0-1"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "1 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["1"] = straightUps["1"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "1"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "1-4 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["1-4"] = splits["1-4"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "1-4"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "4 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["4"] = straightUps["4"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "4"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "4-7 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["4-7"] = splits["4-7"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "4-7"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "7 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["7"] = straightUps["7"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "7"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "7-10 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["7-10"] = splits["7-10"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "7-10"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "10 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["10"] = straightUps["10"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "10"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "10-13 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["10-13"] = splits["10-13"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "10-13"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "13 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["13"] = straightUps["13"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "13"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "13-16 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["13-16"] = splits["13-16"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "13-16"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "16 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["16"] = straightUps["16"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "16"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "16-19 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["16-19"] = splits["16-19"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "16-19"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "19 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["19"] = straightUps["19"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "19"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "19-22 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["19-22"] = splits["19-22"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "19-22"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "22 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["22"] = straightUps["22"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "22"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "22-25 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["22-25"] = splits["22-25"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "22-25"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "25 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["25"] = straightUps["25"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "25"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "25-28 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["25-28"] = splits["25-28"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "25-28"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "28 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["28"] = straightUps["28"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "28"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "28-31 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["28-31"] = splits["28-31"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "28-31"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "31 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["31"] = straightUps["31"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "31"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "31-34 split":
-          setChipCount(chipCount - currentBetValue);
           newSplits["31-34"] = splits["31-34"] + currentBetValue;
           setSplits({...newSplits});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "31-34"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "34 straight":
-          setChipCount(chipCount - currentBetValue);
           newStraightUps["34"] = straightUps["34"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "34"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "1st column":
-          setChipCount(chipCount - currentBetValue);
           newColumns["1st column"] = columns["1st column"] + currentBetValue;
           setColumns({...newColumns});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "1st column"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "1-2-3 street":
-          setChipCount(chipCount - currentBetValue);
           newStreets["1-2-3"] = streets["1-2-3"] + currentBetValue;
           setStreets({...newStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "1-2-3"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "1 to 6 double-street":
-          setChipCount(chipCount - currentBetValue);
           newDoubleStreets["1 to 6"] = doubleStreets["1 to 6"] + currentBetValue;
           setDoubleStreets({...newDoubleStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "1 to 6"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "4-5-6 street":
-          setChipCount(chipCount - currentBetValue);
           newStreets["4-5-6"] = streets["4-5-6"] + currentBetValue;
           setStreets({...newStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "4-5-6"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "4 to 9 double-street":
-          setChipCount(chipCount - currentBetValue);
           newDoubleStreets["4 to 9"] = doubleStreets["4 to 9"] + currentBetValue;
           setDoubleStreets({...newDoubleStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "4 to 9"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "7-8-9 street":
-          setChipCount(chipCount - currentBetValue);
           newStreets["7-8-9"] = streets["7-8-9"] + currentBetValue;
           setStreets({...newStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "7-8-9"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "7 to 12 double-street":
-          setChipCount(chipCount - currentBetValue);
           newDoubleStreets["7 to 12"] = doubleStreets["7 to 12"] + currentBetValue;
           setDoubleStreets({...newDoubleStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "7 to 12"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "10-11-12 street":
-          setChipCount(chipCount - currentBetValue);
           newStreets["10-11-12"] = streets["10-11-12"] + currentBetValue;
           setStreets({...newStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "10-11-12"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "10 to 15 double-street":
-          setChipCount(chipCount - currentBetValue);
           newDoubleStreets["10 to 15"] = doubleStreets["10 to 15"] + currentBetValue;
           setDoubleStreets({...newDoubleStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "10 to 15"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "13-14-15 street":
-          setChipCount(chipCount - currentBetValue);
           newStreets["13-14-15"] = streets["13-14-15"] + currentBetValue;
           setStreets({...newStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "13-14-15"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "13 to 18 double-street":
-          setChipCount(chipCount - currentBetValue);
           newDoubleStreets["13 to 18"] = doubleStreets["13 to 18"] + currentBetValue;
           setDoubleStreets({...newDoubleStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "13 to 18"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "16-17-18 street":
-          setChipCount(chipCount - currentBetValue);
           newStreets["16-17-18"] = streets["16-17-18"] + currentBetValue;
           setStreets({...newStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "16-17-18"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "16 to 21 double-street":
-          setChipCount(chipCount - currentBetValue);
           newDoubleStreets["16 to 21"] = doubleStreets["16 to 21"] + currentBetValue;
           setDoubleStreets({...newDoubleStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "16 to 21"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "19-20-21 street":
-          setChipCount(chipCount - currentBetValue);
           newStreets["19-20-21"] = streets["19-20-21"] + currentBetValue;
           setStreets({...newStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "19-20-21"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "19 to 24 double-street":
-          setChipCount(chipCount - currentBetValue);
           newDoubleStreets["19 to 24"] = doubleStreets["19 to 24"] + currentBetValue;
           setDoubleStreets({...newDoubleStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "19 to 24"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "22-23-24 street":
-          setChipCount(chipCount - currentBetValue);
           newStreets["22-23-24"] = streets["22-23-24"] + currentBetValue;
           setStreets({...newStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "22-23-24"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "22 to 27 double-street":
-          setChipCount(chipCount - currentBetValue);
           newDoubleStreets["22 to 27"] = doubleStreets["22 to 27"] + currentBetValue;
           setDoubleStreets({...newDoubleStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "22 to 27"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "25-26-27 street":
-          setChipCount(chipCount - currentBetValue);
           newStreets["25-26-27"] = streets["25-26-27"] + currentBetValue;
           setStreets({...newStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "25-26-27"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "25 to 30 double-street":
-          setChipCount(chipCount - currentBetValue);
           newDoubleStreets["25 to 30"] = doubleStreets["25 to 30"] + currentBetValue;
           setDoubleStreets({...newDoubleStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "25 to 30"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "28-29-30 street":
-          setChipCount(chipCount - currentBetValue);
           newStreets["28-29-30"] = streets["28-29-30"] + currentBetValue;
           setStreets({...newStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "28-29-30"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "28 to 33 double-street":
-          setChipCount(chipCount - currentBetValue);
           newDoubleStreets["28 to 33"] = doubleStreets["28 to 33"] + currentBetValue;
           setDoubleStreets({...newDoubleStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "28 to 33"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "31-32-33 street":
-          setChipCount(chipCount - currentBetValue);
           newStreets["31-32-33"] = streets["31-32-33"] + currentBetValue;
           setStreets({...newStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "31-32-33"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "31-36 double-street":
-          setChipCount(chipCount - currentBetValue);
           newDoubleStreets["31 to 36"] = doubleStreets["31 to 36"] + currentBetValue;
           setDoubleStreets({...newDoubleStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "31 to 36"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "34-35-36 street":
-          setChipCount(chipCount - currentBetValue);
           newStreets["34-35-36"] = streets["34-35-36"] + currentBetValue;
           setStreets({...newStreets});
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "34-35-36"]);
-          setRecentBetValue(currentBetValue);
           break;
         case "1st dozen":
-          setChipCount(chipCount - currentBetValue);
           newDozens[0] = dozens[0] + currentBetValue;
           setDozens([...newDozens]);
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 0]);
-          setRecentBetValue(currentBetValue);
           break;
         case "2nd dozen":
-          setChipCount(chipCount - currentBetValue);
           newDozens[1] = dozens[1] + currentBetValue;
           setDozens([...newDozens]);
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 1]);
-          setRecentBetValue(currentBetValue);
           break;
         case "3rd dozen":
-          setChipCount(chipCount - currentBetValue);
           newDozens[2] = dozens[2] + currentBetValue;
           setDozens([...newDozens]);
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 2]);
-          setRecentBetValue(currentBetValue);
           break;
         case "low":
-          setChipCount(chipCount - currentBetValue);
           newHighLow[0] = newHighLow[0] + currentBetValue;
           setHighLow([...newHighLow]);
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 0]);
-          setRecentBetValue(currentBetValue);
           break;
         case "odd":
-          setChipCount(chipCount - currentBetValue);
           newOddEven[0] = newOddEven[0] + currentBetValue;
           setOddEven([...newOddEven]);
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 0]);
-          setRecentBetValue(currentBetValue);
           break;
         case "red":
-          setChipCount(chipCount - currentBetValue);
           newRedBlack[0] = redBlack[0] + currentBetValue;
           setRedBlack([...newRedBlack]);
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 0]);
-          setRecentBetValue(currentBetValue);
           break;
         case "black":
-          setChipCount(chipCount - currentBetValue);
           newRedBlack[1] = newRedBlack[1] + currentBetValue;
           setRedBlack([...newRedBlack]);
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 1]);
-          setRecentBetValue(currentBetValue);
           break;
         case "even":
-          setChipCount(chipCount - currentBetValue);
           newOddEven[1] = newOddEven[1] + currentBetValue;
           setOddEven([...newOddEven]);
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 1]);
-          setRecentBetValue(currentBetValue);
           break;
         case "high":
-          setChipCount(chipCount - currentBetValue);
           newHighLow[1] = newHighLow[1] + currentBetValue;
           setHighLow([...newHighLow]);
-          setPendingTotalBet(pendingTotalBet + currentBetValue);
           setRecentBet([betToIncrease.match(betTypeRegex)[0], 1]);
-          setRecentBetValue(currentBetValue);
           break;
       }
+      setChipCount(chipCount - currentBetValue);
+      setPendingTotalBet(pendingTotalBet + currentBetValue);
+      setRecentBetValue(currentBetValue);
     }
   };
 
