@@ -53,7 +53,7 @@ export default function Layout({
       let newHighLow = highLow.flat();
       let newOddEven = oddEven.flat();
       let newRedBlack = redBlack.flat();
-      let newDozens = dozens.flat();
+      let newDozens = {...dozens};
       let newCorners = {...corners};
       let betTypeRegex = /[a-z]+-?[a-z]+?$|low|high/;
 
@@ -808,19 +808,19 @@ export default function Layout({
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "34-35-36"]);
           break;
         case "1st dozen":
-          newDozens[0] = dozens[0] + currentBetValue;
-          setDozens([...newDozens]);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 0]);
+          newDozens["1st dozen"] = dozens["1st dozen"] + currentBetValue;
+          setDozens({...newDozens});
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "1st dozen"]);
           break;
         case "2nd dozen":
-          newDozens[1] = dozens[1] + currentBetValue;
-          setDozens([...newDozens]);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 1]);
+          newDozens["2nd dozen"] = dozens["2nd dozen"] + currentBetValue;
+          setDozens({...newDozens});
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "2nd dozen"]);
           break;
         case "3rd dozen":
-          newDozens[2] = dozens[2] + currentBetValue;
-          setDozens([...newDozens]);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 2]);
+          newDozens["3rd dozen"] = dozens["3rd dozen"] + currentBetValue;
+          setDozens({...newDozens});
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "3rd dozen"]);
           break;
         case "low":
           newHighLow[0] = newHighLow[0] + currentBetValue;
@@ -3760,14 +3760,14 @@ export default function Layout({
           <div className="ribbon-div">
             <img src={Ribbon} className="ribbon-img"></img>
             <h1 className="dozen-text">1 - 12</h1>
-            {dozens[0] > 0 ? (
+            {dozens["1st dozen"] > 0 ? (
               <div className="chip-and-bet dozen-chip">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{dozens[0]}</p>
+                <p className="bet-text">{dozens["1st dozen"]}</p>
               </div>
             ) : (
               <></>
@@ -3775,20 +3775,20 @@ export default function Layout({
           </div>
         </div>
         <div
-          className="bet-box  dozen"
+          className="bet-box dozen"
           onClick={() => increaseBet("2nd dozen")}
         >
           <div className="ribbon-div">
             <img src={Ribbon} className="ribbon-img"></img>
             <h1 className="dozen-text">13-24</h1>
-            {dozens[1] > 0 ? (
+            {dozens["2nd dozen"] > 0 ? (
               <div className="chip-and-bet dozen-chip">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{dozens[1]}</p>
+                <p className="bet-text">{dozens["2nd dozen"]}</p>
               </div>
             ) : (
               <></>
@@ -3802,14 +3802,14 @@ export default function Layout({
           <div className="ribbon-div">
             <img src={Ribbon} className="ribbon-img"></img>
             <h1 className="dozen-text">25-36</h1>
-            {dozens[2] > 0 ? (
+            {dozens["3rd dozen"] > 0 ? (
               <div className="chip-and-bet dozen-chip">
                 <img
                   className="blank-chip"
                   alt="blank chip"
                   src={BlankChip}
                 ></img>
-                <p className="bet-text">{dozens[2]}</p>
+                <p className="bet-text">{dozens["3rd dozen"]}</p>
               </div>
             ) : (
               <></>

@@ -54,7 +54,7 @@ function App() {
   });
   const [basket, setBasket] = useState(0);
   const [columns, setColumns] = useState({"1st column":0, "2nd column":0, "3rd column":0});
-  const [dozens, setDozens] = useState([0, 0, 0]);
+  const [dozens, setDozens] = useState({"1st dozen":0, "2nd dozen":0, "3rd dozen":0});
   const [redBlack, setRedBlack] = useState([0, 0]);
   const [oddEven, setOddEven] = useState([0, 0]);
   const [highLow, setHighLow] = useState([0, 0]);
@@ -141,7 +141,7 @@ function App() {
     });
     setBasket(0);
     setColumns({"1st column":0, "2nd column":0, "3rd column":0});
-    setDozens([0, 0, 0]);
+    setDozens({"1st dozen":0, "2nd dozen":0, "3rd dozen":0});
     setRedBlack([0, 0]);
     setOddEven([0, 0]);
     setHighLow([0, 0]);
