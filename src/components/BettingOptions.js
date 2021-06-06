@@ -16,19 +16,19 @@ import Wheel from "../images/roulette-wheel.png";
 
 export default function BettingOptions({
   chipCount,
+  collectWinnings,
   currentBetValue,
-  setCurrentBetValue,
-  spinTheWheel,
   isSpinComplete,
+  isWheelSpinning,
   pendingTotalBet,
   recentBet,
-  isWheelSpinning,
-  winningNumber,
+  resetLayout,
+  setCurrentBetValue,
+  spinTheWheel,
+  totalAmountWon,
   undoRecentBet,
   whichMessage,
-  resetLayout,
-  collectWinnings,
-  totalAmountWon,
+  winningNumber
 }) {
   const handleChipClick = (value) => {
     if (!isSpinComplete) {

@@ -44,7 +44,7 @@ export default function Layout({
       currentBetValue <= chipCount &&
       currentBetValue > 0
     ) {
-      let splitRegex = /split$/;
+      // let splitRegex = /split$/;
       let newSplits = {...splits};
       let newStraightUps = {...straightUps};
       let newColumns = {...columns};

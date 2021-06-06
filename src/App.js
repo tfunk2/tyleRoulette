@@ -355,9 +355,6 @@ function App() {
     }
   }, [previousTwenty]);
 
-  // NEXT MOVE -->> change payout section to work with streets new object format, 
-  // Shift-command-L also highlights double streets, careful with that
-
   // PAYOUT SECTION BELOW
   useEffect(() => {
     let allPayouts = 0;
@@ -1105,53 +1102,52 @@ function App() {
       </header>
       <BettingOptions
         chipCount={chipCount}
+        collectWinnings={collectWinnings}
         currentBetValue={currentBetValue}
-        setCurrentBetValue={setCurrentBetValue}
-        spinTheWheel={spinTheWheel}
         isSpinComplete={isSpinComplete}
+        isWheelSpinning={isWheelSpinning}
         pendingTotalBet={pendingTotalBet}
         recentBet={recentBet}
-        isWheelSpinning={isWheelSpinning}
-        winningNumber={winningNumber}
         resetLayout={resetLayout}
+        setCurrentBetValue={setCurrentBetValue}
+        spinTheWheel={spinTheWheel}
+        totalAmountWon={totalAmountWon}
         undoRecentBet={undoRecentBet}
         whichMessage={whichMessage}
-        resetLayout={resetLayout}
-        collectWinnings={collectWinnings}
-        totalAmountWon={totalAmountWon}
+        winningNumber={winningNumber}
       />
       <div className="wood-railing">
         <Layout
+          basket={basket}
           chipCount={chipCount}
-          setChipCount={setChipCount}
-          currentBetValue={currentBetValue}
-          isSpinComplete={isSpinComplete}
-          setSplits={setSplits}
-          splits={splits}
-          straightUps={straightUps}
-          setStraightUps={setStraightUps}
           columns={columns}
+          corners={corners}
+          currentBetValue={currentBetValue}
+          doubleStreets={doubleStreets}
+          dozens={dozens}
+          highLow={highLow}
+          isSpinComplete={isSpinComplete}
+          oddEven={oddEven}
+          pendingTotalBet={pendingTotalBet}
+          redBlack={redBlack}
+          setBasket={setBasket}
+          setChipCount={setChipCount}
           setColumns={setColumns}
           setCorners={setCorners}
-          corners={corners}
-          setStreets={setStreets}
-          streets={streets}
           setDoubleStreets={setDoubleStreets}
-          doubleStreets={doubleStreets}
-          setHighLow={setHighLow}
-          highLow={highLow}
-          setOddEven={setOddEven}
-          oddEven={oddEven}
-          setRedBlack={setRedBlack}
-          redBlack={redBlack}
           setDozens={setDozens}
-          dozens={dozens}
+          setHighLow={setHighLow}
+          setOddEven={setOddEven}
           setPendingTotalBet={setPendingTotalBet}
-          pendingTotalBet={pendingTotalBet}
-          basket={basket}
-          setBasket={setBasket}
           setRecentBet={setRecentBet}
           setRecentBetValue={setRecentBetValue}
+          setRedBlack={setRedBlack}
+          setSplits={setSplits}
+          setStraightUps={setStraightUps}
+          setStreets={setStreets}
+          splits={splits}
+          straightUps={straightUps}
+          streets={streets}
           winningNumber={winningNumber}
         />
       </div>
