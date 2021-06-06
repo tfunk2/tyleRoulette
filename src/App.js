@@ -55,9 +55,9 @@ function App() {
   const [basket, setBasket] = useState(0);
   const [columns, setColumns] = useState({"1st column":0, "2nd column":0, "3rd column":0});
   const [dozens, setDozens] = useState({"1st dozen":0, "2nd dozen":0, "3rd dozen":0});
-  const [redBlack, setRedBlack] = useState([0, 0]);
-  const [oddEven, setOddEven] = useState([0, 0]);
-  const [highLow, setHighLow] = useState([0, 0]);
+  const [redBlack, setRedBlack] = useState({"red":0, "black":0});
+  const [oddEven, setOddEven] = useState({"odd":0, "even":0});
+  const [highLow, setHighLow] = useState({"high":0, "low":0});
   const [isSpinComplete, setIsSpinComplete] = useState(false);
   const [recentBet, setRecentBet] = useState([]);
   const [recentBetValue, setRecentBetValue] = useState(0);
@@ -142,9 +142,9 @@ function App() {
     setBasket(0);
     setColumns({"1st column":0, "2nd column":0, "3rd column":0});
     setDozens({"1st dozen":0, "2nd dozen":0, "3rd dozen":0});
-    setRedBlack([0, 0]);
-    setOddEven([0, 0]);
-    setHighLow([0, 0]);
+    setRedBlack({"red":0, "black":0});
+    setOddEven({"odd":0, "even":0});
+    setHighLow({"low":0, "high":0});
     if (!isSpinComplete) {
       setChipCount(chipCount + pendingTotalBet);
     }
@@ -384,10 +384,10 @@ function App() {
             (basket * 6 + basket) +
             (doubleStreets["1 to 6"] * 5 + doubleStreets["1 to 6"]) +
             columns["1st column"] * 3 +
-            dozens[0] * 3 +
-            oddEven[0] * 2 +
-            highLow[0] * 2 +
-            redBlack[0] * 2;
+            dozens["1st dozen"] * 3 +
+            oddEven["odd"] * 2 +
+            highLow["low"] * 2 +
+            redBlack["red"] * 2;
           break;
         case "2":
           allPayouts =
@@ -405,10 +405,10 @@ function App() {
             (basket * 6 + basket) +
             (doubleStreets["1 to 6"] * 5 + doubleStreets["1 to 6"]) +
             columns["2nd column"] * 3 +
-            dozens[0] * 3 +
-            oddEven[1] * 2 +
-            highLow[0] * 2 +
-            redBlack[1] * 2;
+            dozens["1st dozen"] * 3 +
+            oddEven["even"] * 2 +
+            highLow["low"] * 2 +
+            redBlack["black"] * 2;
           break;
         case "3":
           allPayouts =
@@ -423,10 +423,10 @@ function App() {
             (basket * 6 + basket) +
             (doubleStreets["1 to 6"] * 5 + doubleStreets["1 to 6"]) +
             columns["3rd column"] * 3 +
-            dozens[0] * 3 +
-            oddEven[0] * 2 +
-            highLow[0] * 2 +
-            redBlack[0] * 2;
+            dozens["1st dozen"] * 3 +
+            oddEven["odd"] * 2 +
+            highLow["low"] * 2 +
+            redBlack["red"] * 2;
           break;
         case "4":
           allPayouts =
@@ -441,10 +441,10 @@ function App() {
             (doubleStreets["1 to 6"] * 5 + doubleStreets["1 to 6"]) +
             (doubleStreets["4 to 9"] * 5 + doubleStreets["4 to 9"]) +
             columns["1st column"] * 3 +
-            dozens[0] * 3 +
-            oddEven[1] * 2 +
-            highLow[0] * 2 +
-            redBlack[1] * 2;
+            dozens["1st dozen"] * 3 +
+            oddEven["even"] * 2 +
+            highLow["low"] * 2 +
+            redBlack["black"] * 2;
           break;
         case "5":
           allPayouts =
@@ -462,10 +462,10 @@ function App() {
             (doubleStreets["1 to 6"] * 5 + doubleStreets["1 to 6"]) +
             (doubleStreets["4 to 9"] * 5 + doubleStreets["4 to 9"]) +
             columns["2nd column"] * 3 +
-            dozens[0] * 3 +
-            oddEven[0] * 2 +
-            highLow[0] * 2 +
-            redBlack[0] * 2;
+            dozens["1st dozen"] * 3 +
+            oddEven["odd"] * 2 +
+            highLow["low"] * 2 +
+            redBlack["red"] * 2;
           break;
         case "6":
           allPayouts =
@@ -480,10 +480,10 @@ function App() {
             (doubleStreets["1 to 6"] * 5 + doubleStreets["1 to 6"]) +
             (doubleStreets["4 to 9"] * 5 + doubleStreets["4 to 9"]) +
             columns["3rd column"] * 3 +
-            dozens[0] * 3 +
-            oddEven[1] * 2 +
-            highLow[0] * 2 +
-            redBlack[1] * 2;
+            dozens["1st dozen"] * 3 +
+            oddEven["even"] * 2 +
+            highLow["low"] * 2 +
+            redBlack["black"] * 2;
           break;
         case "7":
           allPayouts =
@@ -498,10 +498,10 @@ function App() {
             (doubleStreets["4 to 9"] * 5 + doubleStreets["4 to 9"]) +
             (doubleStreets["7 to 12"] * 5 + doubleStreets["7 to 12"]) +
             columns["1st column"] * 3 +
-            dozens[0] * 3 +
-            oddEven[0] * 2 +
-            highLow[0] * 2 +
-            redBlack[0] * 2;
+            dozens["1st dozen"] * 3 +
+            oddEven["odd"] * 2 +
+            highLow["low"] * 2 +
+            redBlack["red"] * 2;
           break;
         case "8":
           allPayouts =
@@ -519,10 +519,10 @@ function App() {
             (doubleStreets["4 to 9"] * 5 + doubleStreets["4 to 9"]) +
             (doubleStreets["7 to 12"] * 5 + doubleStreets["7 to 12"]) +
             columns["2nd column"] * 3 +
-            dozens[0] * 3 +
-            oddEven[1] * 2 +
-            highLow[0] * 2 +
-            redBlack[1] * 2;
+            dozens["1st dozen"] * 3 +
+            oddEven["even"] * 2 +
+            highLow["low"] * 2 +
+            redBlack["black"] * 2;
           break;
         case "9":
           allPayouts =
@@ -537,10 +537,10 @@ function App() {
             (doubleStreets["4 to 9"] * 5 + doubleStreets["4 to 9"]) +
             (doubleStreets["7 to 12"] * 5 + doubleStreets["7 to 12"]) +
             columns["3rd column"] * 3 +
-            dozens[0] * 3 +
-            oddEven[0] * 2 +
-            highLow[0] * 2 +
-            redBlack[0] * 2;
+            dozens["1st dozen"] * 3 +
+            oddEven["odd"] * 2 +
+            highLow["low"] * 2 +
+            redBlack["red"] * 2;
           break;
         case "10":
           allPayouts =
@@ -555,10 +555,10 @@ function App() {
             (doubleStreets["7 to 12"] * 5 + doubleStreets["7 to 12"]) +
             (doubleStreets["10 to 15"] * 5 + doubleStreets["10 to 15"]) +
             columns["1st column"] * 3 +
-            dozens[0] * 3 +
-            oddEven[1] * 2 +
-            highLow[0] * 2 +
-            redBlack[1] * 2;
+            dozens["1st dozen"] * 3 +
+            oddEven["even"] * 2 +
+            highLow["low"] * 2 +
+            redBlack["black"] * 2;
           break;
         case "11":
           allPayouts =
@@ -576,10 +576,10 @@ function App() {
             (doubleStreets["7 to 12"] * 5 + doubleStreets["7 to 12"]) +
             (doubleStreets["10 to 15"] * 5 + doubleStreets["10 to 15"]) +
             columns["2nd column"] * 3 +
-            dozens[0] * 3 +
-            oddEven[0] * 2 +
-            highLow[0] * 2 +
-            redBlack[1] * 2;
+            dozens["1st dozen"] * 3 +
+            oddEven["odd"] * 2 +
+            highLow["low"] * 2 +
+            redBlack["black"] * 2;
           break;
         case "12":
           allPayouts =
@@ -594,10 +594,10 @@ function App() {
             (doubleStreets["7 to 12"] * 5 + doubleStreets["7 to 12"]) +
             (doubleStreets["10 to 15"] * 5 + doubleStreets["10 to 15"]) +
             columns["3rd column"] * 3 +
-            dozens[0] * 3 +
-            oddEven[1] * 2 +
-            highLow[0] * 2 +
-            redBlack[0] * 2;
+            dozens["1st dozen"] * 3 +
+            oddEven["even"] * 2 +
+            highLow["low"] * 2 +
+            redBlack["red"] * 2;
           break;
         case "13":
           allPayouts =
@@ -612,10 +612,10 @@ function App() {
             (doubleStreets["10 to 15"] * 5 + doubleStreets["10 to 15"]) +
             (doubleStreets["13 to 18"] * 5 + doubleStreets["13 to 18"]) +
             columns["1st column"] * 3 +
-            dozens[1] * 3 +
-            oddEven[0] * 2 +
-            highLow[0] * 2 +
-            redBlack[1] * 2;
+            dozens["2nd dozen"] * 3 +
+            oddEven["odd"] * 2 +
+            highLow["low"] * 2 +
+            redBlack["black"] * 2;
           break;
         case "14":
           allPayouts =
@@ -633,10 +633,10 @@ function App() {
             (doubleStreets["10 to 15"] * 5 + doubleStreets["10 to 15"]) +
             (doubleStreets["13 to 18"] * 5 + doubleStreets["13 to 18"]) +
             columns["2nd column"] * 3 +
-            dozens[1] * 3 +
-            oddEven[1] * 2 +
-            highLow[0] * 2 +
-            redBlack[0] * 2;
+            dozens["2nd dozen"] * 3 +
+            oddEven["even"] * 2 +
+            highLow["low"] * 2 +
+            redBlack["red"] * 2;
           break;
         case "15":
           allPayouts =
@@ -651,10 +651,10 @@ function App() {
             (doubleStreets["10 to 15"] * 5 + doubleStreets["10 to 15"]) +
             (doubleStreets["13 to 18"] * 5 + doubleStreets["13 to 18"]) +
             columns["3rd column"] * 3 +
-            dozens[1] * 3 +
-            oddEven[0] * 2 +
-            highLow[0] * 2 +
-            redBlack[1] * 2;
+            dozens["2nd dozen"] * 3 +
+            oddEven["odd"] * 2 +
+            highLow["low"] * 2 +
+            redBlack["black"] * 2;
           break;
         case "16":
           allPayouts =
@@ -669,10 +669,10 @@ function App() {
             (doubleStreets["13 to 18"] * 5 + doubleStreets["13 to 18"]) +
             (doubleStreets["16 to 21"] * 5 + doubleStreets["16 to 21"]) +
             columns["1st column"] * 3 +
-            dozens[1] * 3 +
-            oddEven[1] * 2 +
-            highLow[0] * 2 +
-            redBlack[0] * 2;
+            dozens["2nd dozen"] * 3 +
+            oddEven["even"] * 2 +
+            highLow["low"] * 2 +
+            redBlack["red"] * 2;
           break;
         case "17":
           allPayouts =
@@ -690,10 +690,10 @@ function App() {
             (doubleStreets["13 to 18"] * 5 + doubleStreets["13 to 18"]) +
             (doubleStreets["16 to 21"] * 5 + doubleStreets["16 to 21"]) +
             columns["2nd column"] * 3 +
-            dozens[1] * 3 +
-            oddEven[0] * 2 +
-            highLow[0] * 2 +
-            redBlack[1] * 2;
+            dozens["2nd dozen"] * 3 +
+            oddEven["odd"] * 2 +
+            highLow["low"] * 2 +
+            redBlack["black"] * 2;
           break;
         case "18":
           allPayouts =
@@ -708,10 +708,10 @@ function App() {
             (doubleStreets["13 to 18"] * 5 + doubleStreets["13 to 18"]) +
             (doubleStreets["16 to 21"] * 5 + doubleStreets["16 to 21"]) +
             columns["3rd column"] * 3 +
-            dozens[1] * 3 +
-            oddEven[1] * 2 +
-            highLow[0] * 2 +
-            redBlack[0] * 2;
+            dozens["2nd dozen"] * 3 +
+            oddEven["even"] * 2 +
+            highLow["low"] * 2 +
+            redBlack["red"] * 2;
           break;
         case "19":
           allPayouts =
@@ -726,10 +726,10 @@ function App() {
             (doubleStreets["16 to 21"] * 5 + doubleStreets["16 to 21"]) +
             (doubleStreets["19 to 24"] * 5 + doubleStreets["19 to 24"]) +
             columns["1st column"] * 3 +
-            dozens[1] * 3 +
-            oddEven[0] * 2 +
-            highLow[1] * 2 +
-            redBlack[0] * 2;
+            dozens["2nd dozen"] * 3 +
+            oddEven["odd"] * 2 +
+            highLow["high"] * 2 +
+            redBlack["red"] * 2;
           break;
         case "20":
           allPayouts =
@@ -747,10 +747,10 @@ function App() {
             (doubleStreets["16 to 21"] * 5 + doubleStreets["16 to 21"]) +
             (doubleStreets["19 to 24"] * 5 + doubleStreets["19 to 24"]) +
             columns["2nd column"] * 3 +
-            dozens[1] * 3 +
-            oddEven[1] * 2 +
-            highLow[1] * 2 +
-            redBlack[1] * 2;
+            dozens["2nd dozen"] * 3 +
+            oddEven["even"] * 2 +
+            highLow["high"] * 2 +
+            redBlack["black"] * 2;
           break;
         case "21":
           allPayouts =
@@ -765,10 +765,10 @@ function App() {
             (doubleStreets["16 to 21"] * 5 + doubleStreets["16 to 21"]) +
             (doubleStreets["19 to 24"] * 5 + doubleStreets["19 to 24"]) +
             columns["3rd column"] * 3 +
-            dozens[1] * 3 +
-            oddEven[0] * 2 +
-            highLow[1] * 2 +
-            redBlack[0] * 2;
+            dozens["2nd dozen"] * 3 +
+            oddEven["odd"] * 2 +
+            highLow["high"] * 2 +
+            redBlack["red"] * 2;
           break;
         case "22":
           allPayouts =
@@ -783,10 +783,10 @@ function App() {
             (doubleStreets["19 to 24"] * 5 + doubleStreets["19 to 24"]) +
             (doubleStreets["22 to 27"] * 5 + doubleStreets["22 to 27"]) +
             columns["1st column"] * 3 +
-            dozens[1] * 3 +
-            oddEven[1] * 2 +
-            highLow[1] * 2 +
-            redBlack[1] * 2;
+            dozens["2nd dozen"] * 3 +
+            oddEven["even"] * 2 +
+            highLow["high"] * 2 +
+            redBlack["black"] * 2;
           break;
         case "23":
           allPayouts =
@@ -804,10 +804,10 @@ function App() {
             (doubleStreets["19 to 24"] * 5 + doubleStreets["19 to 24"]) +
             (doubleStreets["22 to 27"] * 5 + doubleStreets["22 to 27"]) +
             columns["2nd column"] * 3 +
-            dozens[1] * 3 +
-            oddEven[0] * 2 +
-            highLow[1] * 2 +
-            redBlack[0] * 2;
+            dozens["2nd dozen"] * 3 +
+            oddEven["odd"] * 2 +
+            highLow["high"] * 2 +
+            redBlack["red"] * 2;
           break;
         case "24":
           allPayouts =
@@ -822,10 +822,10 @@ function App() {
             (doubleStreets["19 to 24"] * 5 + doubleStreets["19 to 24"]) +
             (doubleStreets["22 to 27"] * 5 + doubleStreets["22 to 27"]) +
             columns["3rd column"] * 3 +
-            dozens[1] * 3 +
-            oddEven[1] * 2 +
-            highLow[1] * 2 +
-            redBlack[1] * 2;
+            dozens["2nd dozen"] * 3 +
+            oddEven["even"] * 2 +
+            highLow["high"] * 2 +
+            redBlack["black"] * 2;
           break;
         case "25":
           allPayouts =
@@ -840,10 +840,10 @@ function App() {
             (doubleStreets["22 to 27"] * 5 + doubleStreets["22 to 27"]) +
             (doubleStreets["25 to 30"] * 5 + doubleStreets["25 to 30"]) +
             columns["1st column"] * 3 +
-            dozens[2] * 3 +
-            oddEven[0] * 2 +
-            highLow[1] * 2 +
-            redBlack[0] * 2;
+            dozens["3rd dozen"] * 3 +
+            oddEven["odd"] * 2 +
+            highLow["high"] * 2 +
+            redBlack["red"] * 2;
           break;
         case "26":
           allPayouts =
@@ -861,10 +861,10 @@ function App() {
             (doubleStreets["22 to 27"] * 5 + doubleStreets["22 to 27"]) +
             (doubleStreets["25 to 30"] * 5 + doubleStreets["25 to 30"]) +
             columns["2nd column"] * 3 +
-            dozens[2] * 3 +
-            oddEven[1] * 2 +
-            highLow[1] * 2 +
-            redBlack[1] * 2;
+            dozens["3rd dozen"] * 3 +
+            oddEven["even"] * 2 +
+            highLow["high"] * 2 +
+            redBlack["black"] * 2;
           break;
         case "27":
           allPayouts =
@@ -879,10 +879,10 @@ function App() {
             (doubleStreets["22 to 27"] * 5 + doubleStreets["22 to 27"]) +
             (doubleStreets["25 to 30"] * 5 + doubleStreets["25 to 30"]) +
             columns["3rd column"] * 3 +
-            dozens[2] * 3 +
-            oddEven[0] * 2 +
-            highLow[1] * 2 +
-            redBlack[0] * 2;
+            dozens["3rd dozen"] * 3 +
+            oddEven["odd"] * 2 +
+            highLow["high"] * 2 +
+            redBlack["red"] * 2;
           break;
         case "28":
           allPayouts =
@@ -897,10 +897,10 @@ function App() {
             (doubleStreets["25 to 30"] * 5 + doubleStreets["25 to 30"]) +
             (doubleStreets["28 to 33"] * 5 + doubleStreets["28 to 33"]) +
             columns["1st column"] * 3 +
-            dozens[2] * 3 +
-            oddEven[1] * 2 +
-            highLow[1] * 2 +
-            redBlack[1] * 2;
+            dozens["3rd dozen"] * 3 +
+            oddEven["even"] * 2 +
+            highLow["high"] * 2 +
+            redBlack["black"] * 2;
           break;
         case "29":
           allPayouts =
@@ -918,10 +918,10 @@ function App() {
             (doubleStreets["25 to 30"] * 5 + doubleStreets["25 to 30"]) +
             (doubleStreets["28 to 33"] * 5 + doubleStreets["28 to 33"]) +
             columns["2nd column"] * 3 +
-            dozens[2] * 3 +
-            oddEven[0] * 2 +
-            highLow[1] * 2 +
-            redBlack[1] * 2;
+            dozens["3rd dozen"] * 3 +
+            oddEven["odd"] * 2 +
+            highLow["high"] * 2 +
+            redBlack["black"] * 2;
           break;
         case "30":
           allPayouts =
@@ -936,10 +936,10 @@ function App() {
             (doubleStreets["25 to 30"] * 5 + doubleStreets["25 to 30"]) +
             (doubleStreets["28 to 33"] * 5 + doubleStreets["28 to 33"]) +
             columns["3rd column"] * 3 +
-            dozens[2] * 3 +
-            oddEven[1] * 2 +
-            highLow[1] * 2 +
-            redBlack[0] * 2;
+            dozens["3rd dozen"] * 3 +
+            oddEven["even"] * 2 +
+            highLow["high"] * 2 +
+            redBlack["red"] * 2;
           break;
         case "31":
           allPayouts =
@@ -954,10 +954,10 @@ function App() {
             (doubleStreets["28 to 33"] * 5 + doubleStreets["28 to 33"]) +
             (doubleStreets["31 to 36"] * 5 + doubleStreets["31 to 36"]) +
             columns["1st column"] * 3 +
-            dozens[2] * 3 +
-            oddEven[0] * 2 +
-            highLow[1] * 2 +
-            redBlack[1] * 2;
+            dozens["3rd dozen"] * 3 +
+            oddEven["odd"] * 2 +
+            highLow["high"] * 2 +
+            redBlack["black"] * 2;
           break;
         case "32":
           allPayouts =
@@ -975,10 +975,10 @@ function App() {
             (doubleStreets["28 to 33"] * 5 + doubleStreets["28 to 33"]) +
             (doubleStreets["31 to 36"] * 5 + doubleStreets["31 to 36"]) +
             columns["2nd column"] * 3 +
-            dozens[2] * 3 +
-            oddEven[1] * 2 +
-            highLow[1] * 2 +
-            redBlack[0] * 2;
+            dozens["3rd dozen"] * 3 +
+            oddEven["even"] * 2 +
+            highLow["high"] * 2 +
+            redBlack["red"] * 2;
           break;
         case "33":
           allPayouts =
@@ -993,10 +993,10 @@ function App() {
             (doubleStreets["28 to 33"] * 5 + doubleStreets["28 to 33"]) +
             (doubleStreets["31 to 36"] * 5 + doubleStreets["31 to 36"]) +
             columns["3rd column"] * 3 +
-            dozens[2] * 3 +
-            oddEven[0] * 2 +
-            highLow[1] * 2 +
-            redBlack[1] * 2;
+            dozens["3rd dozen"] * 3 +
+            oddEven["odd"] * 2 +
+            highLow["high"] * 2 +
+            redBlack["black"] * 2;
           break;
         case "34":
           allPayouts =
@@ -1008,10 +1008,10 @@ function App() {
             (corners["31-32-34-35"] * 8 + corners["31-32-34-35"]) +
             (doubleStreets["31 to 36"] * 5 + doubleStreets["31 to 36"]) +
             columns["1st column"] * 3 +
-            dozens[2] * 3 +
-            oddEven[1] * 2 +
-            highLow[1] * 2 +
-            redBlack[0] * 2;
+            dozens["3rd dozen"] * 3 +
+            oddEven["even"] * 2 +
+            highLow["high"] * 2 +
+            redBlack["red"] * 2;
           break;
         case "35":
           allPayouts =
@@ -1025,10 +1025,10 @@ function App() {
             (corners["32-33-35-36"] * 8 + corners["32-33-35-36"]) +
             (doubleStreets["31 to 36"] * 5 + doubleStreets["31 to 36"]) +
             columns["2nd column"] * 3 +
-            dozens[2] * 3 +
-            oddEven[0] * 2 +
-            highLow[1] * 2 +
-            redBlack[1] * 2;
+            dozens["3rd dozen"] * 3 +
+            oddEven["odd"] * 2 +
+            highLow["high"] * 2 +
+            redBlack["black"] * 2;
           break;
         case "36":
           allPayouts =
@@ -1040,10 +1040,10 @@ function App() {
             (corners["32-33-35-36"] * 8 + corners["32-33-35-36"]) +
             (doubleStreets["31 to 36"] * 5 + doubleStreets["31 to 36"]) +
             columns["3rd column"] * 3 +
-            dozens[2] * 3 +
-            oddEven[1] * 2 +
-            highLow[1] * 2 +
-            redBlack[0] * 2;
+            dozens["3rd dozen"] * 3 +
+            oddEven["even"] * 2 +
+            highLow["high"] * 2 +
+            redBlack["red"] * 2;
           break;
         case "00":
           allPayouts =

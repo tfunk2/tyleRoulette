@@ -50,9 +50,9 @@ export default function Layout({
       let newColumns = {...columns};
       let newStreets = {...streets};
       let newDoubleStreets = {...doubleStreets};
-      let newHighLow = highLow.flat();
-      let newOddEven = oddEven.flat();
-      let newRedBlack = redBlack.flat();
+      let newHighLow = {...highLow};
+      let newOddEven = {...oddEven};
+      let newRedBlack = {...redBlack};
       let newDozens = {...dozens};
       let newCorners = {...corners};
       let betTypeRegex = /[a-z]+-?[a-z]+?$|low|high/;
@@ -823,34 +823,34 @@ export default function Layout({
           setRecentBet([betToIncrease.match(betTypeRegex)[0], "3rd dozen"]);
           break;
         case "low":
-          newHighLow[0] = newHighLow[0] + currentBetValue;
-          setHighLow([...newHighLow]);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 0]);
+          newHighLow["low"] = newHighLow["low"] + currentBetValue;
+          setHighLow({...newHighLow});
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "low"]);
           break;
         case "odd":
-          newOddEven[0] = newOddEven[0] + currentBetValue;
-          setOddEven([...newOddEven]);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 0]);
+          newOddEven["odd"] = newOddEven["odd"] + currentBetValue;
+          setOddEven({...newOddEven});
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "odd"]);
           break;
         case "red":
-          newRedBlack[0] = redBlack[0] + currentBetValue;
-          setRedBlack([...newRedBlack]);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 0]);
+          newRedBlack["red"] = redBlack["red"] + currentBetValue;
+          setRedBlack({...newRedBlack});
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "red"]);
           break;
         case "black":
-          newRedBlack[1] = newRedBlack[1] + currentBetValue;
-          setRedBlack([...newRedBlack]);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 1]);
+          newRedBlack["black"] = newRedBlack["black"] + currentBetValue;
+          setRedBlack({...newRedBlack});
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "black"]);
           break;
         case "even":
-          newOddEven[1] = newOddEven[1] + currentBetValue;
-          setOddEven([...newOddEven]);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 1]);
+          newOddEven["even"] = newOddEven["even"] + currentBetValue;
+          setOddEven({...newOddEven});
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "even"]);
           break;
         case "high":
-          newHighLow[1] = newHighLow[1] + currentBetValue;
-          setHighLow([...newHighLow]);
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], 1]);
+          newHighLow["high"] = newHighLow["high"] + currentBetValue;
+          setHighLow({...newHighLow});
+          setRecentBet([betToIncrease.match(betTypeRegex)[0], "high"]);
           break;
       }
       setChipCount(chipCount - currentBetValue);
@@ -3823,14 +3823,14 @@ export default function Layout({
           className="bet-box even-money left-even-money"
           onClick={() => increaseBet("low")}
         >
-          {highLow[0] > 0 ? (
+          {highLow["low"] > 0 ? (
             <div className="chip-and-bet dozen-chip">
               <img
                 className="blank-chip"
                 alt="blank chip"
                 src={BlankChip}
               ></img>
-              <p className="bet-text">{highLow[0]}</p>
+              <p className="bet-text">{highLow["low"]}</p>
             </div>
           ) : (
             <></>
@@ -3838,14 +3838,14 @@ export default function Layout({
           1 - 18
         </div>
         <div className="bet-box even-money" onClick={() => increaseBet("odd")}>
-          {oddEven[0] > 0 ? (
+          {oddEven["odd"] > 0 ? (
             <div className="chip-and-bet dozen-chip">
               <img
                 className="blank-chip"
                 alt="blank chip"
                 src={BlankChip}
               ></img>
-              <p className="bet-text">{oddEven[0]}</p>
+              <p className="bet-text">{oddEven["odd"]}</p>
             </div>
           ) : (
             <></>
@@ -3853,14 +3853,14 @@ export default function Layout({
           Odd
         </div>
         <div className="bet-box even-money" onClick={() => increaseBet("red")}>
-          {redBlack[0] > 0 ? (
+          {redBlack["red"] > 0 ? (
             <div className="chip-and-bet dozen-chip">
               <img
                 className="blank-chip"
                 alt="blank chip"
                 src={BlankChip}
               ></img>
-              <p className="bet-text">{redBlack[0]}</p>
+              <p className="bet-text">{redBlack["red"]}</p>
             </div>
           ) : (
             <></>
@@ -3871,14 +3871,14 @@ export default function Layout({
           className="bet-box even-money"
           onClick={() => increaseBet("black")}
         >
-          {redBlack[1] > 0 ? (
+          {redBlack["black"] > 0 ? (
             <div className="chip-and-bet dozen-chip">
               <img
                 className="blank-chip"
                 alt="blank chip"
                 src={BlankChip}
               ></img>
-              <p className="bet-text">{redBlack[1]}</p>
+              <p className="bet-text">{redBlack["black"]}</p>
             </div>
           ) : (
             <></>
@@ -3886,14 +3886,14 @@ export default function Layout({
           <img className="diamond" alt="black diamond" src={BlackDiamond}></img>
         </div>
         <div className="bet-box even-money" onClick={() => increaseBet("even")}>
-          {oddEven[1] > 0 ? (
+          {oddEven["even"] > 0 ? (
             <div className="chip-and-bet dozen-chip">
               <img
                 className="blank-chip"
                 alt="blank chip"
                 src={BlankChip}
               ></img>
-              <p className="bet-text">{oddEven[1]}</p>
+              <p className="bet-text">{oddEven["even"]}</p>
             </div>
           ) : (
             <></>
@@ -3904,14 +3904,14 @@ export default function Layout({
           className="bet-box right-even-money"
           onClick={() => increaseBet("high")}
         >
-          {highLow[1] > 0 ? (
+          {highLow["high"] > 0 ? (
             <div className="chip-and-bet dozen-chip">
               <img
                 className="blank-chip"
                 alt="blank chip"
                 src={BlankChip}
               ></img>
-              <p className="bet-text">{highLow[1]}</p>
+              <p className="bet-text">{highLow["high"]}</p>
             </div>
           ) : (
             <></>
