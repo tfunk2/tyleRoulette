@@ -226,16 +226,16 @@ function App() {
   const undoRecentBet = () => {
     let betType = recentBet[0];
     let betIndex = recentBet[1];
-    let newSplits = splits.flat();
+    let newSplits = {...splits};
     let newStraightUps = {...straightUps};
-    let newColumns = columns.flat();
-    let newStreets = streets.flat();
-    let newDoubleStreets = doubleStreets.flat();
-    let newHighLow = highLow.flat();
-    let newOddEven = oddEven.flat();
-    let newRedBlack = redBlack.flat();
-    let newDozens = dozens.flat();
-    let newCorners = corners.flat();
+    let newColumns = {...columns};
+    let newStreets = {...streets};
+    let newDoubleStreets = {...doubleStreets};
+    let newHighLow = {...highLow};
+    let newOddEven = {...oddEven};
+    let newRedBlack = {...redBlack};
+    let newDozens = {...dozens};
+    let newCorners = {...corners};
 
     switch (betType) {
       case "straight":
