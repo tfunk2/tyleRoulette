@@ -59,16 +59,14 @@ function App() {
   const [oddEven, setOddEven] = useState({"odd":0, "even":0});
   const [highLow, setHighLow] = useState({"high":0, "low":0});
   const [isSpinComplete, setIsSpinComplete] = useState(false);
-  const [recentBet, setRecentBet] = useState([]);
-  const [recentBetValue, setRecentBetValue] = useState(0);
+  const [recentBets, setRecentBets] = useState([]);
   const [isWheelSpinning, setIsWheelSpinning] = useState(false);
 
   const wheelNumbers = [
-      "0",
+      "0", "00",
       "1", "4", "7", "10", "13", "16", "19", "22", "25", "28", "31", "34",
       "2", "5", "8", "11", "14", "17", "20", "23", "26", "29", "32", "35",
-      "3", "6", "9", "12", "15", "18", "21", "24", "27", "30", "33", "36",
-      "00"
+      "3", "6", "9", "12", "15", "18", "21", "24", "27", "30", "33", "36"
   ];
 
   const spinTheWheel = () => {
@@ -153,8 +151,7 @@ function App() {
       setIsSpinComplete(false);
       setChipCount(1000);
     }
-    setRecentBet([]);
-    setRecentBetValue(0);
+    setRecentBets([]);
   };
 
   const whatColorNumber = (winningNum) => {
@@ -209,10 +206,6 @@ function App() {
     }
   };
 
-  // const wheelHistory = previousTwenty.reverse().map(winningNum => {
-  //   return <p className="history-num">{winningNum}</p>
-  // })
-
   const wheelHistoryLine = previousTwenty.map((winningNum) => {
     return (
       <div className={whatColorNumber(winningNum)}>
@@ -224,8 +217,10 @@ function App() {
 
   // Rework this AFTER converting arrays to objects for legibility
   const undoRecentBet = () => {
-    let betType = recentBet[0];
-    let betIndex = recentBet[1];
+    let mostRecentBet = recentBets[recentBets.length - 1];
+    let betType = mostRecentBet[0];
+    let betKey = mostRecentBet[1];
+    let betValue = mostRecentBet[2];
     let newSplits = {...splits};
     let newStraightUps = {...straightUps};
     let newColumns = {...columns};
@@ -239,87 +234,63 @@ function App() {
 
     switch (betType) {
       case "straight":
-        newStraightUps[betIndex] = straightUps[betIndex] - recentBetValue;
+        newStraightUps[betKey] = straightUps[betKey] - betValue;
         setStraightUps(newStraightUps);
-        setRecentBet([]);
-        setRecentBetValue([]);
         break;
       case "split":
-        newSplits[betIndex] = splits[betIndex] - recentBetValue;
+        newSplits[betKey] = splits[betKey] - betValue;
         setSplits(newSplits);
-        setRecentBet([]);
-        setRecentBetValue([]);
         break;
       case "corner":
-        newCorners[betIndex] = corners[betIndex] - recentBetValue;
+        newCorners[betKey] = corners[betKey] - betValue;
         setCorners(newCorners);
-        setRecentBet([]);
-        setRecentBetValue([]);
         break;
       case "street":
-        newStreets[betIndex] = streets[betIndex] - recentBetValue;
+        newStreets[betKey] = streets[betKey] - betValue;
         setStreets(newStreets);
-        setRecentBet([]);
-        setRecentBetValue([]);
         break;
       case "double-street":
-        newDoubleStreets[betIndex] = doubleStreets[betIndex] - recentBetValue;
+        newDoubleStreets[betKey] = doubleStreets[betKey] - betValue;
         setDoubleStreets(newDoubleStreets);
-        setRecentBet([]);
-        setRecentBetValue([]);
         break;
       case "column":
-        newColumns[betIndex] = columns[betIndex] - recentBetValue;
+        newColumns[betKey] = columns[betKey] - betValue;
         setColumns(newColumns);
-        setRecentBet([]);
-        setRecentBetValue([]);
         break;
       case "dozen":
-        newDozens[betIndex] = dozens[betIndex] - recentBetValue;
+        newDozens[betKey] = dozens[betKey] - betValue;
         setDozens(newDozens);
-        setRecentBet([]);
-        setRecentBetValue([]);
         break;
       case "low":
-        newHighLow[betIndex] = highLow[betIndex] - recentBetValue;
+        newHighLow[betKey] = highLow[betKey] - betValue;
         setHighLow(newHighLow);
-        setRecentBet([]);
-        setRecentBetValue([]);
         break;
       case "high":
-        newHighLow[betIndex] = highLow[betIndex] - recentBetValue;
+        newHighLow[betKey] = highLow[betKey] - betValue;
         setHighLow(newHighLow);
-        setRecentBet([]);
-        setRecentBetValue([]);
         break;
       case "odd":
-        newOddEven[betIndex] = oddEven[betIndex] - recentBetValue;
+        newOddEven[betKey] = oddEven[betKey] - betValue;
         setOddEven(newOddEven);
-        setRecentBet([]);
-        setRecentBetValue([]);
         break;
       case "even":
-        newOddEven[betIndex] = oddEven[betIndex] - recentBetValue;
+        newOddEven[betKey] = oddEven[betKey] - betValue;
         setOddEven(newOddEven);
-        setRecentBet([]);
-        setRecentBetValue([]);
         break;
       case "red":
-        newRedBlack[betIndex] = redBlack[betIndex] - recentBetValue;
+        newRedBlack[betKey] = redBlack[betKey] - betValue;
         setRedBlack(newRedBlack);
-        setRecentBet([]);
-        setRecentBetValue([]);
         break;
       case "basket":
-        setBasket(basket - recentBetValue);
-        setRecentBet([]);
-        setRecentBetValue([]);
+        setBasket(basket - betValue);
         break;
       default:
         console.log("No recent bet");
     }
-    setChipCount(chipCount + recentBetValue);
-    setPendingTotalBet(pendingTotalBet - recentBetValue);
+    setChipCount(chipCount + betValue);
+    setPendingTotalBet(pendingTotalBet - betValue);
+    let newRecentBets = recentBets.splice(0, recentBets.length - 1);
+    setRecentBets(newRecentBets);
   };
 
   const collectWinnings = () => {
@@ -1107,7 +1078,7 @@ function App() {
         isSpinComplete={isSpinComplete}
         isWheelSpinning={isWheelSpinning}
         pendingTotalBet={pendingTotalBet}
-        recentBet={recentBet}
+        recentBets={recentBets}
         resetLayout={resetLayout}
         setCurrentBetValue={setCurrentBetValue}
         spinTheWheel={spinTheWheel}
@@ -1129,6 +1100,7 @@ function App() {
           isSpinComplete={isSpinComplete}
           oddEven={oddEven}
           pendingTotalBet={pendingTotalBet}
+          recentBets={recentBets}
           redBlack={redBlack}
           setBasket={setBasket}
           setChipCount={setChipCount}
@@ -1139,8 +1111,7 @@ function App() {
           setHighLow={setHighLow}
           setOddEven={setOddEven}
           setPendingTotalBet={setPendingTotalBet}
-          setRecentBet={setRecentBet}
-          setRecentBetValue={setRecentBetValue}
+          setRecentBets={setRecentBets}
           setRedBlack={setRedBlack}
           setSplits={setSplits}
           setStraightUps={setStraightUps}

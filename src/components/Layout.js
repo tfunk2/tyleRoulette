@@ -17,6 +17,7 @@ export default function Layout({
   isSpinComplete, 
   oddEven, 
   pendingTotalBet, 
+  recentBets,
   redBlack, 
   setBasket, 
   setChipCount, 
@@ -27,8 +28,7 @@ export default function Layout({
   setHighLow, 
   setOddEven, 
   setPendingTotalBet, 
-  setRecentBet, 
-  setRecentBetValue, 
+  setRecentBets, 
   setRedBlack, 
   setSplits, 
   setStraightUps, 
@@ -56,806 +56,811 @@ export default function Layout({
       let newDozens = {...dozens};
       let newCorners = {...corners};
       let betTypeRegex = /[a-z]+-?[a-z]+?$|low|high/;
+      let betType = betToIncrease.match(betTypeRegex)[0];
 
+      // Create a helper function which returns [...recentBets, [betType, x, currentBetValue]] 
+      // in order to remove repeated code below
       switch (betToIncrease) {
         case "0-00 split":
           newSplits["0-00"] = splits["0-00"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "0-00"]);
+          setRecentBets([...recentBets, [betType, "0-00", currentBetValue]]);
           break;
         case "00 straight":
           newStraightUps["00"] = straightUps["00"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "00"]);
+          setRecentBets([...recentBets, [betType, "00", currentBetValue]]);
           break;
         case "0 straight":
           newStraightUps["0"] = straightUps["0"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "0"]);
+          setRecentBets([...recentBets, [betType, "0", currentBetValue]]);
           break;
         case "00-3 split":
           newSplits["00-3"] = splits["00-3"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "00-3"]);
+          setRecentBets([...recentBets, [betType, "00-3", currentBetValue]]);
           break;
         case "3 straight":
           newStraightUps["3"] = straightUps["3"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "3"]);
+          setRecentBets([...recentBets, [betType, "3", currentBetValue]]);
           break;
         case "3-6 split":
           newSplits["3-6"] = splits["3-6"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "3-6"]);
+          setRecentBets([...recentBets, [betType, "3-6", currentBetValue]]);
           break;
         case "6 straight":
           newStraightUps["6"] = straightUps["6"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "6"]);
+          setRecentBets([...recentBets, [betType, "6", currentBetValue]]);
           break;
         case "6-9 split":
           newSplits["6-9"] = splits["6-9"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "6-9"]);
+          setRecentBets([...recentBets, [betType, "6-9", currentBetValue]]);
           break;
         case "9 straight":
           newStraightUps["9"] = straightUps["9"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "9"]);
+          setRecentBets([...recentBets, [betType, "9", currentBetValue]]);
           break;
         case "9-12 split":
           newSplits["9-12"] = splits["9-12"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "9-12"]);
+          setRecentBets([...recentBets, [betType, "9-12", currentBetValue]]);
           break;
         case "12 straight":
           newStraightUps["12"] = straightUps["12"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "12"]);
+          setRecentBets([...recentBets, [betType, "12", currentBetValue]]);
           break;
         case "12-15 split":
           newSplits["12-15"] = splits["12-15"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "12-15"]);
+          setRecentBets([...recentBets, [betType, "12-15", currentBetValue]]);
           break;
         case "15 straight":
           newStraightUps["15"] = straightUps["15"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "15"]);
+          setRecentBets([...recentBets, [betType, "15", currentBetValue]]);
           break;
         case "15-18 split":
           newSplits["15-18"] = splits["15-18"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "15-18"]);
+          setRecentBets([...recentBets, [betType, "15-18", currentBetValue]]);
           break;
         case "18 straight":
           newStraightUps["18"] = straightUps["18"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "18"]);
+          setRecentBets([...recentBets, [betType, "18", currentBetValue]]);
           break;
         case "18-21 split":
           newSplits["18-21"] = splits["18-21"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "18-21"]);
+          setRecentBets([...recentBets, [betType, "18-21", currentBetValue]]);
           break;
         case "21 straight":
           newStraightUps["21"] = straightUps["21"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "21"]);
+          setRecentBets([...recentBets, [betType, "21", currentBetValue]]);
           break;
         case "21-24 split":
           newSplits["21-24"] = splits["21-24"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "21-24"]);
+          setRecentBets([...recentBets, [betType, "21-24", currentBetValue]]);
           break;
         case "24 straight":
           newStraightUps["24"] = straightUps["24"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "24"]);
+          setRecentBets([...recentBets, [betType, "24", currentBetValue]]);
           break;
         case "24-27 split":
           newSplits["24-27"] = splits["24-27"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "24-27"]);
+          setRecentBets([...recentBets, [betType, "24-27", currentBetValue]]);
           break;
         case "27 straight":
           newStraightUps["27"] = straightUps["27"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "27"]);
+          setRecentBets([...recentBets, [betType, "27", currentBetValue]]);
           break;
         case "27-30 split":
           newSplits["27-30"] = splits["27-30"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "27-30"]);
+          setRecentBets([...recentBets, [betType, "27-30", currentBetValue]]);
           break;
         case "30 straight":
           newStraightUps["30"] = straightUps["30"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "30"]);
+          setRecentBets([...recentBets, [betType, "30", currentBetValue]]);
           break;
         case "30-33 split":
           newSplits["30-33"] = splits["30-33"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "30-33"]);
+          setRecentBets([...recentBets, [betType, "30-33", currentBetValue]]);
           break;
         case "33 straight":
           newStraightUps["33"] = straightUps["33"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "33"]);
+          setRecentBets([...recentBets, [betType, "33", currentBetValue]]);
           break;
         case "33-36 split":
           newSplits["33-36"] = splits["33-36"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "33-36"]);
+          setRecentBets([...recentBets, [betType, "33-36", currentBetValue]]);
           break;
         case "36 straight":
           newStraightUps["36"] = straightUps["36"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "36"]);
+          setRecentBets([...recentBets, [betType, "36", currentBetValue]]);
           break;
         case "3rd column":
           newColumns["3rd column"] = columns["3rd column"] + currentBetValue;
           setColumns({...newColumns});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "3rd column"]);
+          setRecentBets([...recentBets, [betType, "3rd column", currentBetValue]]);
           break;
         case "00-2-3 street":
           newStreets["00-2-3"] = streets["00-2-3"] + currentBetValue;
           setStreets({...newStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "00-2-3"]);
+          setRecentBets([...recentBets, [betType, "00-2-3", currentBetValue]]);
           break;
         case "2-3 split":
           newSplits["2-3"] = splits["2-3"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "2-3"]);
+          setRecentBets([...recentBets, [betType, "2-3", currentBetValue]]);
           break;
         case "2-3-5-6 corner":
           newCorners["2-3-5-6"] = corners["2-3-5-6"] + currentBetValue;
           setCorners({...newCorners});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "2-3-5-6"]);
+          setRecentBets([...recentBets, [betType, "2-3-5-6", currentBetValue]]);
           break;
         case "5-6 split":
           newSplits["5-6"] = splits["5-6"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "5-6"]);
+          setRecentBets([...recentBets, [betType, "5-6", currentBetValue]]);
           break;
         case "5-6-8-9 corner":
           newCorners["5-6-8-9"] = corners["5-6-8-9"] + currentBetValue;
           setCorners({...newCorners});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "5-6-8-9"]);
+          setRecentBets([...recentBets, [betType, "5-6-8-9", currentBetValue]]);
           break;
         case "8-9 split":
           newSplits["8-9"] = splits["8-9"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "8-9"]);
+          setRecentBets([...recentBets, [betType, "8-9", currentBetValue]]);
           break;
         case "8-9-11-12 corner":
           newCorners["8-9-11-12"] = corners["8-9-11-12"] + currentBetValue;
           setCorners({...newCorners});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "8-9-11-12"]);
+          setRecentBets([...recentBets, [betType, "8-9-11-12", currentBetValue]]);
           break;
         case "11-12 split":
           newSplits["11-12"] = splits["11-12"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "11-12"]);
+          setRecentBets([...recentBets, [betType, "11-12", currentBetValue]]);
           break;
         case "11-12-14-15 corner":
           newCorners["11-12-14-15"] = corners["11-12-14-15"] + currentBetValue;
           setCorners({...newCorners});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "11-12-14-15"]);
+          setRecentBets([...recentBets, [betType, "11-12-14-15", currentBetValue]]);
           break;
         case "14-15 split":
           newSplits["14-15"] = splits["14-15"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "14-15"]);
+          setRecentBets([...recentBets, [betType, "14-15", currentBetValue]]);
           break;
         case "14-15-17-18 corner":
           newCorners["14-15-17-18"] = corners["14-15-17-18"] + currentBetValue;
           setCorners({...newCorners});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "14-15-17-18"]);
+          setRecentBets([...recentBets, [betType, "14-15-17-18", currentBetValue]]);
           break;
         case "17-18 split":
           newSplits["17-18"] = splits["17-18"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "17-18"]);
+          setRecentBets([...recentBets, [betType, "17-18", currentBetValue]]);
           break;
         case "17-18-20-21 corner":
           newCorners["17-18-20-21"] = corners["17-18-20-21"] + currentBetValue;
           setCorners({...newCorners});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "17-18-20-21"]);
+          setRecentBets([...recentBets, [betType, "17-18-20-21", currentBetValue]]);
           break;
         case "20-21 split":
           newSplits["20-21"] = splits["20-21"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "20-21"]);
+          setRecentBets([...recentBets, [betType, "20-21", currentBetValue]]);
           break;
         case "20-21-23-24 corner":
           newCorners["20-21-23-24"] = corners["20-21-23-24"] + currentBetValue;
           setCorners({...newCorners});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "20-21-23-24"]);
+          setRecentBets([...recentBets, [betType, "20-21-23-24", currentBetValue]]);
           break;
         case "23-24 split":
           newSplits["23-24"] = splits["23-24"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "23-24"]);
+          setRecentBets([...recentBets, [betType, "23-24", currentBetValue]]);
           break;
         case "23-24-26-27 corner":
           newCorners["23-24-26-27"] = corners["23-24-26-27"] + currentBetValue;
           setCorners({...newCorners});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "23-24-26-27"]);
+          setRecentBets([...recentBets, [betType, "23-24-26-27", currentBetValue]]);
           break;
         case "26-27 split":
           newSplits["26-27"] = splits["26-27"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "26-27"]);
+          setRecentBets([...recentBets, [betType, "26-27", currentBetValue]]);
           break;
         case "26-27-29-30 corner":
           newCorners["26-27-29-30"] = corners["26-27-29-30"] + currentBetValue;
           setCorners({...newCorners});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "26-27-29-30"]);
+          setRecentBets([...recentBets, [betType, "26-27-29-30", currentBetValue]]);
           break;
         case "29-30 split":
           newSplits["29-30"] = splits["29-30"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "29-30"]);
+          setRecentBets([...recentBets, [betType, "29-30", currentBetValue]]);
           break;
         case "29-30-32-33 corner":
           newCorners["29-30-32-33"] = corners["29-30-32-33"] + currentBetValue;
           setCorners({...newCorners});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "29-30-32-33"]);
+          setRecentBets([...recentBets, [betType, "29-30-32-33", currentBetValue]]);
           break;
         case "32-33 split":
           newSplits["32-33"] = splits["32-33"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "32-33"]);
+          setRecentBets([...recentBets, [betType, "32-33", currentBetValue]]);
           break;
         case "32-33-35-36 corner":
           newCorners["32-33-35-36"] = corners["32-33-35-36"] + currentBetValue;
           setCorners({...newCorners});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "32-33-35-36"]);
+          setRecentBets([...recentBets, [betType, "32-33-35-36", currentBetValue]]);
           break;
         case "35-36 split":
           newSplits["35-36"] = splits["35-36"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "35-36"]);
+          setRecentBets([...recentBets, [betType, "35-36", currentBetValue]]);
           break;
         case "0-00-2 street":
           newStreets["0-00-2"] = streets["0-00-2"] + currentBetValue;
           setStreets({...newStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "0-00-2"]);
+          setRecentBets([...recentBets, [betType, "0-00-2", currentBetValue]]);
           break;
         case "2 straight":
           newStraightUps["2"] = straightUps["2"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "2"]);
+          setRecentBets([...recentBets, [betType, "2", currentBetValue]]);
           break;
         case "2-5 split":
           newSplits["2-5"] = splits["2-5"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "2-5"]);
+          setRecentBets([...recentBets, [betType, "2-5", currentBetValue]]);
           break;
         case "5 straight":
           newStraightUps["5"] = straightUps["5"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "5"]);
+          setRecentBets([...recentBets, [betType, "5", currentBetValue]]);
           break;
         case "5-8 split":
           newSplits["5-8"] = splits["5-8"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "5-8"]);
+          setRecentBets([...recentBets, [betType, "5-8", currentBetValue]]);
           break;
         case "8 straight":
           newStraightUps["8"] = straightUps["8"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "8"]);
+          setRecentBets([...recentBets, [betType, "8", currentBetValue]]);
           break;
         case "8-11 split":
           newSplits["8-11"] = splits["8-11"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "8-11"]);
+          setRecentBets([...recentBets, [betType, "8-11", currentBetValue]]);
           break;
         case "11 straight":
           newStraightUps["11"] = straightUps["11"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "11"]);
+          setRecentBets([...recentBets, [betType, "11", currentBetValue]]);
           break;
         case "11-14 split":
           newSplits["11-14"] = splits["11-14"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "11-14"]);
+          setRecentBets([...recentBets, [betType, "11-14", currentBetValue]]);
           break;
         case "14 straight":
           newStraightUps["14"] = straightUps["14"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "14"]);
+          setRecentBets([...recentBets, [betType, "14", currentBetValue]]);
           break;
         case "14-17 split":
           newSplits["14-17"] = splits["14-17"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "14-17"]);
+          setRecentBets([...recentBets, [betType, "14-17", currentBetValue]]);
           break;
         case "17 straight":
           newStraightUps["17"] = straightUps["17"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "17"]);
+          setRecentBets([...recentBets, [betType, "17", currentBetValue]]);
           break;
         case "17-20 split":
           newSplits["17-20"] = splits["17-20"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "17-20"]);
+          setRecentBets([...recentBets, [betType, "17-20", currentBetValue]]);
           break;
         case "20 straight":
           newStraightUps["20"] = straightUps["20"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "20"]);
+          setRecentBets([...recentBets, [betType, "20", currentBetValue]]);
           break;
         case "20-23 split":
           newSplits["20-23"] = splits["20-23"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "20-23"]);
+          setRecentBets([...recentBets, [betType, "20-23", currentBetValue]]);
           break;
         case "23 straight":
           newStraightUps["23"] = straightUps["23"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "23"]);
+          setRecentBets([...recentBets, [betType, "23", currentBetValue]]);
           break;
         case "23-26 split":
           newSplits["23-26"] = splits["23-26"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "23-26"]);
+          setRecentBets([...recentBets, [betType, "23-26", currentBetValue]]);
           break;
         case "26 straight":
           newStraightUps["26"] = straightUps["26"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "26"]);
+          setRecentBets([...recentBets, [betType, "26", currentBetValue]]);
           break;
         case "26-29 split":
           newSplits["26-29"] = splits["26-29"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "26-29"]);
+          setRecentBets([...recentBets, [betType, "26-29", currentBetValue]]);
           break;
         case "29 straight":
           newStraightUps["29"] = straightUps["29"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "29"]);
+          setRecentBets([...recentBets, [betType, "29", currentBetValue]]);
           break;
         case "29-32 split":
           newSplits["29-32"] = splits["29-32"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "29-32"]);
+          setRecentBets([...recentBets, [betType, "29-32", currentBetValue]]);
           break;
         case "32 straight":
           newStraightUps["32"] = straightUps["32"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "32"]);
+          setRecentBets([...recentBets, [betType, "32", currentBetValue]]);
           break;
         case "32-35 split":
           newSplits["32-35"] = splits["32-35"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "32-35"]);
+          setRecentBets([...recentBets, [betType, "32-35", currentBetValue]]);
           break;
         case "35 straight":
           newStraightUps["35"] = straightUps["35"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "35"]);
+          setRecentBets([...recentBets, [betType, "35", currentBetValue]]);
           break;
         case "2nd column":
           newColumns["2nd column"] = columns["2nd column"] + currentBetValue;
           setColumns({...newColumns});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "2nd column"]);
+          setRecentBets([...recentBets, [betType, "2nd column", currentBetValue]]);
           break;
         case "basket":
           setBasket(basket + currentBetValue);
-          setRecentBet(["basket", null]);
+          setRecentBets([...recentBets, ["basket", null, currentBetValue]]);
           break;
         case "0-1-2 street":
           newStreets["0-1-2"] = streets["0-1-2"] + currentBetValue;
           setStreets({...newStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "0-1-2"]);
+          setRecentBets([...recentBets, [betType, "0-1-2", currentBetValue]]);
           break;
         case "1-2 split":
           newSplits["1-2"] = splits["1-2"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "1-2"]);
+          setRecentBets([...recentBets, [betType, "1-2", currentBetValue]]);
           break;
         case "1-2-4-5 corner":
           newCorners["1-2-4-5"] = corners["1-2-4-5"] + currentBetValue;
           setCorners({...newCorners});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "1-2-4-5"]);
+          setRecentBets([...recentBets, [betType, "1-2-4-5", currentBetValue]]);
           break;
         case "4-5 split":
           newSplits["4-5"] = splits["4-5"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "4-5"]);
+          setRecentBets([...recentBets, [betType, "4-5", currentBetValue]]);
           break;
         case "4-5-7-8 corner":
           newCorners["4-5-7-8"] = corners["4-5-7-8"] + currentBetValue;
           setCorners({...newCorners});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "4-5-7-8"]);
+          setRecentBets([...recentBets, [betType, "4-5-7-8", currentBetValue]]);
           break;
         case "7-8 split":
           newSplits["7-8"] = splits["7-8"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "7-8"]);
+          setRecentBets([...recentBets, [betType, "7-8", currentBetValue]]);
           break;
         case "7-8-10-11 corner":
           newCorners["7-8-10-11"] = corners["7-8-10-11"] + currentBetValue;
           setCorners({...newCorners});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "7-8-10-11"]);
+          setRecentBets([...recentBets, [betType, "7-8-10-11", currentBetValue]]);
           break;
         case "10-11 split":
           newSplits["10-11"] = splits["10-11"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "10-11"]);
+          setRecentBets([...recentBets, [betType, "10-11", currentBetValue]]);
           break;
         case "10-11-13-14 corner":
           newCorners["10-11-13-14"] = corners["10-11-13-14"] + currentBetValue;
           setCorners({...newCorners});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "10-11-13-14"]);
+          setRecentBets([...recentBets, [betType, "10-11-13-14", currentBetValue]]);
           break;
         case "13-14 split":
           newSplits["13-14"] = splits["13-14"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "13-14"]);
+          setRecentBets([...recentBets, [betType, "13-14", currentBetValue]]);
           break;
         case "13-14-16-17 corner":
           newCorners["13-14-16-17"] = corners["13-14-16-17"] + currentBetValue;
           setCorners({...newCorners});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "13-14-16-17"]);
+          setRecentBets([...recentBets, [betType, "13-14-16-17", currentBetValue]]);
           break;
         case "16-17 split":
           newSplits["16-17"] = splits["16-17"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "16-17"]);
+          setRecentBets([...recentBets, [betType, "16-17", currentBetValue]]);
           break;
         case "16-17-19-20 corner":
           newCorners["16-17-19-20"] = corners["16-17-19-20"] + currentBetValue;
           setCorners({...newCorners});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "16-17-19-20"]);
+          setRecentBets([...recentBets, [betType, "16-17-19-20", currentBetValue]]);
           break;
         case "19-20 split":
           newSplits["19-20"] = splits["19-20"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "19-20"]);
+          setRecentBets([...recentBets, [betType, "19-20", currentBetValue]]);
           break;
         case "19-20-22-23 corner":
           newCorners["19-20-22-23"] = corners["19-20-22-23"] + currentBetValue;
           setCorners({...newCorners});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "19-20-22-23"]);
+          setRecentBets([...recentBets, [betType, "19-20-22-23", currentBetValue]]);
           break;
         case "22-23 split":
           newSplits["22-23"] = splits["22-23"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "22-23"]);
+          setRecentBets([...recentBets, [betType, "22-23", currentBetValue]]);
           break;
         case "22-23-25-26 corner":
           newCorners["22-23-25-26"] = corners["22-23-25-26"] + currentBetValue;
           setCorners({...newCorners});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "22-23-25-26"]);
+          setRecentBets([...recentBets, [betType, "22-23-25-26", currentBetValue]]);
           break;
         case "25-26 split":
           newSplits["25-26"] = splits["25-26"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "25-26"]);
+          setRecentBets([...recentBets, [betType, "25-26", currentBetValue]]);
           break;
         case "25-26-28-29 corner":
           newCorners["25-26-28-29"] = corners["25-26-28-29"] + currentBetValue;
           setCorners({...newCorners});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "25-26-28-29"]);
+          setRecentBets([...recentBets, [betType, "25-26-28-29", currentBetValue]]);
           break;
         case "28-29 split":
           newSplits["28-29"] = splits["28-29"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "28-29"]);
+          setRecentBets([...recentBets, [betType, "28-29", currentBetValue]]);
           break;
         case "28-29-31-32 corner":
           newCorners["28-29-31-32"] = corners["28-29-31-32"] + currentBetValue;
           setCorners({...newCorners});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "28-29-31-32"]);
+          setRecentBets([...recentBets, [betType, "28-29-31-32", currentBetValue]]);
           break;
         case "31-32 split":
           newSplits["31-32"] = splits["31-32"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "31-32"]);
+          setRecentBets([...recentBets, [betType, "31-32", currentBetValue]]);
           break;
         case "31-32-34-35 corner":
           newCorners["31-32-34-35"] = corners["31-32-34-35"] + currentBetValue;
           setCorners({...newCorners});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "31-32-34-35"]);
+          setRecentBets([...recentBets, [betType, "31-32-34-35", currentBetValue]]);
           break;
         case "34-35 split":
           newSplits["34-35"] = splits["34-35"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "34-35"]);
+          setRecentBets([...recentBets, [betType, "34-35", currentBetValue]]);
           break;
         case "0-1 split":
           newSplits["0-1"] = splits["0-1"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "0-1"]);
+          setRecentBets([...recentBets, [betType, "0-1", currentBetValue]]);
           break;
         case "1 straight":
           newStraightUps["1"] = straightUps["1"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "1"]);
+          setRecentBets([...recentBets, [betType, "1", currentBetValue]]);
           break;
         case "1-4 split":
           newSplits["1-4"] = splits["1-4"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "1-4"]);
+          setRecentBets([...recentBets, [betType, "1-4", currentBetValue]]);
           break;
         case "4 straight":
           newStraightUps["4"] = straightUps["4"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "4"]);
+          setRecentBets([...recentBets, [betType, "4", currentBetValue]]);
           break;
         case "4-7 split":
           newSplits["4-7"] = splits["4-7"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "4-7"]);
+          setRecentBets([...recentBets, [betType, "4-7", currentBetValue]]);
           break;
         case "7 straight":
           newStraightUps["7"] = straightUps["7"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "7"]);
+          setRecentBets([...recentBets, [betType, "7", currentBetValue]]);
           break;
         case "7-10 split":
           newSplits["7-10"] = splits["7-10"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "7-10"]);
+          setRecentBets([...recentBets, [betType, "7-10", currentBetValue]]);
           break;
         case "10 straight":
           newStraightUps["10"] = straightUps["10"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "10"]);
+          setRecentBets([...recentBets, [betType, "10", currentBetValue]]);
           break;
         case "10-13 split":
           newSplits["10-13"] = splits["10-13"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "10-13"]);
+          setRecentBets([...recentBets, [betType, "10-13", currentBetValue]]);
           break;
         case "13 straight":
           newStraightUps["13"] = straightUps["13"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "13"]);
+          setRecentBets([...recentBets, [betType, "13", currentBetValue]]);
           break;
         case "13-16 split":
           newSplits["13-16"] = splits["13-16"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "13-16"]);
+          setRecentBets([...recentBets, [betType, "13-16", currentBetValue]]);
           break;
         case "16 straight":
           newStraightUps["16"] = straightUps["16"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "16"]);
+          setRecentBets([...recentBets, [betType, "16", currentBetValue]]);
           break;
         case "16-19 split":
           newSplits["16-19"] = splits["16-19"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "16-19"]);
+          setRecentBets([...recentBets, [betType, "16-19", currentBetValue]]);
           break;
         case "19 straight":
           newStraightUps["19"] = straightUps["19"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "19"]);
+          setRecentBets([...recentBets, [betType, "19", currentBetValue]]);
           break;
         case "19-22 split":
           newSplits["19-22"] = splits["19-22"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "19-22"]);
+          setRecentBets([...recentBets, [betType, "19-22", currentBetValue]]);
           break;
         case "22 straight":
           newStraightUps["22"] = straightUps["22"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "22"]);
+          setRecentBets([...recentBets, [betType, "22", currentBetValue]]);
           break;
         case "22-25 split":
           newSplits["22-25"] = splits["22-25"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "22-25"]);
+          setRecentBets([...recentBets, [betType, "22-25", currentBetValue]]);
           break;
         case "25 straight":
           newStraightUps["25"] = straightUps["25"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "25"]);
+          setRecentBets([...recentBets, [betType, "25", currentBetValue]]);
           break;
         case "25-28 split":
           newSplits["25-28"] = splits["25-28"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "25-28"]);
+          setRecentBets([...recentBets, [betType, "25-28", currentBetValue]]);
           break;
         case "28 straight":
           newStraightUps["28"] = straightUps["28"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "28"]);
+          setRecentBets([...recentBets, [betType, "28", currentBetValue]]);
           break;
         case "28-31 split":
           newSplits["28-31"] = splits["28-31"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "28-31"]);
+          setRecentBets([...recentBets, [betType, "28-31", currentBetValue]]);
           break;
         case "31 straight":
           newStraightUps["31"] = straightUps["31"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "31"]);
+          setRecentBets([...recentBets, [betType, "31", currentBetValue]]);
           break;
         case "31-34 split":
           newSplits["31-34"] = splits["31-34"] + currentBetValue;
           setSplits({...newSplits});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "31-34"]);
+          setRecentBets([...recentBets, [betType, "31-34", currentBetValue]]);
           break;
         case "34 straight":
           newStraightUps["34"] = straightUps["34"] + currentBetValue;
           setStraightUps({...newStraightUps});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "34"]);
+          setRecentBets([...recentBets, [betType, "34", currentBetValue]]);
           break;
         case "1st column":
           newColumns["1st column"] = columns["1st column"] + currentBetValue;
           setColumns({...newColumns});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "1st column"]);
+          setRecentBets([...recentBets, [betType, "1st column", currentBetValue]]);
           break;
         case "1-2-3 street":
           newStreets["1-2-3"] = streets["1-2-3"] + currentBetValue;
           setStreets({...newStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "1-2-3"]);
+          setRecentBets([...recentBets, [betType, "1-2-3", currentBetValue]]);
           break;
         case "1 to 6 double-street":
           newDoubleStreets["1 to 6"] = doubleStreets["1 to 6"] + currentBetValue;
           setDoubleStreets({...newDoubleStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "1 to 6"]);
+          setRecentBets([...recentBets, [betType, "1 to 6", currentBetValue]]);
           break;
         case "4-5-6 street":
           newStreets["4-5-6"] = streets["4-5-6"] + currentBetValue;
           setStreets({...newStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "4-5-6"]);
+          setRecentBets([...recentBets, [betType, "4-5-6", currentBetValue]]);
           break;
         case "4 to 9 double-street":
           newDoubleStreets["4 to 9"] = doubleStreets["4 to 9"] + currentBetValue;
           setDoubleStreets({...newDoubleStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "4 to 9"]);
+          setRecentBets([...recentBets, [betType, "4 to 9", currentBetValue]]);
           break;
         case "7-8-9 street":
           newStreets["7-8-9"] = streets["7-8-9"] + currentBetValue;
           setStreets({...newStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "7-8-9"]);
+          setRecentBets([...recentBets, [betType, "7-8-9", currentBetValue]]);
           break;
         case "7 to 12 double-street":
           newDoubleStreets["7 to 12"] = doubleStreets["7 to 12"] + currentBetValue;
           setDoubleStreets({...newDoubleStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "7 to 12"]);
+          setRecentBets([...recentBets, [betType, "7 to 12", currentBetValue]]);
           break;
         case "10-11-12 street":
           newStreets["10-11-12"] = streets["10-11-12"] + currentBetValue;
           setStreets({...newStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "10-11-12"]);
+          setRecentBets([...recentBets, [betType, "10-11-12", currentBetValue]]);
           break;
         case "10 to 15 double-street":
           newDoubleStreets["10 to 15"] = doubleStreets["10 to 15"] + currentBetValue;
           setDoubleStreets({...newDoubleStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "10 to 15"]);
+          setRecentBets([...recentBets, [betType, "10 to 15", currentBetValue]]);
           break;
         case "13-14-15 street":
           newStreets["13-14-15"] = streets["13-14-15"] + currentBetValue;
           setStreets({...newStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "13-14-15"]);
+          setRecentBets([...recentBets, [betType, "13-14-15", currentBetValue]]);
           break;
         case "13 to 18 double-street":
           newDoubleStreets["13 to 18"] = doubleStreets["13 to 18"] + currentBetValue;
           setDoubleStreets({...newDoubleStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "13 to 18"]);
+          setRecentBets([...recentBets, [betType, "13 to 18", currentBetValue]]);
           break;
         case "16-17-18 street":
           newStreets["16-17-18"] = streets["16-17-18"] + currentBetValue;
           setStreets({...newStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "16-17-18"]);
+          setRecentBets([...recentBets, [betType, "16-17-18", currentBetValue]]);
           break;
         case "16 to 21 double-street":
           newDoubleStreets["16 to 21"] = doubleStreets["16 to 21"] + currentBetValue;
           setDoubleStreets({...newDoubleStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "16 to 21"]);
+          setRecentBets([...recentBets, [betType, "16 to 21", currentBetValue]]);
           break;
         case "19-20-21 street":
           newStreets["19-20-21"] = streets["19-20-21"] + currentBetValue;
           setStreets({...newStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "19-20-21"]);
+          setRecentBets([...recentBets, [betType, "19-20-21", currentBetValue]]);
           break;
         case "19 to 24 double-street":
           newDoubleStreets["19 to 24"] = doubleStreets["19 to 24"] + currentBetValue;
           setDoubleStreets({...newDoubleStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "19 to 24"]);
+          setRecentBets([...recentBets, [betType, "19 to 24", currentBetValue]]);
           break;
         case "22-23-24 street":
           newStreets["22-23-24"] = streets["22-23-24"] + currentBetValue;
           setStreets({...newStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "22-23-24"]);
+          setRecentBets([...recentBets, [betType, "22-23-24", currentBetValue]]);
           break;
         case "22 to 27 double-street":
           newDoubleStreets["22 to 27"] = doubleStreets["22 to 27"] + currentBetValue;
           setDoubleStreets({...newDoubleStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "22 to 27"]);
+          setRecentBets([...recentBets, [betType, "22 to 27", currentBetValue]]);
           break;
         case "25-26-27 street":
           newStreets["25-26-27"] = streets["25-26-27"] + currentBetValue;
           setStreets({...newStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "25-26-27"]);
+          setRecentBets([...recentBets, [betType, "25-26-27", currentBetValue]]);
           break;
         case "25 to 30 double-street":
           newDoubleStreets["25 to 30"] = doubleStreets["25 to 30"] + currentBetValue;
           setDoubleStreets({...newDoubleStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "25 to 30"]);
+          setRecentBets([...recentBets, [betType, "25 to 30", currentBetValue]]);
           break;
         case "28-29-30 street":
           newStreets["28-29-30"] = streets["28-29-30"] + currentBetValue;
           setStreets({...newStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "28-29-30"]);
+          setRecentBets([...recentBets, [betType, "28-29-30", currentBetValue]]);
           break;
         case "28 to 33 double-street":
           newDoubleStreets["28 to 33"] = doubleStreets["28 to 33"] + currentBetValue;
           setDoubleStreets({...newDoubleStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "28 to 33"]);
+          setRecentBets([...recentBets, [betType, "28 to 33", currentBetValue]]);
           break;
         case "31-32-33 street":
           newStreets["31-32-33"] = streets["31-32-33"] + currentBetValue;
           setStreets({...newStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "31-32-33"]);
+          setRecentBets([...recentBets, [betType, "31-32-33", currentBetValue]]);
           break;
         case "31-36 double-street":
           newDoubleStreets["31 to 36"] = doubleStreets["31 to 36"] + currentBetValue;
           setDoubleStreets({...newDoubleStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "31 to 36"]);
+          setRecentBets([...recentBets, [betType, "31 to 36", currentBetValue]]);
           break;
         case "34-35-36 street":
           newStreets["34-35-36"] = streets["34-35-36"] + currentBetValue;
           setStreets({...newStreets});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "34-35-36"]);
+          setRecentBets([...recentBets, [betType, "34-35-36", currentBetValue]]);
           break;
         case "1st dozen":
           newDozens["1st dozen"] = dozens["1st dozen"] + currentBetValue;
           setDozens({...newDozens});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "1st dozen"]);
+          setRecentBets([...recentBets, [betType, "1st dozen", currentBetValue]]);
           break;
         case "2nd dozen":
           newDozens["2nd dozen"] = dozens["2nd dozen"] + currentBetValue;
           setDozens({...newDozens});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "2nd dozen"]);
+          setRecentBets([...recentBets, [betType, "2nd dozen", currentBetValue]]);
           break;
         case "3rd dozen":
           newDozens["3rd dozen"] = dozens["3rd dozen"] + currentBetValue;
           setDozens({...newDozens});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "3rd dozen"]);
+          setRecentBets([...recentBets, [betType, "3rd dozen", currentBetValue]]);
           break;
         case "low":
           newHighLow["low"] = newHighLow["low"] + currentBetValue;
           setHighLow({...newHighLow});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "low"]);
+          setRecentBets([...recentBets, [betType, "low", currentBetValue]]);
           break;
         case "odd":
           newOddEven["odd"] = newOddEven["odd"] + currentBetValue;
           setOddEven({...newOddEven});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "odd"]);
+          setRecentBets([...recentBets, [betType, "odd", currentBetValue]]);
           break;
         case "red":
           newRedBlack["red"] = redBlack["red"] + currentBetValue;
           setRedBlack({...newRedBlack});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "red"]);
+          setRecentBets([...recentBets, [betType, "red", currentBetValue]]);
           break;
         case "black":
           newRedBlack["black"] = newRedBlack["black"] + currentBetValue;
           setRedBlack({...newRedBlack});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "black"]);
+          setRecentBets([...recentBets, [betType, "black", currentBetValue]]);
           break;
         case "even":
           newOddEven["even"] = newOddEven["even"] + currentBetValue;
           setOddEven({...newOddEven});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "even"]);
+          setRecentBets([...recentBets, [betType, "even", currentBetValue]]);
           break;
         case "high":
           newHighLow["high"] = newHighLow["high"] + currentBetValue;
           setHighLow({...newHighLow});
-          setRecentBet([betToIncrease.match(betTypeRegex)[0], "high"]);
+          setRecentBets([...recentBets, [betType, "high", currentBetValue]]);
+          break;
+        default: 
+          console.log("Something went wrong in Betting Options > increaseBet() > switch statement")
           break;
       }
       setChipCount(chipCount - currentBetValue);
       setPendingTotalBet(pendingTotalBet + currentBetValue);
-      setRecentBetValue(currentBetValue);
     }
   };
 
@@ -3758,7 +3763,7 @@ export default function Layout({
         <div className="empty" id="empty-remove-border"></div>
         <div className="bet-box dozen" onClick={() => increaseBet("1st dozen")}>
           <div className="ribbon-div">
-            <img src={Ribbon} className="ribbon-img"></img>
+            <img alt="ribbon for dozens bet-box" src={Ribbon} className="ribbon-img"></img>
             <h1 className="dozen-text">1 - 12</h1>
             {dozens["1st dozen"] > 0 ? (
               <div className="chip-and-bet dozen-chip">
@@ -3779,7 +3784,7 @@ export default function Layout({
           onClick={() => increaseBet("2nd dozen")}
         >
           <div className="ribbon-div">
-            <img src={Ribbon} className="ribbon-img"></img>
+            <img alt="ribbon for dozens bet-box" src={Ribbon} className="ribbon-img"></img>
             <h1 className="dozen-text">13-24</h1>
             {dozens["2nd dozen"] > 0 ? (
               <div className="chip-and-bet dozen-chip">
@@ -3800,7 +3805,7 @@ export default function Layout({
           onClick={() => increaseBet("3rd dozen")}
         >
           <div className="ribbon-div">
-            <img src={Ribbon} className="ribbon-img"></img>
+            <img alt="ribbon for dozens bet-box" src={Ribbon} className="ribbon-img"></img>
             <h1 className="dozen-text">25-36</h1>
             {dozens["3rd dozen"] > 0 ? (
               <div className="chip-and-bet dozen-chip">

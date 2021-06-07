@@ -21,7 +21,7 @@ export default function BettingOptions({
   isSpinComplete,
   isWheelSpinning,
   pendingTotalBet,
-  recentBet,
+  recentBets,
   resetLayout,
   setCurrentBetValue,
   spinTheWheel,
@@ -307,7 +307,7 @@ export default function BettingOptions({
             ) : (
               <></>
             )}
-            {recentBet.length === 2 ? (
+            {recentBets.length > 0 ? (
               <button onClick={undoRecentBet} className="undo-bet-button">
                 Undo Last Bet
               </button>
