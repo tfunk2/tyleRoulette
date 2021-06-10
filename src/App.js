@@ -60,6 +60,8 @@ function App() {
   const [highLow, setHighLow] = useState({"high":0, "low":0});
   const [isSpinComplete, setIsSpinComplete] = useState(false);
   const [recentBets, setRecentBets] = useState([]);
+  const [previousTotalBet, setPreviousTotalBet] = useState(0);
+  const [allPreviousBets, setAllPreviousBets] = useState([]);
   const [isWheelSpinning, setIsWheelSpinning] = useState(false);
 
   const wheelNumbers = [
@@ -215,7 +217,6 @@ function App() {
   });
 
 
-  // Rework this AFTER converting arrays to objects for legibility
   const undoRecentBet = () => {
     let mostRecentBet = recentBets[recentBets.length - 1];
     let betType = mostRecentBet[0];
@@ -293,6 +294,10 @@ function App() {
     setRecentBets(newRecentBets);
   };
 
+  const sameBet = () => {
+    console.log(allPreviousBets);
+  }
+
   const collectWinnings = () => {
     setIsSpinComplete(false);
     if (totalAmountWon > 0) {
@@ -320,6 +325,7 @@ function App() {
     }
   };
 
+  // Fixes the back to back number problem
   useEffect(() => {
     if (previousTwenty[-1] === previousTwenty[-2]) {
       setIsWheelSpinning(false);
@@ -1033,14 +1039,10 @@ function App() {
           break;
       }
       setTotalAmountWon(totalAmountWon + allPayouts);
+      setPreviousTotalBet(pendingTotalBet)
+      setAllPreviousBets(recentBets);
     }
   }, [previousTwenty]);
-
-  // useEffect(() => {
-  //   if(chipCount < 1) {
-
-  //   }
-  // }, [chipCount])
 
   return (
     <div className="app">
@@ -1056,9 +1058,6 @@ function App() {
           <h3 className="header-h3">
             Chips: <span className="chip-count-text">{chipCount}</span>
           </h3>
-          {/* <div className="chip-count-pending-bet">
-            <span className="chip-count-text">{chipCount}</span>
-          </div> */}
           {
             pendingTotalBet > 0 ? (
               <span className="pending-bet-span">
@@ -1067,7 +1066,6 @@ function App() {
             ) : (
               <></>
             )
-            // <span className="empty-pending-bet-span"> </span>
           }
         </div>
       </header>
@@ -1078,8 +1076,10 @@ function App() {
         isSpinComplete={isSpinComplete}
         isWheelSpinning={isWheelSpinning}
         pendingTotalBet={pendingTotalBet}
+        previousTotalBet={previousTotalBet}
         recentBets={recentBets}
         resetLayout={resetLayout}
+        sameBet={sameBet}
         setCurrentBetValue={setCurrentBetValue}
         spinTheWheel={spinTheWheel}
         totalAmountWon={totalAmountWon}

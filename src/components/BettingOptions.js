@@ -21,8 +21,10 @@ export default function BettingOptions({
   isSpinComplete,
   isWheelSpinning,
   pendingTotalBet,
+  previousTotalBet,
   recentBets,
   resetLayout,
+  sameBet,
   setCurrentBetValue,
   spinTheWheel,
   totalAmountWon,
@@ -300,6 +302,13 @@ export default function BettingOptions({
         </div>
         {!isSpinComplete ? (
           <div className="buttons-div">
+            {chipCount >= previousTotalBet && previousTotalBet > 0 ? (
+              <button onClick={sameBet} className="same-bet-button">
+                Same Bet
+              </button>
+            ) : (
+              <></>
+            )}
             {pendingTotalBet > 0 ? (
               <button onClick={resetLayout} className="reset-button">
                 Reset All Bets
